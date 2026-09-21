@@ -1,0 +1,336 @@
+================================================================================
+MASTER PROMPT FIGMA MAKE.AI / AI CODE GENERATOR (VERSI LENGKAP 100% SUBMENU)
+PROYEK REDESAIN WEBSITE PENGADILAN NEGERI PURWOREJO KELAS IB (pn-purworejo.go.id)
+MENGATASI SELURUH 70+ SUBMENU DI NAVBAR TANPA MENGUBAH DESAIN YANG SUDAH JADI
+================================================================================
+
+PRINSIP UTAMA:
+1. DESAIN YANG SUDAH JADI TIDAK DIUBAH SAMA SEKALI:
+   - Beranda (HomePageWrapper) TETAP AMAN.
+   - Posbakum Info (/hubungi/posbakum) TETAP AMAN.
+   - Formulir Posbakum (/hubungi/posbakum/form) TETAP AMAN.
+   - Go-Info (/hubungi/goinfo) TETAP AMAN.
+   - Seluruh widget (Accessibility, ExternalModal, FloatingHelp, IkmDashboard) TETAP AMAN.
+
+2. ATURAN WARNA & TAMPILAN GLOBAL:
+   - Primary: Deep Court Maroon (#9A2109)
+   - Primary Dark/Hover: #7A1A07
+   - Secondary Accent: Royal Gold (#F9C784)
+   - Surface: Pure White (#FFFFFF) & Neutral Background (#F8FAFC)
+   - Card Style: 16px corner radius (rounded-2xl), 1px solid #E2E8F0 border, soft shadow.
+   - Typography: Font Family "Inter", font-sans. Standar WCAG 2.1 AA (kontras tinggi).
+   - Navbar di semua subpage: Wajib background putih solid dengan teks abu-abu/marun agar tidak terjadi teks putih di atas background putih.
+
+================================================================================
+MATRIKS PEMETAAN: 70+ SUBMENU DI NAVBAR KE PROMPT SPESIFIK
+================================================================================
+
+Berikut adalah pemetaan setiap submenu di navbar ke prompt yang sesuai:
+
+A. KELOMPOK PROFIL & KELEMBAGAAN:
+   - Pengantar Ketua Pengadilan ---------> Gunakan PROMPT 1.2
+   - Visi Misi Pengadilan ---------------> Gunakan PROMPT 1.2
+   - Sejarah Pengadilan -----------------> Gunakan PROMPT 1.2
+   - Struktur Organisasi ----------------> Gunakan PROMPT 1.2
+   - Wilayah Yuridiksi ------------------> Gunakan PROMPT 1.2
+   - Profil Role Model & Agen Perubahan -> Gunakan PROMPT 1.1
+   - Profil Hakim & Pegawai (Semua Rute) -> Gunakan PROMPT 1.1
+   - Kepaniteraan (Pidana, Perdata, Hukum) -> Gunakan PROMPT 1.2
+   - Kesekretariatan (IT, Kepegawaian, Keuangan) -> Gunakan PROMPT 1.2
+   - Tata Tertib Pengadilan -------------> Gunakan PROMPT 1.2
+
+B. KELOMPOK LAYANAN PUBLIK & HUKUM INTERAKTIF:
+   - Jadwal Sidang (Semua Ruang & Perkara) -> Gunakan PROMPT 2.1
+   - Denda Tilang Online -----------------> Gunakan PROMPT 2.2
+   - Prosedur Berperkara (Pidana/Perdata) -> Gunakan PROMPT 3.1
+   - Biaya Perkara & Kalkulator Panjar ---> Gunakan PROMPT 3.1
+   - Pengumuman Sisa Panjar Biaya Perkara -> Gunakan PROMPT 3.1
+   - Prosedur Pembebasan Biaya (Prodeo) -> Gunakan PROMPT 3.1
+   - Prosedur Eksekusi Putusan -----------> Gunakan PROMPT 3.1
+   - Zitting Plaats (Sidang Keliling) ---> Gunakan PROMPT 3.1
+   - PTSP (Standar & Maklumat Layanan) ---> Gunakan PROMPT 1.2
+   - Layanan Disabilitas & LANDAS --------> Gunakan PROMPT 1.2
+
+C. KELOMPOK TRANSPARANSI, DOKUMEN & LAPORAN:
+   (Laporan Tahunan, Keuangan, SAKIP, LKjIP, LHKPN, IKM/SKM, IPAK/SPAK, 
+    Aset & Inventaris, E-Brosur, SOP Layanan, Renstra, RKA-KL, Pengawasan,
+    Zona Integritas Area I s.d VI, AMPUH, SK Akreditasi)
+   --------------------------------------> Gunakan PROMPT 6.1 (Template Dokumen Transparansi)
+
+D. KELOMPOK FORMULIR ONLINE:
+   - Posbakum (Info & Form) -------------> SUDAH ADA (TETAP DIPERTAHANKAN)
+   - GO-INFO ----------------------------> SUDAH ADA (TETAP DIPERTAHANKAN)
+   - Permohonan Informasi Publik (PPID) -> Gunakan PROMPT 4.1
+   - Pengaduan Layanan & SIWAS WBS ------> Gunakan PROMPT 4.2
+
+E. KELOMPOK BERITA, KONTAK & MEDIA:
+   - Berita Terkini & Artikel -----------> Gunakan PROMPT 5.1
+   - Galeri Foto & Video Kegiatan -------> Gunakan PROMPT 5.3
+   - Alamat Kantor & Media Sosial -------> Gunakan PROMPT 5.4
+   - Hasil Pencarian --------------------> Gunakan PROMPT 5.2
+
+================================================================================
+KUMPULAN PROMPT FIGMA MAKE.AI (SIAP COPY-PASTE)
+================================================================================
+
+--------------------------------------------------------------------------------
+MODUL 1: PROFIL & DIREKTORI PEGAWAI
+--------------------------------------------------------------------------------
+
+PROMPT 1.1: Halaman Profil Hakim & Aparatur Pegawai (Rute /tentang-pengadilan/pegawai/:id)
+"""
+Design a clean, professional government web page (Desktop 1440px) in Indonesian for "Profil Hakim dan Aparatur Sipil Negara Pengadilan Negeri Purworejo".
+
+[DESIGN SYSTEM]
+- Theme: Court Maroon (#9A2109), Royal Gold (#F9C784), Pure White cards, Background #F8FAFC.
+- Typography: Inter font, line-height 1.6, WCAG 2.1 AA compliant.
+
+[PAGE LAYOUT & SECTIONS]
+1. Header & Breadcrumb:
+   - Breadcrumb: Beranda > Tentang Pengadilan > Profil Hakim dan Pegawai.
+   - Title: "Aparatur Pengadilan Negeri Purworejo"
+   - Subtitle: "Mengenal profil pimpinan, hakim majelis, pejabat kepaniteraan, dan staf yang berdedikasi melayani pencari keadilan secara profesional dan berintegritas."
+2. Category Filter Bar (Pill Tabs):
+   - Horizontal tab filters: "Semua Aparatur", "Pimpinan", "Hakim Karier", "Kepaniteraan", "Kesekretariatan", "Jurusita & Staf Pelaksana".
+   - Search bar: "Cari nama hakim atau NIP..."
+3. Leadership Spotlight (2 Kolom untuk Ketua & Wakil Ketua):
+   - Card 1 (Ketua Pengadilan): Foto resmi toga hakim, Nama "Santoso, S.H., M.H.", NIP 1974xxxx, Golongan Pembina Utama Muda (IV/c), Riwayat Pendidikan, dan Motto Integritas.
+   - Card 2 (Wakil Ketua Pengadilan): Foto resmi, Nama "Rina Wijayanti, S.H., M.Hum.", NIP 1978xxxx, Pangkat Pembina Tingkat I (IV/b).
+4. Aparatur Directory Grid (4 Kolom Card):
+   - Kartu pegawai: Foto portrait, Nama lengkap dengan gelar, Jabatan (Hakim Anggota / Panitera Muda / Kasubbag / Jurusita), NIP, dan tombol "Detail Profil".
+   - Pagination di bawah: [1] [2] [3] ... [Next].
+"""
+
+PROMPT 1.2: Halaman Standar Profil Kelembagaan, Visi Misi, Sejarah & Struktur
+"""
+Design an elegant institutional profile web page (Desktop 1440px) in Indonesian for "Profil Resmi & Tata Kelola Pengadilan Negeri Purworejo".
+(This prompt covers: Visi Misi, Sejarah, Wilayah Yuridiksi, Struktur Organisasi, Kepaniteraan, Kesekretariatan, PTSP, Layanan Disabilitas, dan Tata Tertib Sidang).
+
+[DESIGN SYSTEM]
+- Primary Maroon (#9A2109), Accent Gold (#F9C784), Surface White (#FFFFFF), Background (#F8FAFC).
+
+[PAGE LAYOUT & SECTIONS]
+1. Header Banner & Dynamic Breadcrumb:
+   - Breadcrumb: Beranda > Tentang Pengadilan > [Nama Halaman Terkait].
+   - Header Title: "Profil & Informasi Kelembagaan" with sub-description.
+2. Two-Column Layout (Sidebar Navigation 25% + Main Article Content 75%):
+   - Left Sidebar (Sticky Menu):
+     * Quick links navigasi antar sub-halaman profil: Visi & Misi, Sejarah Lembaga, Struktur Organisasi, Wilayah Yuridiksi 16 Kecamatan, Kepaniteraan, Kesekretariatan, Maklumat Pelayanan PTSP, Tata Tertib Persidangan.
+   - Right Main Content:
+     * H1 Title & Ringkasan Eksekutif.
+     * Content Blocks with clean typography, iconography, and structured callouts.
+     * Interactive Tree Organization Chart (untuk Struktur Organisasi).
+     * Peta Wilayah Yuridiksi Interaktif (Peta 16 Kecamatan di Kab. Purworejo dengan luas wilayah dan jumlah penduduk binaan).
+     * Maklumat PTSP Box with badge "Komitmen Pelayanan Bebas Gratifikasi & Pungli".
+3. Download Regulasi & SOP Terkait (Box Unduhan Dokumen PDF resmi berstempel digital).
+"""
+
+--------------------------------------------------------------------------------
+MODUL 2: LAYANAN PUBLIK & TILANG
+--------------------------------------------------------------------------------
+
+PROMPT 2.1: Halaman Jadwal Sidang Interaktif & Filter SIPP
+"""
+Design a comprehensive public court schedule dashboard (Desktop 1440px) in Indonesian for "Jadwal Persidangan Terbuka PN Purworejo".
+
+[DESIGN SYSTEM]
+- Primary: Maroon (#9A2109), Status Colors: Green (#15803D) for Berlangsung, Amber (#B45309) for Menunggu, Slate (#475569) for Selesai.
+
+[PAGE LAYOUT & SECTIONS]
+1. Breadcrumb: Beranda > Layanan Publik > Jadwal Sidang.
+2. Live Status Header:
+   - Title: "Jadwal Persidangan Pengadilan Negeri Purworejo"
+   - Live badge: Pulse dot green "Terhubung Real-Time ke SIPP Mahkamah Agung".
+3. 4-Column Search & Filter Card:
+   - Filter 1: Input cari nomor perkara / nama para pihak.
+   - Filter 2: Dropdown klasifikasi (Semua, Pidana Biasa, Tilang, Gugatan, Permohonan).
+   - Filter 3: Date picker (Default: Hari Ini).
+   - Filter 4: Dropdown Ruang Sidang (Ruang Cakra, Ruang Kartika, Ruang Tirta).
+   - Action buttons: "Terapkan Filter" (#9A2109 pill button) & "Reset".
+4. Schedule Data Table:
+   - Columns: Jam Sidang, Nomor Perkara, Ruang, Majelis Hakim, Agenda Sidang, Status Sidang, Aksi.
+   - 5 Baris Data Sampel Realistis:
+     * 09:00 WIB | 24/Pid.B/2026/PN Pwr | Ruang Cakra | H. Santoso, S.H. | Pemeriksaan Saksi | [Sedang Berlangsung] | Button "Detail"
+     * 10:30 WIB | 41/Pdt.G/2026/PN Pwr | Ruang Kartika | Rina Wijayanti, S.H. | Mediasi Lanjutan | [Menunggu Giliran] | Button "Detail"
+     * 11:00 WIB | 18/Pdt.P/2026/PN Pwr | Ruang Tirta | Budi Hartono, S.H. | Pembacaan Penetapan | [Menunggu Giliran] | Button "Detail"
+     * 08:30 WIB | 15/Pid.Sus/2026/PN Pwr | Ruang Cakra | H. Santoso, S.H. | Tuntutan JPU | [Selesai] | Button "Detail"
+5. Quick Detail Modal on Click (Detail nama jaksa, pengacara, panitera, dan ruang sidang).
+"""
+
+PROMPT 2.2: Halaman Layanan Denda Tilang Online & Cek Tagihan
+"""
+Design a citizen-friendly public service page (Desktop 1440px) in Indonesian for "Layanan Informasi Denda Tilang Online PN Purworejo".
+
+[PAGE LAYOUT & SECTIONS]
+1. Breadcrumb: Beranda > Layanan Publik > Layanan Tilang.
+2. Cek Denda Tilang Box (Prominent Hero Card):
+   - Input bar besar: "Masukkan Nomor Register Tilang / Nomor Polisi Kendaraan (cth: AA 1234 BC)".
+   - Button "Cari Tagihan Denda Tilang" (Maroon #9A2109).
+3. 3-Langkah Praktis Pengambilan Barang Bukti (Visual Stepper):
+   - Langkah 1: Cek Putusan Denda Tilang di website setiap hari Kamis/Jumat.
+   - Langkah 2: Bayar denda ke kas negara via ATM/M-Banking (Kode Bayar BRIVA).
+   - Langkah 3: Ambil SIM/STNK di Kantor Kejaksaan Negeri Purworejo atau gunakan layanan antar tilang COD Pos Indonesia.
+4. Tabel Hasil Putusan Sidang Tilang Terakhir (No. Register, Nama Pelanggar, Pasal, Besaran Denda Resmi, Status).
+5. FAQ Layanan Tilang (Accordion).
+"""
+
+--------------------------------------------------------------------------------
+MODUL 3: LAYANAN HUKUM, ALUR PERKARA & BIAYA
+--------------------------------------------------------------------------------
+
+PROMPT 3.1: Halaman Alur Berperkara Interaktif & Kalkulator Panjar Biaya
+"""
+Design a step-by-step user-centered judicial guide page (Desktop 1440px) in Indonesian for "Panduan Prosedur Berperkara & Kalkulator Panjar Biaya".
+(Covers: Gugatan Perdata, Gugatan Sederhana, Pidana, Prodeo, dan Eksekusi).
+
+[DESIGN SYSTEM]
+- High clarity, zero legal jargon (Heuristic H2), interactive cost estimator.
+
+[PAGE LAYOUT & SECTIONS]
+1. Breadcrumb: Beranda > Layanan Hukum > Prosedur Berperkara.
+2. Segmented Pill Tabs:
+   - "Perkara Gugatan Perdata", "Gugatan Sederhana (Small Claim)", "Perkara Pidana", "Permohonan Prodeo (Gratis)", "Prosedur Eksekusi".
+3. 5-Step Visual Interactive Stepper:
+   - Tahap 1: Pengajuan Gugatan (e-Court / Loket PTSP) + Tombol "Unduh Format Surat Gugatan (.DOCX)".
+   - Tahap 2: Pembayaran Panjar via Virtual Account Bank (Bebas Pungli).
+   - Tahap 3: Pemanggilan Pihak oleh Jurusita Resmi.
+   - Tahap 4: Mediasi Wajib dengan Hakim Mediator Gratis.
+   - Tahap 5: Persidangan & Salinan Akta Putusan Resmi.
+4. Interactive Panjar Fee Estimator (Kalkulator Panjar Biaya Perkara):
+   - Dropdown pilihan radius domisili pemohon (Kecamatan Purworejo, Kutoarjo, Gebang, Loano, Pituruh, dll.).
+   - Rincian biaya: Pendaftaran (Rp 30.000), ATK (Rp 75.000), Panggilan Pihak (Radius 1-4), Meterai & Redaksi.
+   - Total estimasi transparan dengan jaminan sisa panjar dikembalikan 100%.
+5. POSBAKUM Assistance Card:
+   - Banner konsultasi hukum gratis bagi warga kurang mampu.
+"""
+
+--------------------------------------------------------------------------------
+MODUL 4: FORMULIR TERPADU & PENGADUAN
+--------------------------------------------------------------------------------
+
+PROMPT 4.1: Formulir Terpadu Permohonan Informasi Publik (PPID)
+"""
+Design an integrated, validated e-service form page (Desktop 1440px) in Indonesian for "Formulir Permohonan Informasi Publik PPID PN Purworejo".
+(Replaces old Google Forms according to Slide 31 requirements).
+
+[PAGE LAYOUT & SECTIONS]
+1. Breadcrumb: Beranda > Formulir Layanan > Permohonan Informasi PPID.
+2. SLA Info Banner: "Layanan Informasi Resmi: Maksimal 10 hari kerja sesuai UU KIP No. 14/2008 & SK KMA No. 1-144/2011."
+3. Two-Column Form Layout:
+   - Left Column: NIK KTP (16 digit validasi), Nama Lengkap, Email & No. WhatsApp aktif, Upload KTP (max 2MB), Rincian Informasi yang Dibutuhkan (counter 0/500 karakter), Cara Perolehan (Email/Cetak di PTSP), Checkbox konfirmasi kebenaran data.
+   - Action buttons: Button "Kosongkan Form" (Ghost Red with confirm modal) & "Kirim Permohonan" (Primary Maroon #9A2109).
+   - Right Column: Panduan pengisian, daftar dokumen wajib, informasi yang dikecualikan.
+4. Submission Success Modal Dialog: "Nomor Registrasi: PPID-PWR-2026-0042", QR Code verifikasi, dan tombol "Unduh Bukti Tanda Terima (PDF)".
+"""
+
+PROMPT 4.2: Formulir Pengaduan Masyarakat & Whistleblowing System (SIWAS)
+"""
+Design a secure, confidential complaint and whistleblowing form (Desktop 1440px) in Indonesian for "Layanan Pengaduan Publik & SIWAS MA-RI PN Purworejo".
+
+[PAGE LAYOUT & SECTIONS]
+1. Breadcrumb: Beranda > Hubungi Kami > Pengaduan Publik.
+2. Privacy & Whistleblower Protection Banner: "Identitas Pelapor Dijamin Kerahasiaannya oleh Badan Pengawasan Mahkamah Agung RI (PERMA No. 9 Tahun 2016)."
+3. Form Sections:
+   - Toggle: "Laporkan Secara Anonim (Tanpa Mencantumkan Nama)".
+   - Kategori Laporan: Pelayanan Petugas PTSP, Pungutan Liar / Gratifikasi, Pelanggaran Kode Etik, Fasilitas Gedung.
+   - Tempat & Waktu Kejadian, Nama Terlapor, Kronologis Kejadian (Rich text), Upload Bukti (Foto/Dokumen).
+4. Output: Kode Rahasia Pelacakan Pengaduan (Tracking Code).
+"""
+
+--------------------------------------------------------------------------------
+MODUL 5: BERITA, PENCARIAN & MEDIA
+--------------------------------------------------------------------------------
+
+PROMPT 5.1: Halaman Detail Berita & Artikel Pengadilan
+"""
+Design an accessible, high-readability news article page (Desktop 1440px) in Indonesian for "Detail Berita Resmi Pengadilan Negeri Purworejo".
+
+[DESIGN FIXES (SLIDE 17 TIM 11)]
+- Active breadcrumb, explicit "Kembali ke Daftar Berita" button, accessibility text-to-speech & font resize controls.
+
+[PAGE LAYOUT & SECTIONS]
+1. Top Bar: Button "← Kembali ke Semua Berita" & Breadcrumb: Beranda > Berita > Berita Terkini > [Judul Berita].
+2. Article Header: Category tag pill, Title H1 (32px), Author (Humas PN Purworejo), Date, Reading Time, Voice Reader button & Font Resizer (A- | Normal | A+).
+3. Featured Image (16:9 ratio, rounded-2xl) with official photo caption.
+4. Article Body (Max width 750px): Professional formatting, drop-cap, pull-quote blockquote, and subheadings.
+5. Share Buttons (WhatsApp, Facebook, X, Salin Link) & Related News Cards at bottom.
+"""
+
+PROMPT 5.2: Halaman Hasil Pencarian Terpadu (Smart Search Results Page)
+"""
+Design a comprehensive search results page (Desktop 1440px) in Indonesian for "Hasil Pencarian Portal Resmi PN Purworejo".
+
+[DESIGN FIXES (SLIDE 15 & 24 TIM 11)]
+- Replaces broken search that jumped to homepage center; includes typo corrections and categorized results.
+
+[PAGE LAYOUT & SECTIONS]
+1. Breadcrumb: Beranda > Pencarian.
+2. Search Query Header Card: Big search bar (Value: "Jadwal Sidang Tilang"), search result count ("Ditemukan 14 hasil"), and "Mungkin maksud Anda: Alur Pembayaran Denda Tilang".
+3. Filter Chips: [Semua Kategori (14)] [Layanan Publik (6)] [Jadwal SIPP (5)] [Berita (2)] [Formulir PPID (1)].
+4. Results List: Cards with highlighted keyword terms, category badge, and direct action link.
+5. Empty State Variation when no matches are found with recovery tips.
+"""
+
+PROMPT 5.3: Halaman Galeri Foto & Video Kegiatan Pengadilan
+"""
+Design a modern multimedia gallery page (Desktop 1440px) in Indonesian for "Galeri Dokumentasi & Video Kegiatan PN Purworejo".
+
+[PAGE LAYOUT & SECTIONS]
+1. Breadcrumb: Beranda > Berita > Galeri Dokumentasi.
+2. Tab switcher: "Semua Dokumentasi", "Kegiatan Persidangan & Pimpinan", "Sosialisasi & Kunjungan", "Video Edukasi Hukum".
+3. Visual Grid: Masonry/3-column card grid with rounded-2xl thumbnails, hover zoom effect, play icon on video items, event date badge, and lightbox modal view upon clicking.
+"""
+
+PROMPT 5.4: Halaman Alamat Kantor, Kontak Terpadu & Media Sosial
+"""
+Design a comprehensive contact and location page (Desktop 1440px) in Indonesian for "Alamat Kantor & Kontak Pelayanan PN Purworejo".
+
+[PAGE LAYOUT & SECTIONS]
+1. Breadcrumb: Beranda > Hubungi Kami > Alamat & Kontak.
+2. Dual-Column Grid:
+   - Left Column: Informasi Lengkap Gedung Kantor (Jl. Tentara Pelajar No. 101, Purworejo, Jawa Tengah 54114), Jam Operasional PTSP (Senin-Kamis 08:00-16:30, Jumat 08:00-17:00), No. Telepon Kantor, WhatsApp Helpdesk PTSP, Email Resmi.
+   - Right Column: Interactive Google Maps Embed Card showing exact court coordinates, directions button, and public transportation notes.
+3. Official Social Media Channels Grid (YouTube, Instagram, Facebook, TikTok) with live follower badges.
+"""
+
+--------------------------------------------------------------------------------
+MODUL 6: TRANSPARANSI & REPOSITORI DOKUMEN REFORMASI BIROKRASI
+--------------------------------------------------------------------------------
+
+PROMPT 6.1: Template Dokumen Transparansi Publik, SAKIP & Zona Integritas
+(MENCAKUP SELURUH SUBMENU TRANSPARANSI: Laporan Tahunan, Keuangan, SAKIP, LKjIP, LHKPN, 
+ IKM/SKM, IPAK/SPAK, SOP, E-Brosur, Renstra, RKA-KL, ZI Area I-VI, dan Dokumen AMPUH)
+"""
+Design an ultra-clean, structured public accountability and document repository page (Desktop 1440px) in Indonesian for "Transparansi Kinerja, Laporan Publik & Reformasi Birokrasi PN Purworejo".
+
+[DESIGN SYSTEM]
+- Theme: Court Maroon (#9A2109), Gold Accents (#F9C784), Pure White Card Surfaces, Neutral Background (#F8FAFC).
+
+[PAGE LAYOUT & SECTIONS]
+1. Dynamic Header & Breadcrumb:
+   - Breadcrumb: Beranda > [Kategori Layanan / Reformasi Birokrasi] > [Nama Dokumen / Laporan].
+   - Title H1: "Repositori Transparansi & Akuntabilitas Kinerja"
+   - Subtitle: "Bentuk pertanggungjawaban publik dan keterbukaan informasi PN Purworejo sesuai prinsip Good Governance dan Pembangunan Zona Integritas (WBK/WBBM)."
+2. Year / Period Filter Bar:
+   - Dropdown Tahun (2026, 2025, 2024, 2023, Arsip).
+   - Search bar: "Cari judul dokumen atau nomor SK..."
+3. Structured Document Cards List:
+   - List of downloadable official PDF reports:
+     * Card 1: Judul Dokumen (cth: "Laporan Kinerja Instansi Pemerintah (LKjIP) Tahun 2025")
+     * Metadata: Tanggal Terbit, Nomor Dokumen/SK, Ukuran File (PDF 2.4 MB), Jumlah Unduhan.
+     * Buttons: "Pratinjau Dokumen (Preview PDF)" & "Unduh Dokumen Resmi (.PDF)".
+     * Verifikasi Tanda Tangan Elektronik (TTE) BSrE Mahkamah Agung badge.
+4. Ringkasan Infografis Visual Kinerja:
+   - 3 Key Metrics Cards at top:
+     * Capaian Kinerja: 98.4% (Sangat Baik)
+     * Indeks Kepuasan Masyarakat (IKM): 3.91 / 4.00 (A)
+     * Indeks Persepsi Anti Korupsi (IPAK): 3.96 / 4.00 (Bersih dari Pungli)
+5. Legal Basis & Regulasi Terkait (Accordion dasar hukum Permenpan RB dan Keputusan Sekretaris MA).
+"""
+
+================================================================================
+HASIL:
+Dengan 11 prompt di atas, SELURUH 70+ SUBMENU di navbar Anda kini memiliki desain 
+halaman yang tepat dan spesifik. Tidak ada lagi menu yang akan melempar ke halaman 
+"Segera Hadir". Semua redesain yang sudah ada tetap utuh dan aman 100%!
+================================================================================
