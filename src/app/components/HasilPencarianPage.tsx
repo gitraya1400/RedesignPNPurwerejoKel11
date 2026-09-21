@@ -105,7 +105,7 @@ export function HasilPencarianPage() {
           {/* Big search bar */}
           <div className="relative mb-4">
             <Search size={20} className="absolute left-5 top-1/2 -translate-y-1/2 text-[#9A2109]" />
-            <input
+            <input aria-label="Input"
               type="text"
               value={inputVal}
               onChange={(e) => setInputVal(e.target.value)}

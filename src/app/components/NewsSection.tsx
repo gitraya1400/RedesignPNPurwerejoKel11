@@ -145,11 +145,11 @@ export function NewsSection() {
               >
                 {featuredNews.title}
               </h3>
-              <p className="text-gray-500 text-sm mb-4 leading-relaxed line-clamp-3">
+              <p className="text-gray-700 text-sm mb-4 leading-relaxed line-clamp-3">
                 {featuredNews.excerpt}
               </p>
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3 text-gray-400 text-xs">
+                <div className="flex items-center gap-3 text-gray-600 text-xs">
                   <span className="flex items-center gap-1">
                     <User size={12} />
                     {featuredNews.author}
@@ -193,7 +193,7 @@ export function NewsSection() {
                   >
                     {item.title}
                   </p>
-                  <p className="text-gray-400 text-[11px] mt-1 flex items-center gap-1">
+                  <p className="text-gray-600 text-[11px] mt-1 flex items-center gap-1">
                     <Calendar size={10} />
                     {item.date}
                   </p>
@@ -245,7 +245,7 @@ export function NewsSection() {
             <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center">
               <Folder size={28} className="text-gray-300" />
             </div>
-            <p className="text-gray-400 text-sm">Belum Ada Artikel</p>
+            <p className="text-gray-600 text-sm">Belum Ada Artikel</p>
             <p className="text-gray-300 text-xs">Tidak ada pengumuman saat ini</p>
           </div>
         ) : (
@@ -271,7 +271,7 @@ export function NewsSection() {
                   >
                     {ann.title}
                   </p>
-                  <span className="inline-flex items-center gap-1 text-xs text-gray-400 mt-1">
+                  <span className="inline-flex items-center gap-1 text-xs text-gray-600 mt-1">
                     <Tag size={10} />
                     {ann.category}
                   </span>

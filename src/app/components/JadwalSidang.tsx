@@ -106,7 +106,7 @@ export function JadwalSidang({ onExternalLink }: JadwalSidangProps) {
                 JADWAL SIDANG
               </h2>
             </div>
-            <p className="text-gray-500 text-sm pl-4">{today}</p>
+            <p className="text-gray-700 text-sm pl-4">{today}</p>
           </div>
           <button
             onClick={() => onExternalLink("#", "SIPP")}
@@ -142,7 +142,7 @@ export function JadwalSidang({ onExternalLink }: JadwalSidangProps) {
             <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center">
               <Users size={28} className="text-gray-300" />
             </div>
-            <p className="text-gray-400 text-sm">Belum Ada Jadwal Sidang</p>
+            <p className="text-gray-600 text-sm">Belum Ada Jadwal Sidang</p>
           </div>
         ) : (
           <div className="grid gap-3">
@@ -180,10 +180,10 @@ export function JadwalSidang({ onExternalLink }: JadwalSidangProps) {
                     </div>
                     <p className="text-gray-600 text-sm truncate">
                       <span style={{ fontWeight: 600 }}>{hearing.plaintiff}</span>
-                      <span className="text-gray-400 mx-2">vs</span>
+                      <span className="text-gray-600 mx-2">vs</span>
                       <span style={{ fontWeight: 600 }}>{hearing.defendant}</span>
                     </p>
-                    <p className="text-gray-400 text-xs mt-0.5">{hearing.agenda}</p>
+                    <p className="text-gray-600 text-xs mt-0.5">{hearing.agenda}</p>
                   </div>
 
                   {/* Time + Room */}
@@ -194,7 +194,7 @@ export function JadwalSidang({ onExternalLink }: JadwalSidangProps) {
                         {hearing.time}
                       </span>
                     </div>
-                    <div className="flex items-center gap-1 text-gray-400">
+                    <div className="flex items-center gap-1 text-gray-600">
                       <MapPin size={11} />
                       <span className="text-xs">{hearing.room}</span>
                     </div>

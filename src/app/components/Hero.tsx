@@ -214,7 +214,7 @@ export function Hero({ onExternalLink }: HeroProps) {
                 </div>
 
                 <div className="relative">
-                  <input
+                  <input aria-label="Cari berdasar kata kunci"
                     type="text"
                     placeholder="Cari berdasar kata kunci"
                     className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#F9C784] focus:border-transparent transition-all"

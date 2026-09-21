@@ -39,7 +39,7 @@ function CircularProgress({
   return (
     <div className="flex flex-col items-center gap-3">
       <div className="relative" style={{ width: size, height: size }}>
-        <svg width={size} height={size} className="-rotate-90">
+        <svg aria-hidden="true" width={size} height={size} className="-rotate-90">
           {/* Track */}
           <circle
             cx={size / 2}

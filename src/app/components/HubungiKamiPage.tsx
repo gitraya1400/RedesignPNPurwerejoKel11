@@ -57,7 +57,7 @@ export function HubungiKamiPage() {
     <div className="min-h-screen bg-[#F8FAFC] pt-24 pb-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-1.5 text-sm text-slate-500 mb-6">
+        <nav className="flex items-center gap-1.5 text-sm text-slate-700 mb-6">
           <Link
             to="/"
             className="flex items-center gap-1 hover:text-[#9A2109] transition-colors"
@@ -65,9 +65,9 @@ export function HubungiKamiPage() {
             <Home size={14} />
             <span>Beranda</span>
           </Link>
-          <ChevronRight size={14} className="text-slate-400" />
+          <ChevronRight size={14} className="text-slate-600" />
           <span className="text-slate-600 font-medium">Hubungi Kami</span>
-          <ChevronRight size={14} className="text-slate-400" />
+          <ChevronRight size={14} className="text-slate-600" />
           <span className="text-[#9A2109] font-semibold">{sectionLabel}</span>
         </nav>
 
@@ -76,7 +76,7 @@ export function HubungiKamiPage() {
           <h1 className="text-3xl font-bold text-slate-800 mb-1">
             Hubungi Kami
           </h1>
-          <p className="text-slate-500 text-sm">
+          <p className="text-slate-700 text-sm">
             Pengadilan Negeri Purworejo — Layanan informasi dan komunikasi publik
           </p>
         </div>
@@ -149,7 +149,7 @@ function AlamatContent() {
               {card.icon}
             </div>
             <div>
-              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1">
+              <p className="text-xs font-semibold text-slate-600 uppercase tracking-wide mb-1">
                 {card.label}
               </p>
               <p className="text-sm font-medium text-slate-700 whitespace-pre-line leading-relaxed">
@@ -181,7 +181,7 @@ function AlamatContent() {
             <p className="text-slate-600 font-semibold text-sm text-center px-4">
               Peta Lokasi
             </p>
-            <p className="text-slate-500 text-xs text-center px-8">
+            <p className="text-slate-700 text-xs text-center px-8">
               Jl. Tentara Pelajar Km. 4, Purworejo
             </p>
           </div>
@@ -258,7 +258,7 @@ function SosialMediaContent() {
       buttonClass: "bg-blue-600 hover:bg-blue-700",
       badgeClass: "bg-blue-100 text-blue-700",
       icon: (
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-blue-600">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-blue-600">
           <path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.234 2.686.234v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
         </svg>
       ),
@@ -277,7 +277,7 @@ function SosialMediaContent() {
       buttonClass: "bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600",
       badgeClass: "bg-pink-100 text-pink-700",
       icon: (
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-pink-500">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-pink-500">
           <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
         </svg>
       ),
@@ -296,7 +296,7 @@ function SosialMediaContent() {
       buttonClass: "bg-red-600 hover:bg-red-700",
       badgeClass: "bg-red-100 text-red-700",
       icon: (
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-red-600">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-red-600">
           <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
         </svg>
       ),
@@ -315,7 +315,7 @@ function SosialMediaContent() {
       buttonClass: "bg-slate-800 hover:bg-slate-900",
       badgeClass: "bg-sky-100 text-sky-700",
       icon: (
-        <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-slate-800">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7 text-slate-800">
           <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
         </svg>
       ),
@@ -324,7 +324,7 @@ function SosialMediaContent() {
 
   return (
     <div className="space-y-6">
-      <p className="text-sm text-slate-500">
+      <p className="text-sm text-slate-700">
         Ikuti dan pantau kanal resmi Pengadilan Negeri Purworejo di berbagai platform media sosial untuk informasi terkini.
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -341,7 +341,7 @@ function SosialMediaContent() {
                 <p className="font-bold text-slate-800 text-base leading-tight">
                   {platform.name}
                 </p>
-                <p className="text-sm text-slate-500 truncate">{platform.handle}</p>
+                <p className="text-sm text-slate-700 truncate">{platform.handle}</p>
               </div>
               <span
                 className={`text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap ${platform.badgeClass}`}
@@ -458,7 +458,7 @@ function PengaduanContent({
               <p className="font-bold text-slate-800 text-lg mb-1">
                 Pengaduan Terkirim!
               </p>
-              <p className="text-sm text-slate-500 max-w-sm">
+              <p className="text-sm text-slate-700 max-w-sm">
                 Terima kasih, <strong>{form.nama}</strong>. Pengaduan Anda telah kami terima dan akan ditindaklanjuti sesuai prosedur yang berlaku.
               </p>
             </div>
@@ -476,7 +476,7 @@ function PengaduanContent({
               <label className="block text-sm font-semibold text-slate-700 mb-1.5">
                 Nama Lengkap <span className="text-red-500">*</span>
               </label>
-              <input
+              <input aria-label="Masukkan nama lengkap Anda"
                 type="text"
                 required
                 placeholder="Masukkan nama lengkap Anda"
@@ -491,7 +491,7 @@ function PengaduanContent({
               <label className="block text-sm font-semibold text-slate-700 mb-1.5">
                 Email / No. WhatsApp <span className="text-red-500">*</span>
               </label>
-              <input
+              <input aria-label="Contoh: nama@email.com atau 08xxxxxxxxxx"
                 type="text"
                 required
                 placeholder="Contoh: nama@email.com atau 08xxxxxxxxxx"
@@ -536,7 +536,7 @@ function PengaduanContent({
                 onChange={(e) => setForm((f) => ({ ...f, uraian: e.target.value }))}
                 className="w-full px-4 py-2.5 rounded-xl border border-[#E2E8F0] text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#9A2109]/30 focus:border-[#9A2109] transition resize-none"
               />
-              <p className="text-right text-xs text-slate-400 mt-1">
+              <p className="text-right text-xs text-slate-600 mt-1">
                 {form.uraian.length}/{maxUraian} karakter
               </p>
             </div>
@@ -569,7 +569,7 @@ function PengaduanContent({
                 </div>
                 <span className="text-sm font-bold text-slate-700">{ch.name}</span>
               </div>
-              <p className="text-xs text-slate-500 leading-relaxed">{ch.desc}</p>
+              <p className="text-xs text-slate-700 leading-relaxed">{ch.desc}</p>
               {ch.url && ch.linkLabel && (
                 <a
                   href={ch.url}

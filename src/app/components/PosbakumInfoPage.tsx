@@ -392,7 +392,7 @@ export function PosbakumInfoPage() {
                   <Clock size={14} className="text-[#9A2109] flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-gray-700 text-xs" style={{ fontWeight: 600 }}>Jam Layanan</p>
-                    <p className="text-gray-500 text-xs">09:00 – 14:00 WIB</p>
+                    <p className="text-gray-700 text-xs">09:00 – 14:00 WIB</p>
                   </div>
                 </div>
                 <div className="border-t border-gray-100 pt-3 space-y-3">

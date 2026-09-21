@@ -32,7 +32,7 @@ function TextInput({ label, required, type = "text", placeholder, value, onChang
   return (
     <div>
       <Label text={label} required={required} />
-      <input type={type} placeholder={placeholder} value={value} onChange={e => onChange(e.target.value)}
+      <input aria-label="Input" type={type} placeholder={placeholder} value={value} onChange={e => onChange(e.target.value)}
         className={`w-full px-4 py-3 rounded-xl border text-sm text-gray-800 placeholder-gray-400 outline-none bg-gray-50 focus:bg-white transition-colors focus:border-[#9A2109] ${error ? "border-red-400 bg-red-50" : "border-gray-200"}`} />
       <FieldError msg={error} />
     </div>
@@ -53,7 +53,7 @@ function FileUpload({ label, required, hint, value, onChange, accept = "*" }: {
   return (
     <div>
       <Label text={label} required={required} />
-      {hint && <div className="text-xs text-gray-400 mb-2">{hint}</div>}
+      {hint && <div className="text-xs text-gray-600 mb-2">{hint}</div>}
       {value.file ? (
         <div className="flex items-center gap-3 border border-green-200 bg-green-50 rounded-xl px-4 py-3">
           <FileText size={16} className="text-green-600 flex-shrink-0" />
@@ -63,13 +63,13 @@ function FileUpload({ label, required, hint, value, onChange, accept = "*" }: {
       ) : (
         <button type="button" onClick={() => ref.current?.click()}
           className={`w-full border-2 border-dashed rounded-xl px-4 py-5 flex flex-col items-center gap-2 hover:border-[#9A2109] hover:bg-[#FFF8F7] transition-colors ${value.error ? "border-red-400 bg-red-50" : "border-gray-200 bg-gray-50"}`}>
-          <Upload size={20} className={value.error ? "text-red-400" : "text-gray-400"} />
-          <span className="text-sm text-gray-500">Klik untuk upload file</span>
-          <span className="text-xs text-gray-400">PDF, gambar, atau dokumen · Maks. 10 MB</span>
+          <Upload size={20} className={value.error ? "text-red-400" : "text-gray-600"} />
+          <span className="text-sm text-gray-700">Klik untuk upload file</span>
+          <span className="text-xs text-gray-600">PDF, gambar, atau dokumen · Maks. 10 MB</span>
         </button>
       )}
       <FieldError msg={value.error} />
-      <input ref={ref} type="file" accept={accept} className="hidden" onChange={handle} />
+      <input aria-label="Input" ref={ref} type="file" accept={accept} className="hidden" onChange={handle} />
     </div>
   );
 }
@@ -192,7 +192,7 @@ export function GoInfoPage() {
               <CheckCircle2 size={32} className="text-green-600" />
             </div>
             <h2 className="text-gray-900 mb-2" style={{ fontWeight: 800, fontSize: "1.25rem" }}>Permohonan Terkirim!</h2>
-            <p className="text-gray-500 text-sm mb-6" style={{ lineHeight: 1.7 }}>
+            <p className="text-gray-700 text-sm mb-6" style={{ lineHeight: 1.7 }}>
               Permohonan GO INFO Anda telah diterima. Petugas akan memproses dan menghubungi Anda dalam 1×3 hari kerja.
             </p>
             <Link to="/" className="inline-flex items-center gap-2 bg-[#9A2109] text-white px-6 py-3 rounded-xl text-sm hover:bg-[#7B1A07] transition-colors" style={{ fontWeight: 700 }}>
@@ -261,7 +261,7 @@ export function GoInfoPage() {
                   {/* Jenis informasi */}
                   <div>
                     <Label text="Informasi yang Dibutuhkan" required />
-                    <p className="text-xs text-gray-400 mb-3">Apabila informasi yang dibutuhkan dalam bentuk cetak dikenakan biaya yang meliputi biaya penggandaan.</p>
+                    <p className="text-xs text-gray-600 mb-3">Apabila informasi yang dibutuhkan dalam bentuk cetak dikenakan biaya yang meliputi biaya penggandaan.</p>
                     <div className="grid sm:grid-cols-2 gap-3">
                       {INFO_TYPES.map(it => (
                         <button key={it.label} type="button" onClick={() => { setInfoType(it.label); clr("infoType"); }}
@@ -271,7 +271,7 @@ export function GoInfoPage() {
                           </div>
                           <div>
                             <p className={`text-sm ${infoType === it.label ? "text-[#9A2109]" : "text-gray-700"}`} style={{ fontWeight: 700 }}>{it.label}</p>
-                            <p className="text-xs text-gray-400">{it.desc}</p>
+                            <p className="text-xs text-gray-600">{it.desc}</p>
                           </div>
                         </button>
                       ))}
@@ -288,7 +288,7 @@ export function GoInfoPage() {
                   {/* Clear form */}
                   {!confirmClear ? (
                     <button type="button" onClick={() => setConfirmClear(true)}
-                      className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-400 hover:border-gray-300 hover:text-gray-500 transition-colors text-sm"
+                      className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-600 hover:border-gray-300 hover:text-gray-700 transition-colors text-sm"
                       style={{ fontWeight: 500 }}>
                       <RotateCcw size={15} />Bersihkan Formulir
                     </button>
@@ -312,7 +312,7 @@ export function GoInfoPage() {
                     </div>
                   )}
 
-                  <p className="text-center text-gray-400 text-xs">* Menunjukkan pertanyaan yang wajib diisi</p>
+                  <p className="text-center text-gray-600 text-xs">* Menunjukkan pertanyaan yang wajib diisi</p>
                 </form>
               </div>
             </div>
@@ -335,7 +335,7 @@ export function GoInfoPage() {
                       <div className="w-7 h-7 rounded-lg bg-[#FFF1F1] flex items-center justify-center flex-shrink-0">
                         <Icon size={14} className="text-[#9A2109]" />
                       </div>
-                      <p className="text-gray-500 text-xs" style={{ lineHeight: 1.6 }}>{text}</p>
+                      <p className="text-gray-700 text-xs" style={{ lineHeight: 1.6 }}>{text}</p>
                     </div>
                   ))}
                 </div>
@@ -357,7 +357,7 @@ export function GoInfoPage() {
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 bg-[#9A2109] rounded-full flex-shrink-0 mt-1.5" />
-                      <p className="text-gray-500 text-xs" style={{ lineHeight: 1.5 }}>{item}</p>
+                      <p className="text-gray-700 text-xs" style={{ lineHeight: 1.5 }}>{item}</p>
                     </div>
                   ))}
                 </div>
@@ -366,7 +366,7 @@ export function GoInfoPage() {
               {/* Blanko CTA */}
               <div className="bg-[#FFF1F1] rounded-2xl border border-[#9A2109]/20 p-5">
                 <p className="text-gray-700 text-sm mb-1" style={{ fontWeight: 700 }}>Belum punya blanko?</p>
-                <p className="text-gray-500 text-xs mb-3" style={{ lineHeight: 1.5 }}>Unduh dan isi blanko formulir permohonan informasi sebelum mengisi form ini.</p>
+                <p className="text-gray-700 text-xs mb-3" style={{ lineHeight: 1.5 }}>Unduh dan isi blanko formulir permohonan informasi sebelum mengisi form ini.</p>
                 <a href="https://bit.ly/layanangoinfoblanko" target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-[#9A2109] text-white text-xs py-2.5 rounded-xl hover:bg-[#7B1A07] transition-colors" style={{ fontWeight: 700 }}>
                   <ExternalLink size={13} />Unduh Blanko Formulir

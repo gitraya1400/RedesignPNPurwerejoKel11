@@ -72,9 +72,9 @@ export function FloatingHelp() {
                     <p className="text-gray-800 text-sm" style={{ fontWeight: 600 }}>
                       {opt.title}
                     </p>
-                    <p className="text-gray-400 text-xs truncate">{opt.desc}</p>
+                    <p className="text-gray-600 text-xs truncate">{opt.desc}</p>
                   </div>
-                  <ChevronRight size={14} className="text-gray-300 group-hover:text-gray-500 transition-colors flex-shrink-0" />
+                  <ChevronRight size={14} className="text-gray-300 group-hover:text-gray-700 transition-colors flex-shrink-0" />
                 </button>
               );
             })}

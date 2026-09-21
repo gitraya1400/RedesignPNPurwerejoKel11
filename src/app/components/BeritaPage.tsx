@@ -429,7 +429,7 @@ export function BeritaPage() {
                   size={16}
                   className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#94A3B8]"
                 />
-                <input
+                <input aria-label="Input"
                   type="text"
                   value={search}
                   onChange={(e) => {

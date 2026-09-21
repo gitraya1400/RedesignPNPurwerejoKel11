@@ -325,7 +325,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
               <div>
                 <p
                   className={`text-[10px] tracking-widest uppercase transition-colors ${
-                    isScrolled ? "text-gray-500" : "text-white/80"
+                    isScrolled ? "text-gray-700" : "text-white/80"
                   }`}
                 >
                   MAHKAMAH AGUNG RI
@@ -364,7 +364,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
                         )}
                       </Link>
                     ) : (
-                    <button
+                    <button aria-haspopup="true" aria-expanded="false"
                       className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm transition-all ${
                         activeTopLevels.has(item.label)
                           ? isScrolled
@@ -414,7 +414,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
                           return (
                             <div key={sub.label} className="relative">
                               {hasSubmenu ? (
-                                <button
+                                <button aria-haspopup="true" aria-expanded="false"
                                   className={`w-full flex items-center justify-between px-4 py-2.5 text-sm text-left text-gray-700 hover:bg-[#9A2109] hover:text-white rounded-lg mx-1 transition-colors group ${
                                     activeSubmenu === sub.label ? "bg-[#9A2109] text-white" : ""
                                   }`}
@@ -424,12 +424,12 @@ export function Header({ onSearchOpen }: HeaderProps) {
                                   }}
                                 >
                                   <span className="flex-1">{sub.label}</span>
-                                  <ChevronRight size={14} className={`flex-shrink-0 ml-2 ${activeSubmenu === sub.label ? "text-white" : "text-gray-400 group-hover:text-white"}`} />
+                                  <ChevronRight size={14} className={`flex-shrink-0 ml-2 ${activeSubmenu === sub.label ? "text-white" : "text-gray-600 group-hover:text-white"}`} />
                                 </button>
                               ) : isDisabled ? (
-                                <div className="flex items-center justify-between px-4 py-2.5 text-sm text-left text-gray-400 mx-1 cursor-not-allowed opacity-50">
+                                <div className="flex items-center justify-between px-4 py-2.5 text-sm text-left text-gray-600 mx-1 cursor-not-allowed opacity-50">
                                   <span className="flex-1">{sub.label}</span>
-                                  <span className="flex-shrink-0 ml-2 text-[10px] bg-gray-100 text-gray-400 px-1.5 py-0.5 rounded">placeholder</span>
+                                  <span className="flex-shrink-0 ml-2 text-[10px] bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded">placeholder</span>
                                 </div>
                               ) : sub.route ? (
                                 <Link
@@ -453,7 +453,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
                                   className="flex items-center justify-between px-4 py-2.5 text-sm text-left text-gray-700 hover:bg-[#9A2109] hover:text-white rounded-lg mx-1 transition-colors group"
                                 >
                                   <span className="flex-1">{sub.label}</span>
-                                  <span className="flex-shrink-0 ml-2 text-[10px] bg-gray-100 group-hover:bg-white/20 text-gray-400 group-hover:text-white px-1.5 py-0.5 rounded">↗</span>
+                                  <span className="flex-shrink-0 ml-2 text-[10px] bg-gray-100 group-hover:bg-white/20 text-gray-600 group-hover:text-white px-1.5 py-0.5 rounded">↗</span>
                                 </a>
                               ) : (
                                 <Link
@@ -480,10 +480,10 @@ export function Header({ onSearchOpen }: HeaderProps) {
                                     return isDisabled3 ? (
                                       <div
                                         key={item3.label}
-                                        className="flex items-center justify-between px-4 py-2.5 text-sm text-left text-gray-400 mx-1 cursor-not-allowed opacity-50"
+                                        className="flex items-center justify-between px-4 py-2.5 text-sm text-left text-gray-600 mx-1 cursor-not-allowed opacity-50"
                                       >
                                         <span className="flex-1">{item3.label}</span>
-                                        <span className="flex-shrink-0 ml-2 text-[10px] bg-gray-100 text-gray-400 px-1.5 py-0.5 rounded">placeholder</span>
+                                        <span className="flex-shrink-0 ml-2 text-[10px] bg-gray-100 text-gray-600 px-1.5 py-0.5 rounded">placeholder</span>
                                       </div>
                                     ) : item3.external ? (
                                       <a
@@ -494,7 +494,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
                                         className="flex items-center justify-between px-4 py-2.5 text-sm text-left text-gray-700 hover:bg-[#9A2109] hover:text-white rounded-lg mx-1 transition-colors group"
                                       >
                                         <span className="flex-1">{item3.label}</span>
-                                        <span className="flex-shrink-0 ml-2 text-[10px] bg-gray-100 group-hover:bg-white/20 text-gray-400 group-hover:text-white px-1.5 py-0.5 rounded">↗</span>
+                                        <span className="flex-shrink-0 ml-2 text-[10px] bg-gray-100 group-hover:bg-white/20 text-gray-600 group-hover:text-white px-1.5 py-0.5 rounded">↗</span>
                                       </a>
                                     ) : (
                                       <Link
@@ -520,7 +520,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
             </nav>
 
             {/* Search Button */}
-            <button
+            <button aria-haspopup="true" aria-expanded="false"
               onClick={onSearchOpen}
               className={`hidden lg:flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all ${
                 isScrolled
@@ -533,7 +533,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
             </button>
 
             {/* Mobile Toggle */}
-            <button
+            <button aria-haspopup="true" aria-expanded="false"
               className={`lg:hidden transition-colors ${
                 isScrolled ? "text-gray-700" : "text-white"
               }`}
@@ -560,7 +560,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
                   </Link>
                 ) : (
                   <>
-                    <button
+                    <button aria-haspopup="true" aria-expanded="false"
                       className="w-full flex items-center justify-between px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-50"
                       style={{ fontWeight: 500 }}
                       onClick={() => setActiveMenu(activeMenu === item.label ? null : item.label)}
@@ -577,7 +577,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
                             <div key={sub.label}>
                               {hasSubmenu ? (
                                 <>
-                                  <button
+                                  <button aria-haspopup="true" aria-expanded="false"
                                     className="w-full flex items-center justify-between px-8 py-2.5 text-sm text-gray-700 hover:bg-gray-100"
                                     onClick={() => setActiveSubmenu(activeSubmenu === sub.label ? null : sub.label)}
                                   >
@@ -588,14 +588,14 @@ export function Header({ onSearchOpen }: HeaderProps) {
                                     <div className="bg-gray-100">
                                       {sub.submenu.map((item3: any) =>
                                         item3.disabled ? (
-                                          <div key={item3.label} className="flex items-center justify-between px-12 py-2 text-xs text-gray-400">
+                                          <div key={item3.label} className="flex items-center justify-between px-12 py-2 text-xs text-gray-600">
                                             <span>{item3.label}</span>
-                                            <span className="text-[9px] bg-gray-200 text-gray-400 px-1 py-0.5 rounded">placeholder</span>
+                                            <span className="text-[9px] bg-gray-200 text-gray-600 px-1 py-0.5 rounded">placeholder</span>
                                           </div>
                                         ) : item3.external ? (
                                           <a key={item3.label} href={item3.href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between px-12 py-2 text-xs text-gray-600 hover:text-[#9A2109]">
                                             <span>{item3.label}</span>
-                                            <span className="text-[9px] text-gray-400">↗</span>
+                                            <span className="text-[9px] text-gray-600">↗</span>
                                           </a>
                                         ) : (
                                           <Link key={item3.label} to={item3.href} className="flex items-center justify-between px-12 py-2 text-xs text-gray-600 hover:text-[#9A2109]" onClick={() => { setActiveMenu(null); setActiveSubmenu(null); setMobileOpen(false); }}>
@@ -607,9 +607,9 @@ export function Header({ onSearchOpen }: HeaderProps) {
                                   )}
                                 </>
                               ) : isDisabled ? (
-                                <div className="flex items-center justify-between px-8 py-2.5 text-sm text-gray-400">
+                                <div className="flex items-center justify-between px-8 py-2.5 text-sm text-gray-600">
                                   <span>{sub.label}</span>
-                                  <span className="text-[10px] bg-gray-200 text-gray-400 px-1.5 py-0.5 rounded">placeholder</span>
+                                  <span className="text-[10px] bg-gray-200 text-gray-600 px-1.5 py-0.5 rounded">placeholder</span>
                                 </div>
                               ) : sub.route ? (
                                 <Link
@@ -624,7 +624,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
                               ) : sub.external ? (
                                 <a href={sub.href} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between px-8 py-2.5 text-sm text-gray-600 hover:text-[#9A2109]">
                                   <span>{sub.label}</span>
-                                  <span className="text-[10px] text-gray-400">↗</span>
+                                  <span className="text-[10px] text-gray-600">↗</span>
                                 </a>
                               ) : (
                                 <Link to={sub.href} className="flex items-center justify-between px-8 py-2.5 text-sm text-gray-600 hover:text-[#9A2109]" onClick={() => { setActiveMenu(null); setActiveSubmenu(null); setMobileOpen(false); }}>

@@ -26,7 +26,7 @@ function FormInput({
         {label} {required && <span className="text-[#DC2626]">*</span>}
       </label>
       <div className="relative">
-        <input
+        <input aria-label="Input"
           type={type}
           value={value}
           onChange={(e) => onChange(e.target.value)}
@@ -227,7 +227,7 @@ export function FormPPIDPage() {
                   <label className="block text-sm font-semibold text-[#334155] mb-1.5">
                     Upload Foto/Scan KTP <span className="text-[#DC2626]">*</span>
                   </label>
-                  <input
+                  <input aria-label="Input"
                     ref={fileRef}
                     type="file"
                     accept=".pdf,.jpg,.jpeg,.png"

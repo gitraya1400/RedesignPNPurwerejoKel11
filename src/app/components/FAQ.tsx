@@ -115,7 +115,7 @@ export function FAQ() {
           <h2 className="text-gray-900 mb-2" style={{ fontWeight: 800, fontSize: "clamp(1.4rem,3vw,1.9rem)" }}>
             Ada Pertanyaan?
           </h2>
-          <p className="text-gray-500 text-sm max-w-lg mx-auto" style={{ lineHeight: 1.7 }}>
+          <p className="text-gray-700 text-sm max-w-lg mx-auto" style={{ lineHeight: 1.7 }}>
             Temukan jawaban atas pertanyaan umum seputar layanan, prosedur, dan informasi Pengadilan Negeri Purworejo.
           </p>
         </div>
@@ -191,7 +191,7 @@ export function FAQ() {
                         }`}>
                           <ChevronDown
                             size={15}
-                            className={`transition-transform ${isOpen ? "rotate-180 text-white" : "text-gray-400"}`}
+                            className={`transition-transform ${isOpen ? "rotate-180 text-white" : "text-gray-600"}`}
                           />
                         </div>
                       </button>

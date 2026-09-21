@@ -295,7 +295,7 @@ const accreditationComponents = [
 
 function Breadcrumb({ section }: { section: string }) {
   return (
-    <nav className="flex items-center gap-1.5 text-sm text-gray-500 mb-6 flex-wrap">
+    <nav className="flex items-center gap-1.5 text-sm text-gray-700 mb-6 flex-wrap">
       <Link to="/" className="hover:text-[#9A2109] transition-colors flex items-center gap-1">
         <Home size={13} />
         Beranda
@@ -398,7 +398,7 @@ function MetricBar({ target, realisasi }: { target: number; realisasi: number })
   return (
     <div className="bg-gray-50 rounded-xl p-4 border border-[#E2E8F0] mb-6">
       <div className="flex items-center justify-between mb-2">
-        <span className="text-xs text-gray-500 font-medium">Capaian Realisasi</span>
+        <span className="text-xs text-gray-700 font-medium">Capaian Realisasi</span>
         <span className="text-xs font-bold" style={{ color: "#9A2109" }}>
           Target: {target}% | Realisasi: {realisasi}%
         </span>
@@ -413,8 +413,8 @@ function MetricBar({ target, realisasi }: { target: number; realisasi: number })
         />
       </div>
       <div className="flex justify-between mt-1">
-        <span className="text-xs text-gray-400">0%</span>
-        <span className="text-xs text-gray-400">100%</span>
+        <span className="text-xs text-gray-600">0%</span>
+        <span className="text-xs text-gray-600">100%</span>
       </div>
     </div>
   );
@@ -433,9 +433,9 @@ function DocumentCard({ title, size }: { title: string; size: string }) {
         <p className="text-sm font-medium text-gray-800 truncate group-hover:text-[#9A2109] transition-colors">
           {title}
         </p>
-        <p className="text-xs text-gray-400">{size}</p>
+        <p className="text-xs text-gray-600">{size}</p>
       </div>
-      <Download size={14} className="text-gray-400 group-hover:text-[#9A2109] transition-colors flex-shrink-0" />
+      <Download size={14} className="text-gray-600 group-hover:text-[#9A2109] transition-colors flex-shrink-0" />
     </div>
   );
 }
@@ -502,7 +502,7 @@ function ZonaIntegritasAreaPage({ areaKey }: { areaKey: string }) {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-gray-900 mb-1">{prog.title}</p>
-                  <p className="text-xs text-gray-500 leading-relaxed">{prog.description}</p>
+                  <p className="text-xs text-gray-700 leading-relaxed">{prog.description}</p>
                 </div>
               </div>
             );
@@ -568,7 +568,7 @@ function AkreditasiPage() {
             >
               A
             </div>
-            <p className="text-xs text-gray-500 font-medium">Nilai Akreditasi</p>
+            <p className="text-xs text-gray-700 font-medium">Nilai Akreditasi</p>
             <p className="text-xs font-semibold text-green-600 mt-1">Sangat Baik</p>
           </div>
           <div className="rounded-xl border border-[#E2E8F0] p-5 text-center bg-[#F8FAFC]">
@@ -578,7 +578,7 @@ function AkreditasiPage() {
             >
               {avg}
             </div>
-            <p className="text-xs text-gray-500 font-medium">Rata-rata Skor</p>
+            <p className="text-xs text-gray-700 font-medium">Rata-rata Skor</p>
             <p className="text-xs font-semibold text-gray-600 mt-1">dari 100 poin</p>
           </div>
           <div className="rounded-xl border border-[#E2E8F0] p-5 text-center bg-[#F8FAFC]">
@@ -588,7 +588,7 @@ function AkreditasiPage() {
             >
               2025–2028
             </div>
-            <p className="text-xs text-gray-500 font-medium">Masa Berlaku</p>
+            <p className="text-xs text-gray-700 font-medium">Masa Berlaku</p>
             <p className="text-xs font-semibold text-gray-600 mt-1">3 tahun sertifikasi</p>
           </div>
         </div>
@@ -629,7 +629,7 @@ function AkreditasiPage() {
                   key={i}
                   className={`border-t border-[#E2E8F0] ${i % 2 === 0 ? "bg-white" : "bg-[#F8FAFC]"}`}
                 >
-                  <td className="px-4 py-3 text-gray-500 text-xs font-mono">{row.no}</td>
+                  <td className="px-4 py-3 text-gray-700 text-xs font-mono">{row.no}</td>
                   <td className="px-4 py-3 text-gray-700 font-medium">{row.komponen}</td>
                   <td className="px-4 py-3 text-center">
                     <span
@@ -771,7 +771,7 @@ function AmpuhPage() {
                 {item.value}
               </div>
               <p className="text-xs font-semibold text-gray-700">{item.label}</p>
-              <p className="text-xs text-gray-400">{item.sub}</p>
+              <p className="text-xs text-gray-600">{item.sub}</p>
             </div>
           ))}
         </div>
@@ -816,7 +816,7 @@ function AmpuhPage() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-gray-900 mb-1">{prog.title}</p>
-                  <p className="text-xs text-gray-500 leading-relaxed">{prog.description}</p>
+                  <p className="text-xs text-gray-700 leading-relaxed">{prog.description}</p>
                 </div>
               </div>
             );
@@ -872,7 +872,7 @@ export function ReformasiBirokrasiPage() {
       <div className="bg-white rounded-2xl border border-[#E2E8F0] p-8 text-center">
         <Shield size={40} className="mx-auto mb-4" style={{ color: "#9A2109" }} />
         <h2 className="text-lg font-bold text-gray-900 mb-2">Reformasi Birokrasi</h2>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-gray-700">
           Pilih salah satu sub-menu di sebelah kiri untuk melihat informasi detail.
         </p>
       </div>

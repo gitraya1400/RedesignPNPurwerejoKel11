@@ -74,7 +74,7 @@ export function QuickLinks({ onExternalLink }: QuickLinksProps) {
                 </span>
                 {svc.external && (
                   <span
-                    className="text-[10px] text-gray-400 group-hover:text-[#9A2109] transition-colors"
+                    className="text-[10px] text-gray-600 group-hover:text-[#9A2109] transition-colors"
                   >
                     ↗ Eksternal
                   </span>

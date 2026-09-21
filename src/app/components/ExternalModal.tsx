@@ -73,7 +73,7 @@ export function ExternalModal({ open, label, onClose, onConfirm }: ExternalModal
         {/* Close */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+          className="absolute top-4 right-4 text-gray-600 hover:text-gray-600 transition-colors"
         >
           <X size={18} />
         </button>
@@ -92,7 +92,7 @@ export function ExternalModal({ open, label, onClose, onConfirm }: ExternalModal
         >
           Meninggalkan Website Ini
         </h3>
-        <p className="text-gray-500 text-sm mb-5" style={{ lineHeight: 1.6 }}>
+        <p className="text-gray-700 text-sm mb-5" style={{ lineHeight: 1.6 }}>
           Anda akan diarahkan ke sistem eksternal. Pastikan Anda mengakses dari jaringan yang aman.
         </p>
 
@@ -103,8 +103,8 @@ export function ExternalModal({ open, label, onClose, onConfirm }: ExternalModal
               {label} — Mahkamah Agung RI
             </p>
             <div className="flex items-center gap-1 mt-1">
-              <LinkIcon size={11} className="text-gray-400 flex-shrink-0" />
-              <span className="text-gray-400 text-xs truncate">{displayUrl}</span>
+              <LinkIcon size={11} className="text-gray-600 flex-shrink-0" />
+              <span className="text-gray-600 text-xs truncate">{displayUrl}</span>
             </div>
           </div>
           <span
@@ -128,12 +128,12 @@ export function ExternalModal({ open, label, onClose, onConfirm }: ExternalModal
             onClick={() => setDontShow(!dontShow)}
           >
             {dontShow && (
-              <svg width="9" height="7" viewBox="0 0 9 7" fill="none">
+              <svg aria-hidden="true" width="9" height="7" viewBox="0 0 9 7" fill="none">
                 <path d="M1 3.5L3.5 6L8 1" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             )}
           </div>
-          <span className="text-gray-500 text-sm">
+          <span className="text-gray-700 text-sm">
             Jangan tampilkan lagi untuk sistem ini
           </span>
         </label>

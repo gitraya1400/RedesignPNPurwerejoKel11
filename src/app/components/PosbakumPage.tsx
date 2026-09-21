@@ -41,7 +41,7 @@ function TextInput({ label, required, type = "text", placeholder, value, onChang
   return (
     <div>
       <Label text={label} required={required} />
-      <input
+      <input aria-label="Input"
         type={type} placeholder={placeholder} value={value}
         onChange={e => onChange(e.target.value)}
         className={`w-full px-4 py-3 rounded-xl border text-sm text-gray-800 placeholder-gray-400 outline-none bg-gray-50 focus:bg-white transition-colors focus:border-[#9A2109] ${error ? "border-red-400 bg-red-50" : "border-gray-200"}`}
@@ -82,7 +82,7 @@ function FileUpload({ label, required, hint, value, onChange, accept = "*" }: {
   return (
     <div>
       <Label text={label} required={required} />
-      {hint && <p className="text-xs text-gray-400 mb-2">{hint}</p>}
+      {hint && <p className="text-xs text-gray-600 mb-2">{hint}</p>}
       {value.file ? (
         <div className="flex items-center gap-3 border border-green-200 bg-green-50 rounded-xl px-4 py-3">
           <FileText size={16} className="text-green-600 flex-shrink-0" />
@@ -92,13 +92,13 @@ function FileUpload({ label, required, hint, value, onChange, accept = "*" }: {
       ) : (
         <button type="button" onClick={() => ref.current?.click()}
           className={`w-full border-2 border-dashed rounded-xl px-4 py-5 flex flex-col items-center gap-2 hover:border-[#9A2109] hover:bg-[#FFF8F7] transition-colors ${value.error ? "border-red-400 bg-red-50" : "border-gray-200 bg-gray-50"}`}>
-          <Upload size={20} className={value.error ? "text-red-400" : "text-gray-400"} />
-          <span className="text-sm text-gray-500">Klik untuk upload file</span>
-          <span className="text-xs text-gray-400">Maks. 10 MB</span>
+          <Upload size={20} className={value.error ? "text-red-400" : "text-gray-600"} />
+          <span className="text-sm text-gray-700">Klik untuk upload file</span>
+          <span className="text-xs text-gray-600">Maks. 10 MB</span>
         </button>
       )}
       <FieldError msg={value.error} />
-      <input ref={ref} type="file" accept={accept} className="hidden" onChange={handle} />
+      <input aria-label="Input" ref={ref} type="file" accept={accept} className="hidden" onChange={handle} />
     </div>
   );
 }
@@ -113,8 +113,8 @@ function SelectField({ label, required, options, value, onChange, placeholder, e
       <Label text={label} required={required} />
       <button type="button" onClick={() => setOpen(!open)}
         className={`w-full flex items-center justify-between px-4 py-3 rounded-xl border text-sm text-left transition-colors ${error ? "border-red-400 bg-red-50" : "border-gray-200 bg-gray-50 hover:border-[#9A2109]"}`}>
-        <span className={value ? "text-gray-800" : "text-gray-400"}>{value || placeholder || "Pilih..."}</span>
-        <ChevronDown size={15} className={`text-gray-400 transition-transform ${open ? "rotate-180" : ""}`} />
+        <span className={value ? "text-gray-800" : "text-gray-600"}>{value || placeholder || "Pilih..."}</span>
+        <ChevronDown size={15} className={`text-gray-600 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
         <>
@@ -260,7 +260,7 @@ export function PosbakumPage() {
               <CheckCircle2 size={32} className="text-green-600" />
             </div>
             <h2 className="text-gray-900 mb-2" style={{ fontWeight: 800, fontSize: "1.25rem" }}>Permohonan Terkirim!</h2>
-            <p className="text-gray-500 text-sm mb-6" style={{ lineHeight: 1.7 }}>
+            <p className="text-gray-700 text-sm mb-6" style={{ lineHeight: 1.7 }}>
               Permohonan Posbakum Anda telah berhasil dikirim. Tim kami akan menghubungi Anda melalui WhatsApp atau Email dalam 1×24 jam kerja.
             </p>
             <Link to="/hubungi/posbakum" className="inline-flex items-center gap-2 bg-[#9A2109] text-white px-6 py-3 rounded-xl text-sm hover:bg-[#7B1A07] transition-colors" style={{ fontWeight: 700 }}>
@@ -338,7 +338,7 @@ export function PosbakumPage() {
                   {/* Clear form */}
                   {!confirmClear ? (
                     <button type="button" onClick={() => setConfirmClear(true)}
-                      className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-400 hover:border-gray-300 hover:text-gray-500 transition-colors text-sm"
+                      className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-600 hover:border-gray-300 hover:text-gray-700 transition-colors text-sm"
                       style={{ fontWeight: 500 }}>
                       <RotateCcw size={15} />Bersihkan Formulir
                     </button>
@@ -362,7 +362,7 @@ export function PosbakumPage() {
                     </div>
                   )}
 
-                  <p className="text-center text-gray-400 text-xs">* Menunjukkan pertanyaan yang wajib diisi</p>
+                  <p className="text-center text-gray-600 text-xs">* Menunjukkan pertanyaan yang wajib diisi</p>
                 </form>
               </div>
             </div>
@@ -385,7 +385,7 @@ export function PosbakumPage() {
                       <div className="w-7 h-7 rounded-lg bg-[#FFF1F1] flex items-center justify-center flex-shrink-0">
                         <Icon size={14} className="text-[#9A2109]" />
                       </div>
-                      <p className="text-gray-500 text-xs" style={{ lineHeight: 1.6 }}>{text}</p>
+                      <p className="text-gray-700 text-xs" style={{ lineHeight: 1.6 }}>{text}</p>
                     </div>
                   ))}
                 </div>

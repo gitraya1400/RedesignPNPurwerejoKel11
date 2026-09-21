@@ -318,7 +318,7 @@ export function JadwalSidangPage() {
             {/* Search */}
             <div className="col-span-2 relative">
               <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#94A3B8]" />
-              <input
+              <input aria-label="Input"
                 type="text"
                 value={searchVal}
                 onChange={(e) => setSearchVal(e.target.value)}
@@ -347,7 +347,7 @@ export function JadwalSidangPage() {
               <label className="block text-[11px] font-semibold text-[#64748B] uppercase tracking-wide mb-1.5">Tanggal Sidang</label>
               <div className="relative">
                 <Calendar size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#9A2109]" />
-                <input
+                <input aria-label="Input"
                   type="text"
                   defaultValue="Hari Ini (21 September 2026)"
                   readOnly

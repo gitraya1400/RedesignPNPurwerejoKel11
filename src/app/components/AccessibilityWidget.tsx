@@ -259,13 +259,13 @@ export function AccessibilityWidget() {
           <div className="flex-1 overflow-y-auto p-4 space-y-5">
             {/* ── UKURAN TEKS ── */}
             <div>
-              <p className="text-gray-400 text-[11px] tracking-widest mb-2.5" style={{ fontWeight: 700 }}>
+              <p className="text-gray-600 text-[11px] tracking-widest mb-2.5" style={{ fontWeight: 700 }}>
                 UKURAN TEKS
               </p>
               <div className="flex items-center gap-1.5">
                 <button
                   onClick={() => update({ fontSize: Math.max(0, settings.fontSize - 1) as any })}
-                  className="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-500 hover:border-[#9A2109] hover:text-[#9A2109] transition-colors"
+                  className="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-700 hover:border-[#9A2109] hover:text-[#9A2109] transition-colors"
                 >
                   <ZoomOut size={15} />
                 </button>
@@ -285,7 +285,7 @@ export function AccessibilityWidget() {
                 ))}
                 <button
                   onClick={() => update({ fontSize: Math.min(4, settings.fontSize + 1) as any })}
-                  className="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-500 hover:border-[#9A2109] hover:text-[#9A2109] transition-colors"
+                  className="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-700 hover:border-[#9A2109] hover:text-[#9A2109] transition-colors"
                 >
                   <ZoomIn size={15} />
                 </button>
@@ -294,7 +294,7 @@ export function AccessibilityWidget() {
 
             {/* ── TEKS KE SUARA ── */}
             <div>
-              <p className="text-gray-400 text-[11px] tracking-widest mb-2.5" style={{ fontWeight: 700 }}>
+              <p className="text-gray-600 text-[11px] tracking-widest mb-2.5" style={{ fontWeight: 700 }}>
                 TEKS KE SUARA
               </p>
               <button
@@ -322,7 +322,7 @@ export function AccessibilityWidget() {
 
             {/* ── TAMPILAN & NAVIGASI ── */}
             <div>
-              <p className="text-gray-400 text-[11px] tracking-widest mb-2.5" style={{ fontWeight: 700 }}>
+              <p className="text-gray-600 text-[11px] tracking-widest mb-2.5" style={{ fontWeight: 700 }}>
                 TAMPILAN & NAVIGASI
               </p>
               <div className="grid grid-cols-2 gap-2">
@@ -364,7 +364,7 @@ export function AccessibilityWidget() {
                     className={`flex flex-col items-center justify-center gap-1.5 h-20 rounded-xl border transition-colors ${
                       settings[key]
                         ? "bg-[#FFF1F1] border-[#9A2109] text-[#9A2109]"
-                        : "border-gray-200 text-gray-500 hover:border-[#9A2109] hover:text-[#9A2109]"
+                        : "border-gray-200 text-gray-700 hover:border-[#9A2109] hover:text-[#9A2109]"
                     }`}
                   >
                     <Icon size={22} />
@@ -391,7 +391,7 @@ export function AccessibilityWidget() {
               </div>
               <ChevronDown
                 size={16}
-                className={`text-gray-400 transition-transform ${showGuide ? "rotate-180" : ""}`}
+                className={`text-gray-600 transition-transform ${showGuide ? "rotate-180" : ""}`}
               />
             </button>
 
@@ -415,7 +415,7 @@ export function AccessibilityWidget() {
                   <h4 className="text-xs text-gray-700 mb-2" style={{ fontWeight: 700 }}>
                     Tombol Pintas Keyboard
                   </h4>
-                  <p className="text-xs text-gray-500 mb-3 leading-relaxed">
+                  <p className="text-xs text-gray-700 mb-3 leading-relaxed">
                     Selain tombol pada widget, Anda dapat memanfaatkan tombol pintas pada keyboard.
                     Fungsi ini berjalan efektif di browser Chrome dan Mozilla Firefox.
                   </p>
@@ -455,7 +455,7 @@ export function AccessibilityWidget() {
 
           {/* Footer */}
           <div className="flex-shrink-0 px-4 py-3 border-t border-gray-100">
-            <p className="text-center text-gray-400 text-xs">
+            <p className="text-center text-gray-600 text-xs">
               Pengaturan tersimpan otomatis
             </p>
           </div>
