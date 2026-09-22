@@ -364,7 +364,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
                         )}
                       </Link>
                     ) : (
-                    <button aria-haspopup="true" aria-expanded="false"
+                    <button aria-label="Aksi" aria-haspopup="true" aria-expanded="false"
                       className={`flex items-center gap-1 px-3 py-2 rounded-lg text-sm transition-all ${
                         activeTopLevels.has(item.label)
                           ? isScrolled
@@ -414,7 +414,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
                           return (
                             <div key={sub.label} className="relative">
                               {hasSubmenu ? (
-                                <button aria-haspopup="true" aria-expanded="false"
+                                <button aria-label="Aksi" aria-haspopup="true" aria-expanded="false"
                                   className={`w-full flex items-center justify-between px-4 py-2.5 text-sm text-left text-gray-700 hover:bg-[#9A2109] hover:text-white rounded-lg mx-1 transition-colors group ${
                                     activeSubmenu === sub.label ? "bg-[#9A2109] text-white" : ""
                                   }`}
@@ -520,7 +520,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
             </nav>
 
             {/* Search Button */}
-            <button aria-haspopup="true" aria-expanded="false"
+            <button aria-label="Aksi" aria-haspopup="true" aria-expanded="false"
               onClick={onSearchOpen}
               className={`hidden lg:flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all ${
                 isScrolled
@@ -533,7 +533,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
             </button>
 
             {/* Mobile Toggle */}
-            <button aria-haspopup="true" aria-expanded="false"
+            <button aria-label="Aksi" aria-haspopup="true" aria-expanded="false"
               className={`lg:hidden transition-colors ${
                 isScrolled ? "text-gray-700" : "text-white"
               }`}
@@ -560,7 +560,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
                   </Link>
                 ) : (
                   <>
-                    <button aria-haspopup="true" aria-expanded="false"
+                    <button aria-label="Aksi" aria-haspopup="true" aria-expanded="false"
                       className="w-full flex items-center justify-between px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 border-b border-gray-50"
                       style={{ fontWeight: 500 }}
                       onClick={() => setActiveMenu(activeMenu === item.label ? null : item.label)}
@@ -577,7 +577,7 @@ export function Header({ onSearchOpen }: HeaderProps) {
                             <div key={sub.label}>
                               {hasSubmenu ? (
                                 <>
-                                  <button aria-haspopup="true" aria-expanded="false"
+                                  <button aria-label="Aksi" aria-haspopup="true" aria-expanded="false"
                                     className="w-full flex items-center justify-between px-8 py-2.5 text-sm text-gray-700 hover:bg-gray-100"
                                     onClick={() => setActiveSubmenu(activeSubmenu === sub.label ? null : sub.label)}
                                   >

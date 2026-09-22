@@ -44,9 +44,9 @@ export function FloatingHelp() {
           <div className="bg-[#9A2109] px-4 py-3.5 flex items-center justify-between">
             <div>
               <p className="text-white text-sm" style={{ fontWeight: 700 }}>Bantuan & Dukungan</p>
-              <p className="text-white/70 text-xs">Kami siap membantu Anda</p>
+              <p className="text-white/70 text-sm">Kami siap membantu Anda</p>
             </div>
-            <button
+            <button aria-label="Aksi"
               onClick={() => setOpen(false)}
               className="text-white/70 hover:text-white transition-colors"
             >
@@ -58,7 +58,7 @@ export function FloatingHelp() {
             {helpOptions.map((opt) => {
               const Icon = opt.icon;
               return (
-                <button
+                <button aria-label="Aksi"
                   key={opt.title}
                   className="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 transition-colors group text-left"
                 >
@@ -72,7 +72,7 @@ export function FloatingHelp() {
                     <p className="text-gray-800 text-sm" style={{ fontWeight: 600 }}>
                       {opt.title}
                     </p>
-                    <p className="text-gray-600 text-xs truncate">{opt.desc}</p>
+                    <p className="text-gray-600 text-sm truncate">{opt.desc}</p>
                   </div>
                   <ChevronRight size={14} className="text-gray-300 group-hover:text-gray-700 transition-colors flex-shrink-0" />
                 </button>
@@ -109,7 +109,7 @@ export function FloatingHelp() {
       </button>
 
       {/* Help Trigger Button */}
-      <button
+      <button aria-label="Aksi"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onClick={() => setOpen(!open)}

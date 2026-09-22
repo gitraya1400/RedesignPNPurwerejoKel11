@@ -482,7 +482,7 @@ function SidebarNav({ currentPath }: { currentPath: string }) {
   return (
     <nav className="bg-white rounded-2xl border border-[#E2E8F0] overflow-hidden shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)]">
       <div className="px-4 py-3.5 bg-[#9A2109] text-white">
-        <p className="text-xs font-bold uppercase tracking-wider">Tentang Pengadilan</p>
+        <p className="text-sm font-bold uppercase tracking-wider">Tentang Pengadilan</p>
       </div>
       <div className="py-2">
         {sideNav.map((item) => {
@@ -491,9 +491,9 @@ function SidebarNav({ currentPath }: { currentPath: string }) {
             const isOpen = open === item.label || isActive;
             return (
               <div key={item.label}>
-                <button
+                <button aria-label="Aksi"
                   onClick={() => setOpen(isOpen ? null : item.label)}
-                  className={`w-full flex items-center justify-between px-4 py-2 text-xs font-semibold transition-colors ${isActive ? "text-[#9A2109]" : "text-[#475569] hover:text-[#9A2109]"}`}
+                  className={`w-full flex items-center justify-between px-4 py-2 text-sm font-semibold transition-colors ${isActive ? "text-[#9A2109]" : "text-[#475569] hover:text-[#9A2109]"}`}
                 >
                   {item.label}
                   <ChevronRight size={12} className={`transition-transform ${isOpen ? "rotate-90" : ""}`} />
@@ -504,7 +504,7 @@ function SidebarNav({ currentPath }: { currentPath: string }) {
                       <Link
                         key={child.path}
                         to={child.path}
-                        className={`flex items-center gap-2 pl-7 pr-4 py-1.5 text-xs transition-colors ${
+                        className={`flex items-center gap-2 pl-7 pr-4 py-1.5 text-sm transition-colors ${
                           currentPath === child.path
                             ? "text-[#9A2109] font-semibold bg-[#FFF1F1]"
                             : "text-[#64748B] hover:text-[#9A2109] hover:bg-[#FFF8F7]"
@@ -523,7 +523,7 @@ function SidebarNav({ currentPath }: { currentPath: string }) {
             <Link
               key={item.path}
               to={item.path}
-              className={`flex items-center px-4 py-2 text-xs font-semibold transition-colors ${
+              className={`flex items-center px-4 py-2 text-sm font-semibold transition-colors ${
                 currentPath === item.path
                   ? "text-[#9A2109] bg-[#FFF1F1]"
                   : "text-[#475569] hover:text-[#9A2109] hover:bg-[#FFF8F7]"
@@ -576,7 +576,7 @@ function RenderBlocks({ blocks }: { blocks: ContentBlock[] }) {
         if (b.type === "list") {
           return (
             <div key={i}>
-              <h3 className="text-sm font-bold text-[#1E293B] mb-3">{b.title}</h3>
+              <h2 className="text-sm font-bold text-[#1E293B] mb-3">{b.title}</h2>
               <ul className="space-y-2">
                 {b.items.map((item, j) => (
                   <li key={j} className="flex items-start gap-2.5 text-sm text-[#475569]">
@@ -598,7 +598,7 @@ function RenderBlocks({ blocks }: { blocks: ContentBlock[] }) {
                   </div>
                   <div>
                     <p className="text-sm font-bold text-[#1E293B] mb-0.5">{title}</p>
-                    <p className="text-xs text-[#64748B] leading-relaxed">{body}</p>
+                    <p className="text-sm text-[#64748B] leading-relaxed">{body}</p>
                   </div>
                 </div>
               ))}
@@ -612,7 +612,7 @@ function RenderBlocks({ blocks }: { blocks: ContentBlock[] }) {
                 <thead className="bg-[#F8FAFC] border-b border-[#E2E8F0]">
                   <tr>
                     {b.headers.map((h) => (
-                      <th key={h} className="px-4 py-3 text-left text-[11px] font-bold text-[#475569] uppercase tracking-wide whitespace-nowrap">{h}</th>
+                      <th key={h} className="px-4 py-3 text-left text-sm font-bold text-[#475569] uppercase tracking-wide whitespace-nowrap">{h}</th>
                     ))}
                   </tr>
                 </thead>
@@ -660,16 +660,16 @@ function StaffPage({ id }: { id: string }) {
                 <User size={28} className="text-white" />
               </div>
               <div className="flex-1">
-                <h3 className="text-base font-bold text-[#1E293B] mb-1">{s.name}</h3>
-                <p className="text-xs font-semibold text-[#9A2109] mb-2">{s.jabatan}</p>
+                <h2 className="text-base font-bold text-[#1E293B] mb-1">{s.name}</h2>
+                <p className="text-sm font-semibold text-[#9A2109] mb-2">{s.jabatan}</p>
                 <div className="grid grid-cols-2 gap-2">
                   {s.nip !== "-" && (
-                    <div className="flex items-center gap-1.5 text-xs text-[#64748B]">
+                    <div className="flex items-center gap-1.5 text-sm text-[#64748B]">
                       <Shield size={11} className="text-[#94A3B8]" />
                       NIP: {s.nip}
                     </div>
                   )}
-                  <div className="flex items-center gap-1.5 text-xs text-[#64748B]">
+                  <div className="flex items-center gap-1.5 text-sm text-[#64748B]">
                     <BookOpen size={11} className="text-[#94A3B8]" />
                     {s.pendidikan}
                   </div>
@@ -701,7 +701,7 @@ export function TentangPengadilanPage() {
       {/* Breadcrumb */}
       <div className="bg-white border-b border-[#E2E8F0]">
         <div className="max-w-[1440px] mx-auto px-8 pt-24 pb-4">
-          <nav className="flex items-center gap-1.5 text-xs text-[#64748B]">
+          <nav className="flex items-center gap-1.5 text-sm text-[#64748B]">
             <Link to="/" className="hover:text-[#9A2109] transition-colors">Beranda</Link>
             {segments.map((seg, i) => (
               <span key={i} className="flex items-center gap-1.5">

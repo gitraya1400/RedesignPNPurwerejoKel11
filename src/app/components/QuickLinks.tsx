@@ -52,7 +52,7 @@ export function QuickLinks({ onExternalLink }: QuickLinksProps) {
           {services.map((svc) => {
             const Icon = svc.icon;
             return (
-              <button
+              <button aria-label="Aksi"
                 key={svc.label}
                 onClick={() =>
                   svc.external ? onExternalLink("#", svc.label) : undefined
@@ -74,7 +74,7 @@ export function QuickLinks({ onExternalLink }: QuickLinksProps) {
                 </span>
                 {svc.external && (
                   <span
-                    className="text-[10px] text-gray-600 group-hover:text-[#9A2109] transition-colors"
+                    className="text-sm text-gray-600 group-hover:text-[#9A2109] transition-colors"
                   >
                     ↗ Eksternal
                   </span>

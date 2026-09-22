@@ -70,14 +70,14 @@ function CircularProgress({
           >
             {animated.toFixed(1)}%
           </span>
-          <span className="text-white/50 text-xs mt-1">Skor</span>
+          <span className="text-white/50 text-sm mt-1">Skor</span>
         </div>
       </div>
       <div className="text-center">
         <p className="text-white" style={{ fontWeight: 700 }}>
           {label}
         </p>
-        <p className="text-white/50 text-xs mt-0.5">{sublabel}</p>
+        <p className="text-white/50 text-sm mt-0.5">{sublabel}</p>
       </div>
     </div>
   );
@@ -117,7 +117,7 @@ export function IkmDashboard() {
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-2 bg-white/10 text-[#F9C784] text-xs px-4 py-1.5 rounded-full mb-4 border border-white/10">
+          <span className="inline-flex items-center gap-2 bg-white/10 text-[#F9C784] text-sm px-4 py-1.5 rounded-full mb-4 border border-white/10">
             Data Terverifikasi Mahkamah Agung RI
           </span>
           <h2
@@ -167,7 +167,7 @@ export function IkmDashboard() {
                 {stat.value}
               </p>
               {stat.unit && (
-                <p className="text-white/40 text-xs mt-0.5">{stat.unit}</p>
+                <p className="text-white/40 text-sm mt-0.5">{stat.unit}</p>
               )}
               <p className="text-white/60 text-sm mt-2" style={{ fontWeight: 500 }}>
                 {stat.label}
@@ -177,7 +177,7 @@ export function IkmDashboard() {
         </div>
 
         {/* Footer note */}
-        <p className="text-center text-white/30 text-xs mt-8">
+        <p className="text-center text-white/30 text-sm mt-8">
           Data bersumber dari survei resmi Mahkamah Agung Republik Indonesia. Diperbarui setiap tahun.
         </p>
       </div>

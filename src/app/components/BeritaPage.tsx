@@ -200,28 +200,28 @@ function NewsCard({ item }: { item: (typeof newsArticles)[0] }) {
       {/* Content */}
       <div className="p-5 flex flex-col flex-1">
         <div className="flex items-center gap-2 mb-3">
-          <span className={`inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-0.5 rounded-full border ${categoryColor(item.category)}`}>
+          <span className={`inline-flex items-center gap-1 text-sm font-semibold px-2.5 py-0.5 rounded-full border ${categoryColor(item.category)}`}>
             <Tag size={9} />
             {item.category}
           </span>
-          <span className="flex items-center gap-1 text-[11px] text-[#94A3B8]">
+          <span className="flex items-center gap-1 text-sm text-[#94A3B8]">
             <Calendar size={10} />
             {item.date}
           </span>
         </div>
 
-        <h3 className="text-sm font-bold text-[#1E293B] leading-snug mb-2 line-clamp-2">
+        <h2 className="text-sm font-bold text-[#1E293B] leading-snug mb-2 line-clamp-2">
           {item.title}
-        </h3>
+        </h2>
 
-        <p className="text-xs text-[#64748B] leading-relaxed line-clamp-3 flex-1">
+        <p className="text-sm text-[#64748B] leading-relaxed line-clamp-3 flex-1">
           {item.excerpt}
         </p>
 
         <div className="mt-4 pt-4 border-t border-[#F1F5F9]">
           <Link
             to="#"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#9A2109] hover:text-[#7A1A07] transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#9A2109] hover:text-[#7A1A07] transition-colors"
           >
             Baca Selengkapnya
             <ArrowRight size={12} />
@@ -247,7 +247,7 @@ function VideoCard({ item }: { item: (typeof videoItems)[0] }) {
             <Play size={20} className="text-white ml-0.5" />
           </div>
           {/* Duration badge */}
-          <span className="absolute bottom-2.5 right-2.5 bg-black bg-opacity-70 text-white text-[11px] font-semibold px-2 py-0.5 rounded">
+          <span className="absolute bottom-2.5 right-2.5 bg-black bg-opacity-70 text-white text-sm font-semibold px-2 py-0.5 rounded">
             {item.duration}
           </span>
         </div>
@@ -255,17 +255,17 @@ function VideoCard({ item }: { item: (typeof videoItems)[0] }) {
 
       {/* Content */}
       <div className="p-4 flex flex-col flex-1">
-        <h3 className="text-sm font-bold text-[#1E293B] leading-snug mb-2 line-clamp-2 flex-1">
+        <h2 className="text-sm font-bold text-[#1E293B] leading-snug mb-2 line-clamp-2 flex-1">
           {item.title}
-        </h3>
+        </h2>
         <div className="flex items-center justify-between mt-3">
-          <span className="flex items-center gap-1 text-[11px] text-[#94A3B8]">
+          <span className="flex items-center gap-1 text-sm text-[#94A3B8]">
             <Calendar size={10} />
             {item.date}
           </span>
           <Link
             to="#"
-            className="inline-flex items-center gap-1 text-xs font-semibold text-white bg-[#9A2109] hover:bg-[#7A1A07] transition-colors px-3 py-1.5 rounded-lg"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-white bg-[#9A2109] hover:bg-[#7A1A07] transition-colors px-3 py-1.5 rounded-lg"
           >
             <Video size={11} />
             Tonton Video
@@ -289,7 +289,7 @@ function Pagination({
 }) {
   return (
     <div className="flex items-center justify-center gap-1 mt-8">
-      <button
+      <button aria-label="Aksi"
         onClick={() => onChange(Math.max(1, current - 1))}
         disabled={current === 1}
         className="w-8 h-8 rounded-lg border border-[#E2E8F0] flex items-center justify-center text-[#64748B] hover:border-[#9A2109] hover:text-[#9A2109] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
@@ -297,10 +297,10 @@ function Pagination({
         <ChevronLeft size={14} />
       </button>
       {Array.from({ length: total }, (_, i) => i + 1).map((p) => (
-        <button
+        <button aria-label="Aksi"
           key={p}
           onClick={() => onChange(p)}
-          className={`w-8 h-8 rounded-lg border text-xs font-semibold transition-colors ${
+          className={`w-8 h-8 rounded-lg border text-sm font-semibold transition-colors ${
             p === current
               ? "bg-[#9A2109] border-[#9A2109] text-white"
               : "border-[#E2E8F0] text-[#475569] hover:border-[#9A2109] hover:text-[#9A2109]"
@@ -309,7 +309,7 @@ function Pagination({
           {p}
         </button>
       ))}
-      <button
+      <button aria-label="Aksi"
         onClick={() => onChange(Math.min(total, current + 1))}
         disabled={current === total}
         className="w-8 h-8 rounded-lg border border-[#E2E8F0] flex items-center justify-center text-[#64748B] hover:border-[#9A2109] hover:text-[#9A2109] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
@@ -359,7 +359,7 @@ export function BeritaPage() {
       {/* ── Breadcrumb ────────────────────────────────────────────────────────── */}
       <div className="bg-white border-b border-[#E2E8F0]">
         <div className="max-w-[1440px] mx-auto px-8 pt-24 pb-4">
-          <nav className="flex items-center gap-1.5 text-xs text-[#64748B]">
+          <nav className="flex items-center gap-1.5 text-sm text-[#64748B]">
             <Link to="/" className="hover:text-[#9A2109] transition-colors">
               Beranda
             </Link>
@@ -444,13 +444,13 @@ export function BeritaPage() {
               {/* Category chips */}
               <div className="flex flex-wrap gap-2">
                 {categories.map((cat) => (
-                  <button
+                  <button aria-label="Aksi"
                     key={cat}
                     onClick={() => {
                       setActiveFilter(cat);
                       setPage(1);
                     }}
-                    className={`px-3.5 py-1.5 rounded-full text-xs font-semibold border transition-all ${
+                    className={`px-3.5 py-1.5 rounded-full text-sm font-semibold border transition-all ${
                       activeFilter === cat
                         ? "bg-[#9A2109] border-[#9A2109] text-white"
                         : "bg-white border-[#E2E8F0] text-[#475569] hover:border-[#9A2109] hover:text-[#9A2109]"
@@ -487,7 +487,7 @@ export function BeritaPage() {
               <div className="bg-white rounded-2xl border border-[#E2E8F0] p-16 text-center">
                 <Newspaper size={40} className="text-[#CBD5E1] mx-auto mb-4" />
                 <p className="text-[#64748B] text-sm font-medium">Tidak ada hasil yang ditemukan.</p>
-                <p className="text-[#94A3B8] text-xs mt-1">Coba ubah kata kunci atau kategori pencarian.</p>
+                <p className="text-[#94A3B8] text-sm mt-1">Coba ubah kata kunci atau kategori pencarian.</p>
               </div>
             ) : (
               <>

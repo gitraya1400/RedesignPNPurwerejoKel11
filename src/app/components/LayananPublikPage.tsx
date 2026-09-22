@@ -351,7 +351,7 @@ function DocumentListSection({ route }: { route: string }) {
             <FolderOpen size={15} className="text-[#9A2109]" />
             <span className="text-sm font-semibold text-[#1E293B]">Daftar Dokumen</span>
           </div>
-          <span className="text-xs text-[#94A3B8]">{data.docs.length} file tersedia</span>
+          <span className="text-sm text-[#94A3B8]">{data.docs.length} file tersedia</span>
         </div>
 
         <div className="divide-y divide-[#F1F5F9]">
@@ -371,8 +371,8 @@ function DocumentListSection({ route }: { route: string }) {
                   {doc.name}
                 </p>
                 <div className="flex items-center gap-3 mt-0.5">
-                  <span className="text-xs text-[#94A3B8]">PDF • {doc.size}</span>
-                  <span className="inline-flex items-center gap-1 text-xs text-[#94A3B8]">
+                  <span className="text-sm text-[#94A3B8]">PDF • {doc.size}</span>
+                  <span className="inline-flex items-center gap-1 text-sm text-[#94A3B8]">
                     <Calendar size={11} />
                     {doc.date}
                   </span>
@@ -383,7 +383,7 @@ function DocumentListSection({ route }: { route: string }) {
               <a
                 href="#"
                 onClick={(e) => e.preventDefault()}
-                className="inline-flex items-center gap-2 text-xs font-semibold text-[#9A2109] border border-[#9A2109] hover:bg-[#9A2109] hover:text-white px-3.5 py-1.5 rounded-lg transition-all flex-shrink-0"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[#9A2109] border border-[#9A2109] hover:bg-[#9A2109] hover:text-white px-3.5 py-1.5 rounded-lg transition-all flex-shrink-0"
               >
                 <Download size={13} />
                 Unduh
@@ -415,28 +415,28 @@ function PengumumanSection() {
             <div className="flex items-start gap-4">
               {/* Number badge */}
               <div className="w-8 h-8 rounded-full bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span className="text-xs font-bold text-[#9A2109]">{item.id}</span>
+                <span className="text-sm font-bold text-[#9A2109]">{item.id}</span>
               </div>
 
               <div className="flex-1 min-w-0">
                 {/* Category + Date row */}
                 <div className="flex items-center gap-2 mb-2 flex-wrap">
                   <span
-                    className="text-xs font-bold px-2.5 py-0.5 rounded-full"
+                    className="text-sm font-bold px-2.5 py-0.5 rounded-full"
                     style={{ color: item.categoryColor, backgroundColor: item.categoryBg }}
                   >
                     {item.category}
                   </span>
-                  <span className="inline-flex items-center gap-1 text-xs text-[#94A3B8]">
+                  <span className="inline-flex items-center gap-1 text-sm text-[#94A3B8]">
                     <Calendar size={11} />
                     {item.date}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-sm font-bold text-[#1E293B] leading-snug mb-2 group-hover:text-[#9A2109] transition-colors">
+                <h2 className="text-sm font-bold text-[#1E293B] leading-snug mb-2 group-hover:text-[#9A2109] transition-colors">
                   {item.title}
-                </h3>
+                </h2>
 
                 {/* Excerpt */}
                 <p className="text-sm text-[#64748B] leading-relaxed mb-3">{item.excerpt}</p>
@@ -444,7 +444,7 @@ function PengumumanSection() {
                 <a
                   href="#"
                   onClick={(e) => e.preventDefault()}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#9A2109] hover:text-[#7A1A07] transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#9A2109] hover:text-[#7A1A07] transition-colors"
                 >
                   Baca Selengkapnya
                   <ChevronRight size={13} />
@@ -481,7 +481,7 @@ function EBrosurSection() {
               <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center">
                 <ScrollText size={28} className="text-white" />
               </div>
-              <span className="absolute top-3 right-3 text-[10px] font-bold bg-white/90 text-[#1E293B] px-2 py-0.5 rounded-full">
+              <span className="absolute top-3 right-3 text-sm font-bold bg-white/90 text-[#1E293B] px-2 py-0.5 rounded-full">
                 {brochure.format}
               </span>
             </div>
@@ -491,11 +491,11 @@ function EBrosurSection() {
               <p className="text-sm font-semibold text-[#1E293B] leading-snug mb-1 group-hover:text-[#9A2109] transition-colors">
                 {brochure.title}
               </p>
-              <p className="text-xs text-[#94A3B8] mb-3">{brochure.pages}</p>
+              <p className="text-sm text-[#94A3B8] mb-3">{brochure.pages}</p>
               <a
                 href="#"
                 onClick={(e) => e.preventDefault()}
-                className="w-full inline-flex items-center justify-center gap-2 text-xs font-semibold bg-[#9A2109] text-white hover:bg-[#7A1A07] py-2 rounded-xl transition-colors"
+                className="w-full inline-flex items-center justify-center gap-2 text-sm font-semibold bg-[#9A2109] text-white hover:bg-[#7A1A07] py-2 rounded-xl transition-colors"
               >
                 <Download size={13} />
                 Unduh Brosur
@@ -528,11 +528,11 @@ function SopSection() {
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-[#F8FAFC] border-b border-[#E2E8F0]">
-                <th className="text-left px-4 py-3 text-xs font-semibold text-[#64748B] uppercase tracking-wide w-12">No.</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-[#64748B] uppercase tracking-wide">Nama SOP</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-[#64748B] uppercase tracking-wide">Nomor Dokumen</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-[#64748B] uppercase tracking-wide">Tanggal Terbit</th>
-                <th className="text-center px-4 py-3 text-xs font-semibold text-[#64748B] uppercase tracking-wide w-24">Unduh</th>
+                <th className="text-left px-4 py-3 text-sm font-semibold text-[#64748B] uppercase tracking-wide w-12">No.</th>
+                <th className="text-left px-4 py-3 text-sm font-semibold text-[#64748B] uppercase tracking-wide">Nama SOP</th>
+                <th className="text-left px-4 py-3 text-sm font-semibold text-[#64748B] uppercase tracking-wide">Nomor Dokumen</th>
+                <th className="text-left px-4 py-3 text-sm font-semibold text-[#64748B] uppercase tracking-wide">Tanggal Terbit</th>
+                <th className="text-center px-4 py-3 text-sm font-semibold text-[#64748B] uppercase tracking-wide w-24">Unduh</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#F1F5F9]">
@@ -549,9 +549,9 @@ function SopSection() {
                       </span>
                     </div>
                   </td>
-                  <td className="px-4 py-3.5 text-[#64748B] font-mono text-xs">{row.nomor}</td>
+                  <td className="px-4 py-3.5 text-[#64748B] font-mono text-sm">{row.nomor}</td>
                   <td className="px-4 py-3.5">
-                    <span className="inline-flex items-center gap-1 text-xs text-[#64748B]">
+                    <span className="inline-flex items-center gap-1 text-sm text-[#64748B]">
                       <Calendar size={11} />
                       {row.tanggal}
                     </span>
@@ -560,7 +560,7 @@ function SopSection() {
                     <a
                       href="#"
                       onClick={(e) => e.preventDefault()}
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#9A2109] border border-[#9A2109] hover:bg-[#9A2109] hover:text-white px-3 py-1.5 rounded-lg transition-all"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#9A2109] border border-[#9A2109] hover:bg-[#9A2109] hover:text-white px-3 py-1.5 rounded-lg transition-all"
                     >
                       <Download size={12} />
                       PDF
@@ -594,11 +594,11 @@ function IkmSection() {
         {/* Big score */}
         <div className="flex-shrink-0 text-center bg-white/10 rounded-2xl px-8 py-5 border border-white/20">
           <p className="text-[3rem] font-black text-white leading-none">{overallScore}</p>
-          <p className="text-[#F9C784] text-xs font-bold uppercase tracking-widest mt-1">Skor IKM</p>
+          <p className="text-[#F9C784] text-sm font-bold uppercase tracking-widest mt-1">Skor IKM</p>
         </div>
         {/* Info */}
         <div>
-          <div className="inline-flex items-center gap-2 bg-[#F9C784] text-[#7A1A07] text-xs font-black px-3 py-1 rounded-full mb-3 uppercase tracking-wide">
+          <div className="inline-flex items-center gap-2 bg-[#F9C784] text-[#7A1A07] text-sm font-black px-3 py-1 rounded-full mb-3 uppercase tracking-wide">
             <CheckCircle2 size={13} />
             Nilai {rating}
           </div>
@@ -612,7 +612,7 @@ function IkmSection() {
               { label: "Interval Nilai", value: "76,61 – 88,30" },
             ].map((item) => (
               <div key={item.label}>
-                <p className="text-white/50 text-[11px] font-semibold uppercase tracking-wide">{item.label}</p>
+                <p className="text-white/50 text-sm font-semibold uppercase tracking-wide">{item.label}</p>
                 <p className="text-white text-sm font-bold">{item.value}</p>
               </div>
             ))}
@@ -653,7 +653,7 @@ function IkmSection() {
         <div className="px-6 py-4 border-t border-[#F1F5F9] bg-[#F8FAFC]">
           <div className="flex items-start gap-2">
             <Info size={14} className="text-[#64748B] mt-0.5 flex-shrink-0" />
-            <p className="text-xs text-[#64748B] leading-relaxed">
+            <p className="text-sm text-[#64748B] leading-relaxed">
               Survei dilakukan oleh Tim PPID PN Purworejo secara berkala. Nilai IKM dihitung berdasarkan Permenpan No. 14 Tahun 2017 dengan skala 1–4. Kuesioner tersedia di loket PTSP dan melalui tautan daring.
             </p>
           </div>
@@ -668,13 +668,13 @@ function IkmSection() {
           </div>
           <div>
             <p className="text-sm font-bold text-[#1E293B]">Laporan Lengkap IKM Semester I 2025.pdf</p>
-            <p className="text-xs text-[#94A3B8]">PDF • 1,3 MB • Diunggah 10 Jul 2025</p>
+            <p className="text-sm text-[#94A3B8]">PDF • 1,3 MB • Diunggah 10 Jul 2025</p>
           </div>
         </div>
         <a
           href="#"
           onClick={(e) => e.preventDefault()}
-          className="inline-flex items-center gap-2 text-xs font-semibold text-[#9A2109] border border-[#9A2109] hover:bg-[#9A2109] hover:text-white px-4 py-2 rounded-xl transition-all flex-shrink-0"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-[#9A2109] border border-[#9A2109] hover:bg-[#9A2109] hover:text-white px-4 py-2 rounded-xl transition-all flex-shrink-0"
         >
           <Download size={13} />
           Unduh Laporan
@@ -697,8 +697,8 @@ function Sidebar({ pathname }: { pathname: string }) {
               <BookOpen size={15} className="text-[#F9C784]" />
             </div>
             <div>
-              <p className="text-white text-xs font-bold uppercase tracking-wide leading-none">Layanan</p>
-              <p className="text-[#F9C784] text-[10px] font-semibold mt-0.5">Publik</p>
+              <p className="text-white text-sm font-bold uppercase tracking-wide leading-none">Layanan</p>
+              <p className="text-[#F9C784] text-sm font-semibold mt-0.5">Publik</p>
             </div>
           </div>
         </div>
@@ -712,7 +712,7 @@ function Sidebar({ pathname }: { pathname: string }) {
                 {/* Group label */}
                 <div className="flex items-center gap-2 px-4 py-2 mb-0.5">
                   <GroupIcon size={12} className="text-[#94A3B8]" />
-                  <span className="text-[10px] font-bold text-[#94A3B8] uppercase tracking-widest">
+                  <span className="text-sm font-bold text-[#94A3B8] uppercase tracking-widest">
                     {group.label}
                   </span>
                 </div>
@@ -725,7 +725,7 @@ function Sidebar({ pathname }: { pathname: string }) {
                     <Link
                       key={item.path}
                       to={item.path}
-                      className={`flex items-center gap-3 mx-2 px-3 py-2.5 rounded-xl text-xs font-semibold transition-all ${
+                      className={`flex items-center gap-3 mx-2 px-3 py-2.5 rounded-xl text-sm font-semibold transition-all ${
                         isActive
                           ? "bg-[#FFF1F1] text-[#9A2109]"
                           : "text-[#475569] hover:bg-[#F8FAFC] hover:text-[#9A2109]"
@@ -752,10 +752,10 @@ function Sidebar({ pathname }: { pathname: string }) {
 
         {/* Footer CTA */}
         <div className="mx-3 mb-3 bg-[#F8FAFC] rounded-xl p-3.5 border border-[#E2E8F0]">
-          <p className="text-xs text-[#64748B] font-semibold mb-1.5">Butuh informasi publik?</p>
+          <p className="text-sm text-[#64748B] font-semibold mb-1.5">Butuh informasi publik?</p>
           <Link
             to="/layanan-publik/formulir-ppid"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#9A2109] hover:text-[#7A1A07] transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-bold text-[#9A2109] hover:text-[#7A1A07] transition-colors"
           >
             Ajukan Permohonan PPID
             <ExternalLink size={11} />
@@ -816,7 +816,7 @@ export function LayananPublikPage() {
       <div className="bg-gradient-to-br from-[#9A2109] to-[#7A1A07] pt-24 pb-6">
         <div className="max-w-[1440px] mx-auto px-8">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-1.5 text-xs text-white/60 mb-4 flex-wrap">
+          <nav className="flex items-center gap-1.5 text-sm text-white/60 mb-4 flex-wrap">
             <Link to="/" className="hover:text-white transition-colors">
               Beranda
             </Link>
@@ -842,7 +842,7 @@ export function LayananPublikPage() {
               )}
             </div>
             <div>
-              <p className="text-white/60 text-xs font-semibold uppercase tracking-wide">
+              <p className="text-white/60 text-sm font-semibold uppercase tracking-wide">
                 {isLaporan ? "Laporan" : "Layanan Publik"}
               </p>
               <h1 className="text-white text-lg font-bold leading-tight">{crumbs[crumbs.length - 1]}</h1>

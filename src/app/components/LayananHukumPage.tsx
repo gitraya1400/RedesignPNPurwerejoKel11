@@ -87,7 +87,7 @@ function SidebarNav({ currentPath }: { currentPath: string }) {
       <div className="bg-white divide-y divide-[#F1F5F9]">
         {sideNav.map((group) => (
           <div key={group.group} className="py-2">
-            <p className="px-4 pt-2 pb-1 text-[10px] font-bold text-[#94A3B8] uppercase tracking-widest">
+            <p className="px-4 pt-2 pb-1 text-sm font-bold text-[#94A3B8] uppercase tracking-widest">
               {group.group}
             </p>
             {group.items.map((item) => {
@@ -96,7 +96,7 @@ function SidebarNav({ currentPath }: { currentPath: string }) {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`flex items-center gap-2 px-4 py-2 text-xs transition-colors ${
+                  className={`flex items-center gap-2 px-4 py-2 text-sm transition-colors ${
                     isActive
                       ? "bg-[#FFF1F1] text-[#9A2109] font-semibold border-r-2 border-[#9A2109]"
                       : "text-[#475569] hover:bg-[#F8FAFC] hover:text-[#9A2109]"
@@ -222,7 +222,7 @@ function ProdeoPage() {
               <div className="flex-1 pt-1">
                 <div className="flex items-center gap-2 mb-1.5">
                   <Icon size={15} className="text-[#9A2109]" />
-                  <h3 className="text-sm font-bold text-[#1E293B]">{title}</h3>
+                  <h2 className="text-sm font-bold text-[#1E293B]">{title}</h2>
                 </div>
                 <p className="text-sm text-[#475569] leading-relaxed">{desc}</p>
               </div>
@@ -235,14 +235,14 @@ function ProdeoPage() {
       <div className="bg-gradient-to-r from-[#9A2109] to-[#7A1A07] rounded-2xl p-6 text-white">
         <div className="flex items-center gap-3 mb-2">
           <HandHeart size={20} className="text-[#F9C784]" />
-          <h3 className="font-bold text-base">Butuh Bantuan?</h3>
+          <h2 className="font-bold text-base">Butuh Bantuan?</h2>
         </div>
         <p className="text-sm text-white/80 mb-4">
           Hubungi Pos Bantuan Hukum (POSBAKUM) di PN Purworejo atau datang langsung ke loket PTSP.
         </p>
         <Link
           to="/hubungi/posbakum"
-          className="inline-flex items-center gap-2 bg-[#F9C784] text-[#7A1A07] rounded-lg px-4 py-2 text-xs font-bold hover:bg-[#F8B84E] transition-colors"
+          className="inline-flex items-center gap-2 bg-[#F9C784] text-[#7A1A07] rounded-lg px-4 py-2 text-sm font-bold hover:bg-[#F8B84E] transition-colors"
         >
           Info POSBAKUM <ArrowRight size={13} />
         </Link>
@@ -315,7 +315,7 @@ function PeraturanPage() {
               {["No.", "Judul Peraturan", "Nomor", "Tahun", "Unduh"].map((h) => (
                 <th
                   key={h}
-                  className="px-4 py-3 text-left text-[11px] font-bold text-[#475569] uppercase tracking-wide whitespace-nowrap"
+                  className="px-4 py-3 text-left text-sm font-bold text-[#475569] uppercase tracking-wide whitespace-nowrap"
                 >
                   {h}
                 </th>
@@ -327,7 +327,7 @@ function PeraturanPage() {
               <tr key={i} className="hover:bg-[#FFF8F7] transition-colors">
                 <td className="px-4 py-3 text-[#94A3B8] font-medium">{i + 1}</td>
                 <td className="px-4 py-3 text-[#1E293B]">
-                  <span className="inline-block mr-2 px-1.5 py-0.5 rounded text-[10px] font-bold bg-[#FFF1F1] text-[#9A2109]">
+                  <span className="inline-block mr-2 px-1.5 py-0.5 rounded text-sm font-bold bg-[#FFF1F1] text-[#9A2109]">
                     {p.jenis}
                   </span>
                   {p.judul}
@@ -335,8 +335,8 @@ function PeraturanPage() {
                 <td className="px-4 py-3 text-[#475569] whitespace-nowrap">No. {p.nomor}</td>
                 <td className="px-4 py-3 text-[#475569]">{p.tahun}</td>
                 <td className="px-4 py-3">
-                  <button
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-xs font-semibold text-[#475569] hover:bg-[#FFF1F1] hover:text-[#9A2109] hover:border-[#FECACA] transition-colors"
+                  <button aria-label="Aksi"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] text-sm font-semibold text-[#475569] hover:bg-[#FFF1F1] hover:text-[#9A2109] hover:border-[#FECACA] transition-colors"
                     title={`Unduh ${p.jenis} No. ${p.nomor}/${p.tahun}`}
                   >
                     <Download size={13} />
@@ -430,7 +430,7 @@ function ZittingPlaatsPage() {
                 {["No.", "Lokasi Sidang Keliling", "Kecamatan", "Jadwal (Bulan)", "Jenis Perkara"].map((h) => (
                   <th
                     key={h}
-                    className="px-4 py-3 text-left text-[11px] font-bold text-[#475569] uppercase tracking-wide whitespace-nowrap"
+                    className="px-4 py-3 text-left text-sm font-bold text-[#475569] uppercase tracking-wide whitespace-nowrap"
                   >
                     {h}
                   </th>
@@ -505,7 +505,7 @@ function ProsedurPengajuanPage() {
         <ul className="space-y-2.5">
           {perdataSteps.map((s, i) => (
             <li key={i} className="flex items-start gap-3">
-              <span className="w-6 h-6 rounded-full bg-[#FFF1F1] text-[#9A2109] text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span className="w-6 h-6 rounded-full bg-[#FFF1F1] text-[#9A2109] text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
                 {i + 1}
               </span>
               <span className="text-sm text-[#475569] leading-relaxed">{s}</span>
@@ -525,7 +525,7 @@ function ProsedurPengajuanPage() {
         <ul className="space-y-2.5">
           {pidanaSteps.map((s, i) => (
             <li key={i} className="flex items-start gap-3">
-              <span className="w-6 h-6 rounded-full bg-[#F1F5F9] text-[#475569] text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span className="w-6 h-6 rounded-full bg-[#F1F5F9] text-[#475569] text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
                 {i + 1}
               </span>
               <span className="text-sm text-[#475569] leading-relaxed">{s}</span>
@@ -539,13 +539,13 @@ function ProsedurPengajuanPage() {
         <BookOpen size={24} className="text-[#9A2109] flex-shrink-0" />
         <div className="flex-1">
           <p className="text-sm font-bold text-[#1E293B] mb-0.5">Panduan Lengkap Tersedia</p>
-          <p className="text-xs text-[#64748B]">
+          <p className="text-sm text-[#64748B]">
             Lihat panduan alur berperkara lengkap berikut dokumen, kalkulator panjar, dan FAQ.
           </p>
         </div>
         <Link
           to="/layanan-hukum/panduan-alur-berperkara"
-          className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#9A2109] text-white rounded-xl text-xs font-bold hover:bg-[#7A1A07] transition-colors whitespace-nowrap flex-shrink-0"
+          className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#9A2109] text-white rounded-xl text-sm font-bold hover:bg-[#7A1A07] transition-colors whitespace-nowrap flex-shrink-0"
         >
           Lihat Panduan Lengkap <ArrowRight size={13} />
         </Link>
@@ -614,7 +614,7 @@ function BiayaPerkaraPage() {
             <thead className="bg-[#F8FAFC] border-b border-[#E2E8F0]">
               <tr>
                 {["Jenis Perkara", "Komponen Biaya", "Estimasi Panjar"].map((h) => (
-                  <th key={h} className="px-4 py-3 text-left text-[11px] font-bold text-[#475569] uppercase tracking-wide">
+                  <th key={h} className="px-4 py-3 text-left text-sm font-bold text-[#475569] uppercase tracking-wide">
                     {h}
                   </th>
                 ))}
@@ -624,9 +624,9 @@ function BiayaPerkaraPage() {
               {biayaTable.map((row, i) => (
                 <tr key={i} className="hover:bg-[#FFF8F7] transition-colors">
                   <td className="px-4 py-3 text-[#1E293B] font-medium">{row.jenis}</td>
-                  <td className="px-4 py-3 text-[#475569] text-xs">{row.komponen}</td>
+                  <td className="px-4 py-3 text-[#475569] text-sm">{row.komponen}</td>
                   <td className="px-4 py-3">
-                    <span className={`text-xs font-semibold ${row.estimasi.includes("Gratis") ? "text-[#15803D]" : "text-[#9A2109]"}`}>
+                    <span className={`text-sm font-semibold ${row.estimasi.includes("Gratis") ? "text-[#15803D]" : "text-[#9A2109]"}`}>
                       {row.estimasi}
                     </span>
                   </td>
@@ -648,7 +648,7 @@ function BiayaPerkaraPage() {
             <thead className="bg-[#F8FAFC] border-b border-[#E2E8F0]">
               <tr>
                 {["Kelas Radius", "Wilayah", "Estimasi Panjar Pemanggilan"].map((h) => (
-                  <th key={h} className="px-4 py-3 text-left text-[11px] font-bold text-[#475569] uppercase tracking-wide">
+                  <th key={h} className="px-4 py-3 text-left text-sm font-bold text-[#475569] uppercase tracking-wide">
                     {h}
                   </th>
                 ))}
@@ -658,7 +658,7 @@ function BiayaPerkaraPage() {
               {radiusTable.map((row, i) => (
                 <tr key={i} className="hover:bg-[#FFF8F7] transition-colors">
                   <td className="px-4 py-3">
-                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-[#FFF1F1] text-[#9A2109] text-xs font-bold">
+                    <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-[#FFF1F1] text-[#9A2109] text-sm font-bold">
                       {row.radius}
                     </span>
                   </td>
@@ -673,7 +673,7 @@ function BiayaPerkaraPage() {
 
       {/* Formula */}
       <div className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-5">
-        <h3 className="text-sm font-bold text-[#1E293B] mb-2">Cara Penghitungan Panjar</h3>
+        <h2 className="text-sm font-bold text-[#1E293B] mb-2">Cara Penghitungan Panjar</h2>
         <p className="text-sm text-[#475569] leading-relaxed">
           Panjar biaya perkara = <strong>PNBP</strong> + <strong>Biaya Pemanggilan</strong> (jumlah pihak × tarif radius) +
           <strong> Biaya Administrasi</strong> + <strong>Meterai</strong>. Biaya dapat berbeda tergantung jumlah tergugat/saksi
@@ -682,13 +682,13 @@ function BiayaPerkaraPage() {
       </div>
 
       {/* Calculator CTA */}
-      <button
+      <button aria-label="Aksi"
         className="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-[#9A2109] to-[#7A1A07] text-white rounded-2xl py-4 px-6 font-bold text-sm hover:opacity-90 transition-opacity"
         type="button"
       >
         <Calculator size={20} />
         Hitung Estimasi Panjar Biaya Perkara
-        <span className="text-[#F9C784] text-xs font-normal ml-1">(Segera Hadir)</span>
+        <span className="text-[#F9C784] text-sm font-normal ml-1">(Segera Hadir)</span>
       </button>
     </div>
   );
@@ -770,12 +770,12 @@ function SisaPanjarPage() {
               </div>
               <div className="flex-1">
                 <p className="text-sm font-bold text-[#1E293B] mb-0.5">{a.nomor}</p>
-                <p className="text-xs text-[#64748B]">Tanggal pengumuman: {a.tanggal}</p>
+                <p className="text-sm text-[#64748B]">Tanggal pengumuman: {a.tanggal}</p>
               </div>
               <div className="text-right flex-shrink-0">
                 <p className="text-base font-bold text-[#9A2109] mb-1">{a.sisa}</p>
                 <span
-                  className={`inline-block px-2.5 py-1 rounded-full text-[11px] font-bold ${
+                  className={`inline-block px-2.5 py-1 rounded-full text-sm font-bold ${
                     bisa
                       ? "bg-[#DCFCE7] text-[#15803D]"
                       : "bg-[#F1F5F9] text-[#64748B]"
@@ -880,7 +880,7 @@ function EksekusiPage() {
                 <Icon size={20} className="text-[#9A2109]" />
               </div>
               <div>
-                <h3 className="text-sm font-bold text-[#1E293B] mb-1">{title}</h3>
+                <h2 className="text-sm font-bold text-[#1E293B] mb-1">{title}</h2>
                 <p className="text-sm text-[#475569] leading-relaxed">{desc}</p>
               </div>
             </div>
@@ -900,20 +900,20 @@ function EksekusiPage() {
                   {num}
                 </div>
                 <Icon size={16} className="text-[#9A2109]" />
-                <h3 className="text-sm font-bold text-[#1E293B]">{title}</h3>
+                <h2 className="text-sm font-bold text-[#1E293B]">{title}</h2>
               </div>
               {/* Step body */}
               <div className="p-5 space-y-3">
                 <p className="text-sm text-[#475569] leading-relaxed">{desc}</p>
                 <div>
-                  <p className="text-xs font-bold text-[#94A3B8] uppercase tracking-wide mb-2">
+                  <p className="text-sm font-bold text-[#94A3B8] uppercase tracking-wide mb-2">
                     Dokumen yang Diperlukan
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {docs.map((d, j) => (
                       <span
                         key={j}
-                        className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#FFF1F1] text-[#9A2109] rounded-lg text-xs font-medium"
+                        className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#FFF1F1] text-[#9A2109] rounded-lg text-sm font-medium"
                       >
                         <FileText size={11} />
                         {d}
@@ -983,7 +983,7 @@ export function LayananHukumPage() {
       {/* Breadcrumb bar */}
       <div className="bg-white border-b border-[#E2E8F0]">
         <div className="max-w-[1440px] mx-auto px-8 pt-24 pb-4">
-          <nav className="flex items-center gap-1.5 text-xs text-[#64748B]">
+          <nav className="flex items-center gap-1.5 text-sm text-[#64748B]">
             <Link to="/" className="hover:text-[#9A2109] transition-colors">
               Beranda
             </Link>

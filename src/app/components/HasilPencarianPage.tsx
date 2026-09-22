@@ -96,7 +96,7 @@ export function HasilPencarianPage() {
       {/* Search Header */}
       <div className="bg-white border-b border-[#E2E8F0]">
         <div className="max-w-[1440px] mx-auto px-8 pt-24 pb-6">
-          <nav className="flex items-center gap-1.5 text-xs text-[#64748B] mb-5">
+          <nav className="flex items-center gap-1.5 text-sm text-[#64748B] mb-5">
             <Link to="/" className="hover:text-[#9A2109] transition-colors">Beranda</Link>
             <ChevronRight size={12} />
             <span className="text-[#9A2109] font-semibold">Hasil Pencarian</span>
@@ -114,14 +114,14 @@ export function HasilPencarianPage() {
               placeholder="Cari informasi, jadwal, formulir..."
             />
             {inputVal && (
-              <button
+              <button aria-label="Aksi"
                 onClick={() => { setInputVal(""); setQuery(""); }}
                 className="absolute right-14 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center rounded-full bg-[#F1F5F9] hover:bg-[#E2E8F0] text-[#64748B] transition-colors"
               >
                 <X size={13} />
               </button>
             )}
-            <button
+            <button aria-label="Aksi"
               onClick={doSearch}
               className="absolute right-3 top-1/2 -translate-y-1/2 bg-[#9A2109] hover:bg-[#7A1A07] text-white px-4 py-2 rounded-xl text-sm font-semibold transition-colors"
             >
@@ -147,10 +147,10 @@ export function HasilPencarianPage() {
             <Lightbulb size={15} className="text-[#B45309]" />
           </div>
           <div>
-            <p className="text-xs font-bold text-[#92400E] uppercase tracking-wide mb-1">Apakah yang Anda maksud?</p>
+            <p className="text-sm font-bold text-[#92400E] uppercase tracking-wide mb-1">Apakah yang Anda maksud?</p>
             <div className="flex flex-wrap gap-2">
               {["Prosedur Gugatan Sederhana", "Biaya Panjar Perkara"].map((sug) => (
-                <button
+                <button aria-label="Aksi"
                   key={sug}
                   onClick={() => { setInputVal(sug); setQuery(sug); }}
                   className="text-sm text-[#B45309] bg-white border border-[#FDE68A] hover:border-[#F59E0B] hover:bg-[#FEF3C7] px-3 py-1 rounded-full font-medium transition-all"
@@ -165,7 +165,7 @@ export function HasilPencarianPage() {
         {/* Filter chips */}
         <div className="flex flex-wrap gap-2 mb-7">
           {filterChips.map((chip, i) => (
-            <button
+            <button aria-label="Aksi"
               key={chip.label}
               onClick={() => setActiveChip(i)}
               className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold border transition-all ${
@@ -175,7 +175,7 @@ export function HasilPencarianPage() {
               }`}
             >
               {chip.label}
-              <span className={`text-[11px] px-1.5 py-0.5 rounded-full font-bold ${
+              <span className={`text-sm px-1.5 py-0.5 rounded-full font-bold ${
                 activeChip === i ? "bg-white/20" : "bg-[#F1F5F9]"
               }`}>
                 {chip.count}
@@ -197,13 +197,13 @@ export function HasilPencarianPage() {
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2.5">
                     <span
-                      className="text-[11px] font-bold px-2.5 py-1 rounded-full"
+                      className="text-sm font-bold px-2.5 py-1 rounded-full"
                       style={{ background: r.categoryBg, color: r.categoryColor }}
                     >
                       {r.categoryLabel}
                     </span>
                     {r.type === "dokumen" && r.fileInfo && (
-                      <span className="text-[11px] text-[#64748B] bg-[#F1F5F9] px-2 py-0.5 rounded-full font-medium">
+                      <span className="text-sm text-[#64748B] bg-[#F1F5F9] px-2 py-0.5 rounded-full font-medium">
                         PDF • {r.fileInfo.size}
                       </span>
                     )}
@@ -214,9 +214,9 @@ export function HasilPencarianPage() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-base font-bold text-[#1E293B] group-hover:text-[#9A2109] transition-colors mb-2 leading-snug">
+                <h2 className="text-base font-bold text-[#1E293B] group-hover:text-[#9A2109] transition-colors mb-2 leading-snug">
                   {highlight(r.title, query)}
-                </h3>
+                </h2>
 
                 {/* Snippet */}
                 {r.snippet && (
@@ -227,20 +227,20 @@ export function HasilPencarianPage() {
 
                 {/* Bottom row */}
                 <div className="flex items-center justify-between pt-3 border-t border-[#F1F5F9]">
-                  <div className="flex items-center gap-1.5 text-xs text-[#94A3B8]">
+                  <div className="flex items-center gap-1.5 text-sm text-[#94A3B8]">
                     <Clock size={11} />
                     {r.meta}
                   </div>
                   {r.type === "dokumen" ? (
                     <a
                       href="#"
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#15803D] bg-[#DCFCE7] hover:bg-[#BBF7D0] px-3 py-1.5 rounded-lg transition-colors"
+                      className="inline-flex items-center gap-1.5 text-sm font-bold text-[#15803D] bg-[#DCFCE7] hover:bg-[#BBF7D0] px-3 py-1.5 rounded-lg transition-colors"
                     >
                       <Download size={12} />
                       {r.ctaLabel}
                     </a>
                   ) : (
-                    <button className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#9A2109] hover:bg-[#FFF1F1] px-3 py-1.5 rounded-lg transition-colors">
+                    <button aria-label="Aksi" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#9A2109] hover:bg-[#FFF1F1] px-3 py-1.5 rounded-lg transition-colors">
                       <Eye size={12} />
                       Baca Selengkapnya
                       <ArrowRight size={11} />
@@ -252,7 +252,7 @@ export function HasilPencarianPage() {
 
             {/* Pagination */}
             <div className="flex items-center justify-between pt-4">
-              <button
+              <button aria-label="Aksi"
                 disabled={page === 1}
                 onClick={() => setPage(p => Math.max(1, p - 1))}
                 className="flex items-center gap-1.5 text-sm font-semibold text-[#64748B] hover:text-[#9A2109] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
@@ -263,7 +263,7 @@ export function HasilPencarianPage() {
 
               <div className="flex items-center gap-1">
                 {[1, 2, 3, "...", 6].map((p, i) => (
-                  <button
+                  <button aria-label="Aksi"
                     key={i}
                     onClick={() => typeof p === "number" && setPage(p)}
                     className={`w-9 h-9 rounded-xl text-sm font-semibold transition-all ${
@@ -279,7 +279,7 @@ export function HasilPencarianPage() {
                 ))}
               </div>
 
-              <button
+              <button aria-label="Aksi"
                 onClick={() => setPage(p => p + 1)}
                 className="flex items-center gap-1.5 text-sm font-semibold text-[#64748B] hover:text-[#9A2109] transition-colors"
               >
@@ -297,17 +297,17 @@ export function HasilPencarianPage() {
                 <HelpCircle size={18} className="text-[#9A2109]" />
               </div>
               <p className="text-sm font-bold text-[#1E293B] mb-1">Tidak menemukan yang dicari?</p>
-              <p className="text-xs text-[#64748B] leading-relaxed mb-4">
+              <p className="text-sm text-[#64748B] leading-relaxed mb-4">
                 Hubungi Petugas PTSP via Layanan Chat Online atau Layanan POSBAKUM PN Purworejo.
               </p>
               <div className="space-y-2">
-                <button className="w-full flex items-center justify-center gap-2 bg-[#9A2109] hover:bg-[#7A1A07] text-white text-xs font-bold px-4 py-2.5 rounded-full transition-colors">
+                <button aria-label="Aksi" className="w-full flex items-center justify-center gap-2 bg-[#9A2109] hover:bg-[#7A1A07] text-white text-sm font-bold px-4 py-2.5 rounded-full transition-colors">
                   <MessageCircle size={13} />
                   Layanan Chat PTSP Online
                 </button>
                 <Link
                   to="/hubungi/posbakum"
-                  className="flex items-center justify-center gap-2 border border-[#E2E8F0] text-[#475569] hover:border-[#9A2109] hover:text-[#9A2109] text-xs font-semibold px-4 py-2.5 rounded-full transition-all"
+                  className="flex items-center justify-center gap-2 border border-[#E2E8F0] text-[#475569] hover:border-[#9A2109] hover:text-[#9A2109] text-sm font-semibold px-4 py-2.5 rounded-full transition-all"
                 >
                   Konsultasi POSBAKUM Gratis
                   <ArrowRight size={12} />
@@ -317,7 +317,7 @@ export function HasilPencarianPage() {
 
             {/* Popular searches */}
             <div className="bg-white rounded-2xl border border-[#E2E8F0] p-5 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)]">
-              <p className="text-xs font-bold text-[#1E293B] uppercase tracking-wide mb-4">Pencarian Populer</p>
+              <p className="text-sm font-bold text-[#1E293B] uppercase tracking-wide mb-4">Pencarian Populer</p>
               <div className="flex flex-wrap gap-2">
                 {[
                   "Biaya Panjar Perkara",
@@ -328,10 +328,10 @@ export function HasilPencarianPage() {
                   "Gugatan Sederhana",
                   "e-Court Daftar",
                 ].map((tag) => (
-                  <button
+                  <button aria-label="Aksi"
                     key={tag}
                     onClick={() => { setInputVal(tag); setQuery(tag); }}
-                    className="text-xs text-[#475569] bg-[#F1F5F9] hover:bg-[#FFF1F1] hover:text-[#9A2109] border border-[#E2E8F0] hover:border-[#FECACA] px-2.5 py-1.5 rounded-full font-medium transition-all"
+                    className="text-sm text-[#475569] bg-[#F1F5F9] hover:bg-[#FFF1F1] hover:text-[#9A2109] border border-[#E2E8F0] hover:border-[#FECACA] px-2.5 py-1.5 rounded-full font-medium transition-all"
                   >
                     {tag}
                   </button>
@@ -341,7 +341,7 @@ export function HasilPencarianPage() {
 
             {/* Quick links */}
             <div className="bg-gradient-to-br from-[#9A2109] to-[#7A1A07] rounded-2xl p-5 text-white">
-              <p className="text-xs font-bold uppercase tracking-wide text-white/60 mb-3">Layanan Cepat</p>
+              <p className="text-sm font-bold uppercase tracking-wide text-white/60 mb-3">Layanan Cepat</p>
               {[
                 { label: "Cek Status Perkara (SIPP)", href: "https://sipp.pn-cikarang.go.id/" },
                 { label: "Daftar Perkara via e-Court", href: "https://ecourt.mahkamahagung.go.id/" },

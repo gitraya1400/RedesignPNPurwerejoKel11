@@ -132,7 +132,7 @@ export function PosbakumInfoPage() {
       {/* ── Hero Banner ── */}
       <div className="pt-24 pb-12" style={{ background: "linear-gradient(135deg,#9A2109 0%,#7B1A07 60%,#4A0E04 100%)" }}>
         <div className="max-w-6xl mx-auto px-4">
-          <nav className="flex items-center gap-1.5 text-xs mb-5 flex-wrap">
+          <nav className="flex items-center gap-1.5 text-sm mb-5 flex-wrap">
             <Link to="/" className="text-white/70 hover:text-white transition-colors">Beranda</Link>
             <ChevronRight size={11} className="text-white/40 flex-shrink-0" />
             <span className="text-white/50">Layanan Hukum</span>
@@ -146,7 +146,7 @@ export function PosbakumInfoPage() {
               <Scale size={24} className="text-[#F9C784]" />
             </div>
             <div>
-              <p className="text-[#F9C784] text-xs mb-1 tracking-wide" style={{ fontWeight: 600 }}>
+              <p className="text-[#F9C784] text-sm mb-1 tracking-wide" style={{ fontWeight: 600 }}>
                 HUBUNGI KAMI · BANTUAN HUKUM
               </p>
               <h1 className="text-white leading-tight" style={{ fontSize: "clamp(1.4rem,3vw,2rem)", fontWeight: 800 }}>
@@ -167,8 +167,8 @@ export function PosbakumInfoPage() {
                 style={{ backgroundColor: "rgba(255,255,255,0.12)" }}>
                 <Phone size={15} className="text-[#F9C784] flex-shrink-0" />
                 <div className="min-w-0">
-                  <p className="text-white text-xs truncate" style={{ fontWeight: 700 }}>{p.nama}</p>
-                  <p className="text-white/70 text-xs">{p.telp}</p>
+                  <p className="text-white text-sm truncate" style={{ fontWeight: 700 }}>{p.nama}</p>
+                  <p className="text-white/70 text-sm">{p.telp}</p>
                 </div>
               </a>
             ))}
@@ -223,7 +223,7 @@ export function PosbakumInfoPage() {
                 {DASAR_HUKUM.map((item, i) => (
                   <div key={i}>
                     <p className="text-gray-800 text-sm mb-2.5" style={{ fontWeight: 600 }}>
-                      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full text-white text-[10px] mr-2 flex-shrink-0 align-middle"
+                      <span className="inline-flex items-center justify-center w-5 h-5 rounded-full text-white text-sm mr-2 flex-shrink-0 align-middle"
                         style={{ backgroundColor: "#9A2109", fontWeight: 700 }}>{i + 1}</span>
                       {item.judul}
                     </p>
@@ -323,7 +323,7 @@ export function PosbakumInfoPage() {
                   {ASAS_PIDANA.map((a, i) => (
                     <div key={i} className="flex items-start gap-3 rounded-xl p-4 border border-gray-100 bg-gray-50">
                       <div className="flex-shrink-0 mt-0.5">
-                        <span className="inline-block bg-[#9A2109] text-white text-[10px] rounded-lg px-2 py-1" style={{ fontWeight: 700, whiteSpace: "nowrap" }}>{a.pasal}</span>
+                        <span className="inline-block bg-[#9A2109] text-white text-sm rounded-lg px-2 py-1" style={{ fontWeight: 700, whiteSpace: "nowrap" }}>{a.pasal}</span>
                       </div>
                       <p className="text-gray-600 text-sm" style={{ lineHeight: 1.7 }}>{a.teks}</p>
                     </div>
@@ -353,10 +353,10 @@ export function PosbakumInfoPage() {
                     <Scale size={22} className="text-[#F9C784]" />
                   </div>
                   <div>
-                    <p className="text-[#F9C784] text-xs mb-1 tracking-wide" style={{ fontWeight: 600 }}>LAYANAN ONLINE</p>
-                    <h3 className="text-white" style={{ fontWeight: 800, fontSize: "1.15rem" }}>
+                    <p className="text-[#F9C784] text-sm mb-1 tracking-wide" style={{ fontWeight: 600 }}>LAYANAN ONLINE</p>
+                    <h2 className="text-white" style={{ fontWeight: 800, fontSize: "1.15rem" }}>
                       Ajukan Permohonan Posbakum Online
-                    </h3>
+                    </h2>
                     <p className="text-white/70 text-sm mt-1.5" style={{ lineHeight: 1.6 }}>
                       Tidak perlu datang ke kantor. Isi formulir permohonan secara online dan tim kami akan menghubungi Anda dalam 1×24 jam kerja.
                     </p>
@@ -384,15 +384,15 @@ export function PosbakumInfoPage() {
             {/* LBH Info */}
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
               <div className="px-5 py-4" style={{ backgroundColor: "#9A2109" }}>
-                <p className="text-[#F9C784] text-xs tracking-wide mb-0.5" style={{ fontWeight: 600 }}>LEMBAGA MITRA</p>
-                <h3 className="text-white" style={{ fontWeight: 700, fontSize: "0.95rem" }}>LBH Adil Indonesia</h3>
+                <p className="text-[#F9C784] text-sm tracking-wide mb-0.5" style={{ fontWeight: 600 }}>LEMBAGA MITRA</p>
+                <h2 className="text-white" style={{ fontWeight: 700, fontSize: "0.95rem" }}>LBH Adil Indonesia</h2>
               </div>
               <div className="p-5 space-y-3.5">
                 <div className="flex items-start gap-2">
                   <Clock size={14} className="text-[#9A2109] flex-shrink-0 mt-0.5" />
                   <div>
-                    <p className="text-gray-700 text-xs" style={{ fontWeight: 600 }}>Jam Layanan</p>
-                    <p className="text-gray-700 text-xs">09:00 – 14:00 WIB</p>
+                    <p className="text-gray-700 text-sm" style={{ fontWeight: 600 }}>Jam Layanan</p>
+                    <p className="text-gray-700 text-sm">09:00 – 14:00 WIB</p>
                   </div>
                 </div>
                 <div className="border-t border-gray-100 pt-3 space-y-3">
@@ -400,10 +400,10 @@ export function PosbakumInfoPage() {
                     <div key={p.nama} className="flex items-start gap-2">
                       <Phone size={13} className="text-[#9A2109] flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="text-gray-700 text-xs" style={{ fontWeight: 600 }}>{p.nama}</p>
+                        <p className="text-gray-700 text-sm" style={{ fontWeight: 600 }}>{p.nama}</p>
                         <a href={`https://wa.me/62${p.telp.replace(/^0/, "")}`}
                           target="_blank" rel="noopener noreferrer"
-                          className="text-[#9A2109] text-xs hover:underline">{p.telp}</a>
+                          className="text-[#9A2109] text-sm hover:underline">{p.telp}</a>
                       </div>
                     </div>
                   ))}
@@ -414,7 +414,7 @@ export function PosbakumInfoPage() {
             {/* Kontak PN */}
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
               <div className="px-5 py-4 border-b border-gray-50">
-                <h3 className="text-gray-800" style={{ fontWeight: 700, fontSize: "0.95rem" }}>Kontak PN Purworejo</h3>
+                <h2 className="text-gray-800" style={{ fontWeight: 700, fontSize: "0.95rem" }}>Kontak PN Purworejo</h2>
               </div>
               <div className="p-5 space-y-3">
                 {[
@@ -425,7 +425,7 @@ export function PosbakumInfoPage() {
                 ].map(({ icon: Icon, text }, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <Icon size={14} className="text-[#9A2109] flex-shrink-0 mt-0.5" />
-                    <p className="text-gray-600 text-xs" style={{ lineHeight: 1.5 }}>{text}</p>
+                    <p className="text-gray-600 text-sm" style={{ lineHeight: 1.5 }}>{text}</p>
                   </div>
                 ))}
               </div>
@@ -445,8 +445,8 @@ export function PosbakumInfoPage() {
                   "Konsultasi bersifat rahasia dan gratis.",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <span className="text-amber-600 text-xs mt-1 flex-shrink-0">•</span>
-                    <p className="text-amber-700 text-xs" style={{ lineHeight: 1.65 }}>{item}</p>
+                    <span className="text-amber-600 text-sm mt-1 flex-shrink-0">•</span>
+                    <p className="text-amber-700 text-sm" style={{ lineHeight: 1.65 }}>{item}</p>
                   </li>
                 ))}
               </ul>
@@ -455,7 +455,7 @@ export function PosbakumInfoPage() {
             {/* Daftar isi */}
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
               <div className="px-5 py-4 border-b border-gray-50">
-                <h3 className="text-gray-800" style={{ fontWeight: 700, fontSize: "0.95rem" }}>Daftar Isi</h3>
+                <h2 className="text-gray-800" style={{ fontWeight: 700, fontSize: "0.95rem" }}>Daftar Isi</h2>
               </div>
               <div className="p-5">
                 <ul className="space-y-1.5">
@@ -472,7 +472,7 @@ export function PosbakumInfoPage() {
                   ].map(([id, label]) => (
                     <li key={id}>
                       <a href={`#${id}`}
-                        className="flex items-center gap-2 text-xs text-gray-600 hover:text-[#9A2109] transition-colors py-0.5"
+                        className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#9A2109] transition-colors py-0.5"
                         style={{ lineHeight: 1.5 }}>
                         <ChevronRight size={12} className="text-[#9A2109] flex-shrink-0" />
                         {label}

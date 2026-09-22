@@ -105,7 +105,7 @@ function StatusBadge({ status }: { status: StatusKey }) {
   const cfg = statusConfig[status];
   return (
     <span
-      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold whitespace-nowrap"
+      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-sm font-semibold whitespace-nowrap"
       style={{ background: cfg.bg, color: cfg.text }}
     >
       <span className="relative flex h-2 w-2">
@@ -135,10 +135,10 @@ function DetailModal({ row, onClose }: { row: typeof scheduleData[0]; onClose: (
       >
         <div className="flex items-center justify-between px-6 py-4 border-b border-[#E2E8F0] bg-[#F8FAFC]">
           <div>
-            <p className="text-xs text-[#9A2109] font-semibold uppercase tracking-wider mb-0.5">Detail Perkara</p>
+            <p className="text-sm text-[#9A2109] font-semibold uppercase tracking-wider mb-0.5">Detail Perkara</p>
             <h2 className="text-base font-bold text-[#1E293B]">{row.noPerkara}</h2>
           </div>
-          <button
+          <button aria-label="Aksi"
             onClick={onClose}
             className="w-8 h-8 flex items-center justify-center rounded-full bg-[#F1F5F9] hover:bg-[#E2E8F0] text-[#64748B] transition-colors"
           >
@@ -157,7 +157,7 @@ function DetailModal({ row, onClose }: { row: typeof scheduleData[0]; onClose: (
               <div key={label} className="bg-[#F8FAFC] rounded-xl p-3.5 border border-[#E2E8F0]">
                 <div className="flex items-center gap-2 mb-1">
                   <Icon size={13} className="text-[#9A2109]" />
-                  <p className="text-[11px] text-[#64748B] font-semibold uppercase tracking-wide">{label}</p>
+                  <p className="text-sm text-[#64748B] font-semibold uppercase tracking-wide">{label}</p>
                 </div>
                 <p className="text-sm text-[#1E293B] font-medium">{value}</p>
               </div>
@@ -179,7 +179,7 @@ function DetailModal({ row, onClose }: { row: typeof scheduleData[0]; onClose: (
                   </div>
                 </div>
                 <div>
-                  <p className="text-[11px] text-[#64748B] font-semibold uppercase tracking-wide mb-0.5">{label}</p>
+                  <p className="text-sm text-[#64748B] font-semibold uppercase tracking-wide mb-0.5">{label}</p>
                   <p className="text-sm text-[#1E293B]">{value}</p>
                 </div>
               </div>
@@ -188,14 +188,14 @@ function DetailModal({ row, onClose }: { row: typeof scheduleData[0]; onClose: (
 
           <div className="flex items-start gap-3 bg-[#FEF3C7] border border-[#FDE68A] rounded-xl p-4">
             <AlertCircle size={16} className="text-[#B45309] flex-shrink-0 mt-0.5" />
-            <p className="text-xs text-[#92400E] leading-relaxed">
+            <p className="text-sm text-[#92400E] leading-relaxed">
               <strong>Perhatian:</strong> Jadwal dapat bergeser sewaktu-waktu sesuai dinamika persidangan di ruang sidang. Silakan konfirmasi ulang kepada petugas PTSP.
             </p>
           </div>
         </div>
 
         <div className="px-6 pb-5">
-          <button
+          <button aria-label="Aksi"
             onClick={onClose}
             className="w-full py-2.5 bg-[#9A2109] hover:bg-[#7A1A07] text-white text-sm font-semibold rounded-full transition-colors"
           >
@@ -213,11 +213,11 @@ function EmptyState({ onReset }: { onReset: () => void }) {
       <div className="w-20 h-20 rounded-full bg-[#FFF1F1] flex items-center justify-center mb-5">
         <Search size={32} className="text-[#9A2109]" />
       </div>
-      <h3 className="text-xl font-bold text-[#1E293B] mb-2">Jadwal Sidang Tidak Ditemukan</h3>
+      <h2 className="text-xl font-bold text-[#1E293B] mb-2">Jadwal Sidang Tidak Ditemukan</h2>
       <p className="text-sm text-[#64748B] max-w-sm leading-relaxed mb-6">
         Periksa kembali nomor perkara atau pastikan tanggal sidang yang Anda pilih benar. Coba ubah filter pencarian.
       </p>
-      <button
+      <button aria-label="Aksi"
         onClick={onReset}
         className="inline-flex items-center gap-2 bg-[#9A2109] hover:bg-[#7A1A07] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-colors"
       >
@@ -285,7 +285,7 @@ export function JadwalSidangPage() {
       {/* Breadcrumb + Page Title */}
       <div className="bg-white border-b border-[#E2E8F0]">
         <div className="max-w-[1440px] mx-auto px-8 pt-24 pb-6">
-          <nav className="flex items-center gap-1.5 text-xs text-[#64748B] mb-5">
+          <nav className="flex items-center gap-1.5 text-sm text-[#64748B] mb-5">
             <Link to="/" className="hover:text-[#9A2109] transition-colors">Beranda</Link>
             <ChevronRight size={12} />
             <span className="hover:text-[#9A2109] cursor-pointer transition-colors">Layanan Publik</span>
@@ -300,7 +300,7 @@ export function JadwalSidangPage() {
                 Informasi jadwal sidang real-time yang terhubung dengan Sistem Informasi Penelusuran Perkara (SIPP) PN Purworejo.
               </p>
             </div>
-            <div className="flex-shrink-0 flex items-center gap-2 bg-[#DCFCE7] border border-[#86EFAC] text-[#15803D] px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap">
+            <div className="flex-shrink-0 flex items-center gap-2 bg-[#DCFCE7] border border-[#86EFAC] text-[#15803D] px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-[#22C55E] opacity-75 animate-ping" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22C55E]" />
@@ -328,7 +328,7 @@ export function JadwalSidangPage() {
             </div>
             {/* Klasifikasi */}
             <div className="relative">
-              <label className="block text-[11px] font-semibold text-[#64748B] uppercase tracking-wide mb-1.5">Klasifikasi Perkara</label>
+              <label className="block text-sm font-semibold text-[#64748B] uppercase tracking-wide mb-1.5">Klasifikasi Perkara</label>
               <div className="relative">
                 <select
                   value={klasifikasi}
@@ -344,7 +344,7 @@ export function JadwalSidangPage() {
             </div>
             {/* Tanggal */}
             <div className="relative">
-              <label className="block text-[11px] font-semibold text-[#64748B] uppercase tracking-wide mb-1.5">Tanggal Sidang</label>
+              <label className="block text-sm font-semibold text-[#64748B] uppercase tracking-wide mb-1.5">Tanggal Sidang</label>
               <div className="relative">
                 <Calendar size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#9A2109]" />
                 <input aria-label="Input"
@@ -359,7 +359,7 @@ export function JadwalSidangPage() {
           {/* Ruang Sidang row */}
           <div className="grid grid-cols-4 gap-4 mb-5">
             <div className="relative">
-              <label className="block text-[11px] font-semibold text-[#64748B] uppercase tracking-wide mb-1.5">Ruang Sidang</label>
+              <label className="block text-sm font-semibold text-[#64748B] uppercase tracking-wide mb-1.5">Ruang Sidang</label>
               <div className="relative">
                 <select
                   value={ruang}
@@ -378,21 +378,21 @@ export function JadwalSidangPage() {
           {/* Action row */}
           <div className="flex items-center justify-between pt-4 border-t border-[#F1F5F9]">
             <div className="flex items-center gap-4">
-              <button
+              <button aria-label="Aksi"
                 onClick={applyFilter}
                 className="inline-flex items-center gap-2 bg-[#9A2109] hover:bg-[#7A1A07] text-white text-sm font-semibold px-6 py-2.5 rounded-full transition-colors"
               >
                 <Filter size={14} />
                 Terapkan Filter
               </button>
-              <button
+              <button aria-label="Aksi"
                 onClick={resetFilter}
                 className="text-sm text-[#64748B] hover:text-[#9A2109] font-medium transition-colors"
               >
                 Reset
               </button>
             </div>
-            <button
+            <button aria-label="Aksi"
               onClick={() => setOnlyUnfinished(!onlyUnfinished)}
               className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold border transition-all ${
                 onlyUnfinished
@@ -415,7 +415,7 @@ export function JadwalSidangPage() {
                   {cols.map((col) => (
                     <th
                       key={col}
-                      className="px-4 py-3.5 text-left text-[11px] font-bold text-[#475569] uppercase tracking-wider whitespace-nowrap"
+                      className="px-4 py-3.5 text-left text-sm font-bold text-[#475569] uppercase tracking-wider whitespace-nowrap"
                     >
                       {col}
                     </th>
@@ -447,18 +447,18 @@ export function JadwalSidangPage() {
                         <span className="text-sm font-semibold text-[#9A2109]">{row.noPerkara}</span>
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap">
-                        <span className="text-xs bg-[#F1F5F9] text-[#475569] px-2.5 py-1 rounded-full font-medium">
+                        <span className="text-sm bg-[#F1F5F9] text-[#475569] px-2.5 py-1 rounded-full font-medium">
                           {row.klasifikasi}
                         </span>
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap">
-                        <div className="flex items-center gap-1.5 text-xs text-[#64748B]">
+                        <div className="flex items-center gap-1.5 text-sm text-[#64748B]">
                           <Building2 size={12} className="text-[#94A3B8]" />
                           {row.ruang}
                         </div>
                       </td>
                       <td className="px-4 py-4">
-                        <span className="text-xs text-[#475569] leading-relaxed">{row.majelis}</span>
+                        <span className="text-sm text-[#475569] leading-relaxed">{row.majelis}</span>
                       </td>
                       <td className="px-4 py-4">
                         <span className="text-sm text-[#1E293B]">{row.agenda}</span>
@@ -467,9 +467,9 @@ export function JadwalSidangPage() {
                         <StatusBadge status={row.status} />
                       </td>
                       <td className="px-4 py-4">
-                        <button
+                        <button aria-label="Aksi"
                           onClick={() => setSelectedRow(row)}
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#9A2109] border border-[#9A2109] px-3 py-1.5 rounded-lg hover:bg-[#9A2109] hover:text-white transition-all"
+                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#9A2109] border border-[#9A2109] px-3 py-1.5 rounded-lg hover:bg-[#9A2109] hover:text-white transition-all"
                         >
                           <Eye size={12} />
                           Lihat Detail

@@ -321,7 +321,7 @@ function Sidebar({ currentPath }: { currentPath: string }) {
           className="px-4 py-3 rounded-t-2xl"
           style={{ background: "#9A2109" }}
         >
-          <p className="text-white text-xs font-semibold uppercase tracking-wider">
+          <p className="text-white text-sm font-semibold uppercase tracking-wider">
             Reformasi Birokrasi
           </p>
         </div>
@@ -347,7 +347,7 @@ function Sidebar({ currentPath }: { currentPath: string }) {
                 <>
                   {/* Group label */}
                   <div
-                    className={`px-4 py-2.5 text-xs font-bold uppercase tracking-wider border-t border-[#E2E8F0] ${gi === 0 ? "border-t-0" : ""}`}
+                    className={`px-4 py-2.5 text-sm font-bold uppercase tracking-wider border-t border-[#E2E8F0] ${gi === 0 ? "border-t-0" : ""}`}
                     style={{ color: "#9A2109", background: "#FFF8F6" }}
                   >
                     {group.label}
@@ -379,14 +379,14 @@ function Sidebar({ currentPath }: { currentPath: string }) {
 function StatusBadge({ status }: { status: AreaStatus }) {
   if (status === "TERCAPAI") {
     return (
-      <span className="inline-flex items-center gap-1.5 bg-green-50 text-green-700 text-xs font-bold px-3 py-1.5 rounded-full border border-green-200">
+      <span className="inline-flex items-center gap-1.5 bg-green-50 text-green-700 text-sm font-bold px-3 py-1.5 rounded-full border border-green-200">
         <CheckCircle2 size={12} />
         TERCAPAI
       </span>
     );
   }
   return (
-    <span className="inline-flex items-center gap-1.5 bg-yellow-50 text-yellow-700 text-xs font-bold px-3 py-1.5 rounded-full border border-yellow-200">
+    <span className="inline-flex items-center gap-1.5 bg-yellow-50 text-yellow-700 text-sm font-bold px-3 py-1.5 rounded-full border border-yellow-200">
       <Clock size={12} />
       DALAM PROSES
     </span>
@@ -398,8 +398,8 @@ function MetricBar({ target, realisasi }: { target: number; realisasi: number })
   return (
     <div className="bg-gray-50 rounded-xl p-4 border border-[#E2E8F0] mb-6">
       <div className="flex items-center justify-between mb-2">
-        <span className="text-xs text-gray-700 font-medium">Capaian Realisasi</span>
-        <span className="text-xs font-bold" style={{ color: "#9A2109" }}>
+        <span className="text-sm text-gray-700 font-medium">Capaian Realisasi</span>
+        <span className="text-sm font-bold" style={{ color: "#9A2109" }}>
           Target: {target}% | Realisasi: {realisasi}%
         </span>
       </div>
@@ -413,8 +413,8 @@ function MetricBar({ target, realisasi }: { target: number; realisasi: number })
         />
       </div>
       <div className="flex justify-between mt-1">
-        <span className="text-xs text-gray-600">0%</span>
-        <span className="text-xs text-gray-600">100%</span>
+        <span className="text-sm text-gray-600">0%</span>
+        <span className="text-sm text-gray-600">100%</span>
       </div>
     </div>
   );
@@ -433,7 +433,7 @@ function DocumentCard({ title, size }: { title: string; size: string }) {
         <p className="text-sm font-medium text-gray-800 truncate group-hover:text-[#9A2109] transition-colors">
           {title}
         </p>
-        <p className="text-xs text-gray-600">{size}</p>
+        <p className="text-sm text-gray-600">{size}</p>
       </div>
       <Download size={14} className="text-gray-600 group-hover:text-[#9A2109] transition-colors flex-shrink-0" />
     </div>
@@ -464,7 +464,7 @@ function ZonaIntegritasAreaPage({ areaKey }: { areaKey: string }) {
           </div>
           <div className="flex-1">
             <div className="flex items-center gap-3 flex-wrap mb-2">
-              <span className="text-[#F9C784] text-xs font-bold uppercase tracking-widest">
+              <span className="text-[#F9C784] text-sm font-bold uppercase tracking-widest">
                 Zona Integritas · {data.label}
               </span>
               <StatusBadge status={data.status} />
@@ -502,7 +502,7 @@ function ZonaIntegritasAreaPage({ areaKey }: { areaKey: string }) {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-gray-900 mb-1">{prog.title}</p>
-                  <p className="text-xs text-gray-700 leading-relaxed">{prog.description}</p>
+                  <p className="text-sm text-gray-700 leading-relaxed">{prog.description}</p>
                 </div>
               </div>
             );
@@ -542,7 +542,7 @@ function AkreditasiPage() {
             <Award size={24} style={{ color: "#9A2109" }} />
           </div>
           <div>
-            <span className="text-[#F9C784] text-xs font-bold uppercase tracking-widest mb-2 block">
+            <span className="text-[#F9C784] text-sm font-bold uppercase tracking-widest mb-2 block">
               Akreditasi Penjaminan Mutu
             </span>
             <h1 className="text-white text-2xl font-black leading-tight mb-2">
@@ -568,8 +568,8 @@ function AkreditasiPage() {
             >
               A
             </div>
-            <p className="text-xs text-gray-700 font-medium">Nilai Akreditasi</p>
-            <p className="text-xs font-semibold text-green-600 mt-1">Sangat Baik</p>
+            <p className="text-sm text-gray-700 font-medium">Nilai Akreditasi</p>
+            <p className="text-sm font-semibold text-green-600 mt-1">Sangat Baik</p>
           </div>
           <div className="rounded-xl border border-[#E2E8F0] p-5 text-center bg-[#F8FAFC]">
             <div
@@ -578,8 +578,8 @@ function AkreditasiPage() {
             >
               {avg}
             </div>
-            <p className="text-xs text-gray-700 font-medium">Rata-rata Skor</p>
-            <p className="text-xs font-semibold text-gray-600 mt-1">dari 100 poin</p>
+            <p className="text-sm text-gray-700 font-medium">Rata-rata Skor</p>
+            <p className="text-sm font-semibold text-gray-600 mt-1">dari 100 poin</p>
           </div>
           <div className="rounded-xl border border-[#E2E8F0] p-5 text-center bg-[#F8FAFC]">
             <div
@@ -588,8 +588,8 @@ function AkreditasiPage() {
             >
               2025–2028
             </div>
-            <p className="text-xs text-gray-700 font-medium">Masa Berlaku</p>
-            <p className="text-xs font-semibold text-gray-600 mt-1">3 tahun sertifikasi</p>
+            <p className="text-sm text-gray-700 font-medium">Masa Berlaku</p>
+            <p className="text-sm font-semibold text-gray-600 mt-1">3 tahun sertifikasi</p>
           </div>
         </div>
 
@@ -603,7 +603,7 @@ function AkreditasiPage() {
             <p className="text-sm font-semibold text-gray-800 mb-1">
               Penilaian oleh Pengadilan Tinggi Jawa Tengah
             </p>
-            <p className="text-xs text-gray-600 leading-relaxed">
+            <p className="text-sm text-gray-600 leading-relaxed">
               Tim Akreditasi Pengadilan Tinggi Jawa Tengah melakukan asesmen menyeluruh terhadap
               9 komponen kinerja PN Purworejo. Hasilnya menyatakan pengadilan ini memenuhi
               standar akreditasi tertinggi dan layak mendapatkan sertifikat nilai "A".
@@ -617,10 +617,10 @@ function AkreditasiPage() {
           <table className="w-full text-sm">
             <thead>
               <tr style={{ background: "#9A2109" }}>
-                <th className="text-left text-white text-xs font-semibold px-4 py-3 w-10">No</th>
-                <th className="text-left text-white text-xs font-semibold px-4 py-3">Komponen Penilaian</th>
-                <th className="text-center text-white text-xs font-semibold px-4 py-3 w-24">Nilai</th>
-                <th className="text-center text-white text-xs font-semibold px-4 py-3 w-32">Kategori</th>
+                <th className="text-left text-white text-sm font-semibold px-4 py-3 w-10">No</th>
+                <th className="text-left text-white text-sm font-semibold px-4 py-3">Komponen Penilaian</th>
+                <th className="text-center text-white text-sm font-semibold px-4 py-3 w-24">Nilai</th>
+                <th className="text-center text-white text-sm font-semibold px-4 py-3 w-32">Kategori</th>
               </tr>
             </thead>
             <tbody>
@@ -629,7 +629,7 @@ function AkreditasiPage() {
                   key={i}
                   className={`border-t border-[#E2E8F0] ${i % 2 === 0 ? "bg-white" : "bg-[#F8FAFC]"}`}
                 >
-                  <td className="px-4 py-3 text-gray-700 text-xs font-mono">{row.no}</td>
+                  <td className="px-4 py-3 text-gray-700 text-sm font-mono">{row.no}</td>
                   <td className="px-4 py-3 text-gray-700 font-medium">{row.komponen}</td>
                   <td className="px-4 py-3 text-center">
                     <span
@@ -641,7 +641,7 @@ function AkreditasiPage() {
                   </td>
                   <td className="px-4 py-3 text-center">
                     <span
-                      className={`inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full ${
+                      className={`inline-flex items-center gap-1 text-sm font-semibold px-2.5 py-1 rounded-full ${
                         row.nilai >= 88
                           ? "bg-green-50 text-green-700"
                           : "bg-blue-50 text-blue-700"
@@ -664,7 +664,7 @@ function AkreditasiPage() {
                   {avg}
                 </td>
                 <td className="px-4 py-3 text-center">
-                  <span className="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-800">
+                  <span className="inline-flex items-center gap-1 text-sm font-bold px-2.5 py-1 rounded-full bg-green-100 text-green-800">
                     <CheckCircle2 size={11} /> Sangat Baik
                   </span>
                 </td>
@@ -736,7 +736,7 @@ function AmpuhPage() {
             A
           </div>
           <div>
-            <span className="text-[#F9C784] text-xs font-bold uppercase tracking-widest mb-2 block">
+            <span className="text-[#F9C784] text-sm font-bold uppercase tracking-widest mb-2 block">
               Program Unggulan
             </span>
             <h1 className="text-white text-2xl font-black leading-tight mb-1">
@@ -770,8 +770,8 @@ function AmpuhPage() {
               >
                 {item.value}
               </div>
-              <p className="text-xs font-semibold text-gray-700">{item.label}</p>
-              <p className="text-xs text-gray-600">{item.sub}</p>
+              <p className="text-sm font-semibold text-gray-700">{item.label}</p>
+              <p className="text-sm text-gray-600">{item.sub}</p>
             </div>
           ))}
         </div>
@@ -781,10 +781,10 @@ function AmpuhPage() {
           className="rounded-xl p-5 mb-7 border border-[#E2E8F0]"
           style={{ background: "#F8FAFC" }}
         >
-          <h3 className="text-sm font-bold text-gray-900 mb-2 flex items-center gap-2">
+          <h2 className="text-sm font-bold text-gray-900 mb-2 flex items-center gap-2">
             <BookOpen size={15} style={{ color: "#9A2109" }} />
             Tentang Program AMPUH
-          </h3>
+          </h2>
           <p className="text-sm text-gray-600 leading-relaxed mb-3">
             Program AMPUH (Aktualisasi Menuju Pengadilan Unggul &amp; Humanis) lahir dari
             komitmen Pengadilan Negeri Purworejo untuk terus meningkatkan kualitas layanan
@@ -816,7 +816,7 @@ function AmpuhPage() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-gray-900 mb-1">{prog.title}</p>
-                  <p className="text-xs text-gray-700 leading-relaxed">{prog.description}</p>
+                  <p className="text-sm text-gray-700 leading-relaxed">{prog.description}</p>
                 </div>
               </div>
             );

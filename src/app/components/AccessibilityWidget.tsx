@@ -234,7 +234,7 @@ export function AccessibilityWidget() {
             style={{ backgroundColor: "#9A2109" }}
           >
             <div className="flex items-center gap-2">
-              <button
+              <button aria-label="Aksi"
                 onClick={() => setOpen(false)}
                 className="text-white/70 hover:text-white transition-colors"
               >
@@ -245,9 +245,9 @@ export function AccessibilityWidget() {
                 Fitur Aksesibilitas
               </span>
             </div>
-            <button
+            <button aria-label="Aksi"
               onClick={reset}
-              className="flex items-center gap-1 text-white/70 hover:text-white text-xs transition-colors"
+              className="flex items-center gap-1 text-white/70 hover:text-white text-sm transition-colors"
               style={{ fontWeight: 500 }}
             >
               <RotateCcw size={13} />
@@ -259,18 +259,18 @@ export function AccessibilityWidget() {
           <div className="flex-1 overflow-y-auto p-4 space-y-5">
             {/* ── UKURAN TEKS ── */}
             <div>
-              <p className="text-gray-600 text-[11px] tracking-widest mb-2.5" style={{ fontWeight: 700 }}>
+              <p className="text-gray-600 text-sm tracking-widest mb-2.5" style={{ fontWeight: 700 }}>
                 UKURAN TEKS
               </p>
               <div className="flex items-center gap-1.5">
-                <button
+                <button aria-label="Aksi"
                   onClick={() => update({ fontSize: Math.max(0, settings.fontSize - 1) as any })}
                   className="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-700 hover:border-[#9A2109] hover:text-[#9A2109] transition-colors"
                 >
                   <ZoomOut size={15} />
                 </button>
                 {fontSizeLabels.map((lbl, i) => (
-                  <button
+                  <button aria-label="Aksi"
                     key={lbl}
                     onClick={() => update({ fontSize: i as any })}
                     className={`flex-1 h-9 rounded-lg border text-sm transition-colors ${
@@ -283,7 +283,7 @@ export function AccessibilityWidget() {
                     {lbl}
                   </button>
                 ))}
-                <button
+                <button aria-label="Aksi"
                   onClick={() => update({ fontSize: Math.min(4, settings.fontSize + 1) as any })}
                   className="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-700 hover:border-[#9A2109] hover:text-[#9A2109] transition-colors"
                 >
@@ -294,10 +294,10 @@ export function AccessibilityWidget() {
 
             {/* ── TEKS KE SUARA ── */}
             <div>
-              <p className="text-gray-600 text-[11px] tracking-widest mb-2.5" style={{ fontWeight: 700 }}>
+              <p className="text-gray-600 text-sm tracking-widest mb-2.5" style={{ fontWeight: 700 }}>
                 TEKS KE SUARA
               </p>
-              <button
+              <button aria-label="Aksi"
                 onClick={toggleTTS}
                 className={`w-full h-11 rounded-xl border flex items-center justify-center gap-2 text-sm transition-colors ${
                   ttsActive
@@ -322,7 +322,7 @@ export function AccessibilityWidget() {
 
             {/* ── TAMPILAN & NAVIGASI ── */}
             <div>
-              <p className="text-gray-600 text-[11px] tracking-widest mb-2.5" style={{ fontWeight: 700 }}>
+              <p className="text-gray-600 text-sm tracking-widest mb-2.5" style={{ fontWeight: 700 }}>
                 TAMPILAN & NAVIGASI
               </p>
               <div className="grid grid-cols-2 gap-2">
@@ -358,7 +358,7 @@ export function AccessibilityWidget() {
                     label: "Masker Baca",
                   },
                 ].map(({ key, icon: Icon, label }) => (
-                  <button
+                  <button aria-label="Aksi"
                     key={key}
                     onClick={() => update({ [key]: !settings[key] })}
                     className={`flex flex-col items-center justify-center gap-1.5 h-20 rounded-xl border transition-colors ${
@@ -368,7 +368,7 @@ export function AccessibilityWidget() {
                     }`}
                   >
                     <Icon size={22} />
-                    <span className="text-xs text-center leading-tight" style={{ fontWeight: 600 }}>
+                    <span className="text-sm text-center leading-tight" style={{ fontWeight: 600 }}>
                       {label}
                     </span>
                   </button>
@@ -379,7 +379,7 @@ export function AccessibilityWidget() {
 
           {/* Panduan Penggunaan */}
           <div className="flex-shrink-0 border-t border-gray-100">
-            <button
+            <button aria-label="Aksi"
               onClick={() => setShowGuide(!showGuide)}
               className="w-full px-4 py-3 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
             >
@@ -399,10 +399,10 @@ export function AccessibilityWidget() {
               <div className="px-4 pb-4 space-y-3 max-h-[300px] overflow-y-auto bg-gray-50">
                 {/* Cara Penggunaan Screen Reader */}
                 <div className="bg-white rounded-xl p-3 border border-gray-100">
-                  <h4 className="text-xs text-gray-700 mb-2" style={{ fontWeight: 700 }}>
+                  <h3 className="text-sm text-gray-700 mb-2" style={{ fontWeight: 700 }}>
                     Cara Penggunaan Teks ke Suara (Screen Reader)
-                  </h4>
-                  <p className="text-xs text-gray-600 leading-relaxed">
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     Tandai atau blok teks atau kalimat yang ingin didengarkan dengan kursor. Kemudian klik tombol
                     <span className="text-[#9A2109] mx-1" style={{ fontWeight: 600 }}>Aktifkan TTS</span>
                     pada widget aksesibilitas. Tunggu beberapa saat hingga loading pembacaan pada sistem selesai.
@@ -412,10 +412,10 @@ export function AccessibilityWidget() {
 
                 {/* Tombol Pintas */}
                 <div className="bg-white rounded-xl p-3 border border-gray-100">
-                  <h4 className="text-xs text-gray-700 mb-2" style={{ fontWeight: 700 }}>
+                  <h3 className="text-sm text-gray-700 mb-2" style={{ fontWeight: 700 }}>
                     Tombol Pintas Keyboard
-                  </h4>
-                  <p className="text-xs text-gray-700 mb-3 leading-relaxed">
+                  </h3>
+                  <p className="text-sm text-gray-700 mb-3 leading-relaxed">
                     Selain tombol pada widget, Anda dapat memanfaatkan tombol pintas pada keyboard.
                     Fungsi ini berjalan efektif di browser Chrome dan Mozilla Firefox.
                   </p>
@@ -431,10 +431,10 @@ export function AccessibilityWidget() {
                       { keys: "Alt + H / J / K", desc: "Mengganti warna kontras tinggi untuk mempermudah membaca" },
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-2">
-                        <kbd className="flex-shrink-0 px-2 py-1 rounded bg-gray-100 border border-gray-200 text-[10px] text-gray-700" style={{ fontWeight: 700, fontFamily: "monospace" }}>
+                        <kbd className="flex-shrink-0 px-2 py-1 rounded bg-gray-100 border border-gray-200 text-sm text-gray-700" style={{ fontWeight: 700, fontFamily: "monospace" }}>
                           {item.keys}
                         </kbd>
-                        <span className="text-xs text-gray-600 leading-tight pt-0.5">
+                        <span className="text-sm text-gray-600 leading-tight pt-0.5">
                           {item.desc}
                         </span>
                       </div>
@@ -444,7 +444,7 @@ export function AccessibilityWidget() {
 
                 {/* Catatan */}
                 <div className="bg-amber-50 border border-amber-200 rounded-xl p-3">
-                  <p className="text-xs text-amber-800 leading-relaxed">
+                  <p className="text-sm text-amber-800 leading-relaxed">
                     <span style={{ fontWeight: 700 }}>Catatan:</span> Pastikan browser Anda mengizinkan penggunaan
                     tombol pintas keyboard dan fitur text-to-speech untuk pengalaman aksesibilitas yang optimal.
                   </p>
@@ -455,7 +455,7 @@ export function AccessibilityWidget() {
 
           {/* Footer */}
           <div className="flex-shrink-0 px-4 py-3 border-t border-gray-100">
-            <p className="text-center text-gray-600 text-xs">
+            <p className="text-center text-gray-600 text-sm">
               Pengaturan tersimpan otomatis
             </p>
           </div>
@@ -472,7 +472,7 @@ export function AccessibilityWidget() {
       )}
 
       {/* Trigger Button */}
-      <button
+      <button aria-label="Aksi"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         onClick={() => setOpen(true)}

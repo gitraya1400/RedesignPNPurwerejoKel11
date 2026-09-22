@@ -149,7 +149,7 @@ function AlamatContent() {
               {card.icon}
             </div>
             <div>
-              <p className="text-xs font-semibold text-slate-600 uppercase tracking-wide mb-1">
+              <p className="text-sm font-semibold text-slate-600 uppercase tracking-wide mb-1">
                 {card.label}
               </p>
               <p className="text-sm font-medium text-slate-700 whitespace-pre-line leading-relaxed">
@@ -181,7 +181,7 @@ function AlamatContent() {
             <p className="text-slate-600 font-semibold text-sm text-center px-4">
               Peta Lokasi
             </p>
-            <p className="text-slate-700 text-xs text-center px-8">
+            <p className="text-slate-700 text-sm text-center px-8">
               Jl. Tentara Pelajar Km. 4, Purworejo
             </p>
           </div>
@@ -344,7 +344,7 @@ function SosialMediaContent() {
                 <p className="text-sm text-slate-700 truncate">{platform.handle}</p>
               </div>
               <span
-                className={`text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap ${platform.badgeClass}`}
+                className={`text-sm font-semibold px-2.5 py-1 rounded-full whitespace-nowrap ${platform.badgeClass}`}
               >
                 {platform.followers} pengikut
               </span>
@@ -462,7 +462,7 @@ function PengaduanContent({
                 Terima kasih, <strong>{form.nama}</strong>. Pengaduan Anda telah kami terima dan akan ditindaklanjuti sesuai prosedur yang berlaku.
               </p>
             </div>
-            <button
+            <button aria-label="Aksi"
               onClick={handleReset}
               className="mt-2 px-5 py-2 rounded-full border border-[#9A2109] text-[#9A2109] text-sm font-semibold hover:bg-[#9A2109]/5 transition-colors"
             >
@@ -536,12 +536,12 @@ function PengaduanContent({
                 onChange={(e) => setForm((f) => ({ ...f, uraian: e.target.value }))}
                 className="w-full px-4 py-2.5 rounded-xl border border-[#E2E8F0] text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#9A2109]/30 focus:border-[#9A2109] transition resize-none"
               />
-              <p className="text-right text-xs text-slate-600 mt-1">
+              <p className="text-right text-sm text-slate-600 mt-1">
                 {form.uraian.length}/{maxUraian} karakter
               </p>
             </div>
 
-            <button
+            <button aria-label="Aksi"
               type="submit"
               className="flex items-center gap-2 px-7 py-3 rounded-full bg-[#9A2109] text-white text-sm font-bold hover:bg-[#7d1b07] transition-colors shadow-md hover:shadow-lg"
             >
@@ -569,13 +569,13 @@ function PengaduanContent({
                 </div>
                 <span className="text-sm font-bold text-slate-700">{ch.name}</span>
               </div>
-              <p className="text-xs text-slate-700 leading-relaxed">{ch.desc}</p>
+              <p className="text-sm text-slate-700 leading-relaxed">{ch.desc}</p>
               {ch.url && ch.linkLabel && (
                 <a
                   href={ch.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-auto inline-flex items-center gap-1.5 text-xs font-semibold text-[#9A2109] hover:underline"
+                  className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-[#9A2109] hover:underline"
                 >
                   {ch.linkLabel}
                   <ExternalLink size={12} />

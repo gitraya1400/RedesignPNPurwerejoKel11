@@ -139,7 +139,7 @@ export function Hero({ onExternalLink }: HeroProps) {
               animating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
             }`}
           >
-            <span className="inline-flex items-center gap-2 bg-white/15 text-[#F9C784] text-xs px-4 py-1.5 rounded-full mb-4 border border-white/20 backdrop-blur-sm">
+            <span className="inline-flex items-center gap-2 bg-white/15 text-[#F9C784] text-sm px-4 py-1.5 rounded-full mb-4 border border-white/20 backdrop-blur-sm">
               <Scale size={12} />
               {slide.badge}
             </span>
@@ -162,7 +162,7 @@ export function Hero({ onExternalLink }: HeroProps) {
 
             {current === 0 ? (
               <div className="flex flex-wrap items-center gap-3">
-                <button
+                <button aria-label="Aksi"
                   onClick={() => scrollToSection('faq-section')}
                   className="inline-flex items-center gap-2 bg-[#9A2109]/30 text-white border-2 border-white/50 px-6 py-3 rounded-full hover:bg-[#9A2109]/50 hover:border-white transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-0.5 backdrop-blur-sm"
                   style={{ fontWeight: 700 }}
@@ -170,7 +170,7 @@ export function Hero({ onExternalLink }: HeroProps) {
                   <HelpCircle size={18} />
                   FAQ
                 </button>
-                <button
+                <button aria-label="Aksi"
                   onClick={() => scrollToSection('jadwal-sidang-section')}
                   className="inline-flex items-center gap-2 bg-white text-[#9A2109] px-6 py-3 rounded-full hover:bg-[#F9C784] transition-all duration-200 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
                   style={{ fontWeight: 700 }}
@@ -180,7 +180,7 @@ export function Hero({ onExternalLink }: HeroProps) {
                 </button>
               </div>
             ) : (
-              <button
+              <button aria-label="Aksi"
                 onClick={() =>
                   slide.ctaExternal
                     ? onExternalLink("#", slide.title)
@@ -209,7 +209,7 @@ export function Hero({ onExternalLink }: HeroProps) {
                   </div>
                   <div>
                     <p className="text-white text-sm" style={{ fontWeight: 700 }}>Pencarian</p>
-                    <p className="text-white/60 text-xs">Temukan informasi dengan cepat</p>
+                    <p className="text-white/60 text-sm">Temukan informasi dengan cepat</p>
                   </div>
                 </div>
 
@@ -238,7 +238,7 @@ export function Hero({ onExternalLink }: HeroProps) {
         {/* Carousel Dots */}
         <div className="flex items-center justify-center gap-2 mt-12">
           {slides.map((_, i) => (
-            <button
+            <button aria-label="Aksi"
               key={i}
               onClick={() => goTo(i)}
               className={`rounded-full transition-all duration-300 ${
@@ -253,7 +253,7 @@ export function Hero({ onExternalLink }: HeroProps) {
 
       {/* Scroll cue */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
-        <span className="text-white/50 text-xs">Scroll</span>
+        <span className="text-white/50 text-sm">Scroll</span>
         <div className="w-0.5 h-6 bg-gradient-to-b from-white/40 to-transparent" />
       </div>
     </section>

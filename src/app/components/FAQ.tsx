@@ -109,7 +109,7 @@ export function FAQ() {
 
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 bg-[#FFF1F1] border border-[#9A2109]/15 text-[#9A2109] text-xs px-4 py-1.5 rounded-full mb-3" style={{ fontWeight: 600 }}>
+          <div className="inline-flex items-center gap-2 bg-[#FFF1F1] border border-[#9A2109]/15 text-[#9A2109] text-sm px-4 py-1.5 rounded-full mb-3" style={{ fontWeight: 600 }}>
             <HelpCircle size={13} />PERTANYAAN YANG SERING DIAJUKAN
           </div>
           <h2 className="text-gray-900 mb-2" style={{ fontWeight: 800, fontSize: "clamp(1.4rem,3vw,1.9rem)" }}>
@@ -122,9 +122,9 @@ export function FAQ() {
 
         {/* Category filter pills */}
         <div className="flex flex-wrap justify-center gap-2 mb-8">
-          <button
+          <button aria-label="Aksi"
             onClick={() => setActiveCategory(null)}
-            className={`text-xs px-4 py-2 rounded-full border transition-all ${
+            className={`text-sm px-4 py-2 rounded-full border transition-all ${
               activeCategory === null
                 ? "bg-[#9A2109] text-white border-[#9A2109]"
                 : "bg-white text-gray-600 border-gray-200 hover:border-[#9A2109] hover:text-[#9A2109]"
@@ -134,10 +134,10 @@ export function FAQ() {
             Semua Topik
           </button>
           {FAQ_ITEMS.map(cat => (
-            <button
+            <button aria-label="Aksi"
               key={cat.category}
               onClick={() => setActiveCategory(cat.category === activeCategory ? null : cat.category)}
-              className={`text-xs px-4 py-2 rounded-full border transition-all ${
+              className={`text-sm px-4 py-2 rounded-full border transition-all ${
                 activeCategory === cat.category
                   ? "bg-[#9A2109] text-white border-[#9A2109]"
                   : "bg-white text-gray-600 border-gray-200 hover:border-[#9A2109] hover:text-[#9A2109]"
@@ -159,7 +159,7 @@ export function FAQ() {
                   style={{ backgroundColor: "#9A2109" }}>
                   <cat.icon size={13} className="text-white" />
                 </div>
-                <p className="text-gray-700 text-xs tracking-wide uppercase" style={{ fontWeight: 700 }}>
+                <p className="text-gray-700 text-sm tracking-wide uppercase" style={{ fontWeight: 700 }}>
                   {cat.category}
                 </p>
                 <div className="flex-1 h-px bg-gray-200" />
@@ -176,7 +176,7 @@ export function FAQ() {
                         isOpen ? "border-[#9A2109]/25 shadow-md" : "border-gray-100 hover:border-gray-200"
                       }`}
                     >
-                      <button
+                      <button aria-label="Aksi"
                         className="w-full flex items-center justify-between px-5 py-4 text-left gap-4"
                         onClick={() => toggle(key)}
                       >
@@ -205,7 +205,7 @@ export function FAQ() {
                           {item.link && (
                             <Link
                               to={item.link.to}
-                              className="inline-flex items-center gap-1.5 mt-3 text-xs text-[#9A2109] hover:underline"
+                              className="inline-flex items-center gap-1.5 mt-3 text-sm text-[#9A2109] hover:underline"
                               style={{ fontWeight: 600 }}
                             >
                               {item.link.label}

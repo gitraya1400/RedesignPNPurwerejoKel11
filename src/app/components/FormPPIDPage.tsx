@@ -42,10 +42,10 @@ function FormInput({
         )}
       </div>
       {state === "error" && errorMsg && (
-        <p className="text-xs text-[#DC2626] mt-1 flex items-center gap-1"><AlertCircle size={11} />{errorMsg}</p>
+        <p className="text-sm text-[#DC2626] mt-1 flex items-center gap-1"><AlertCircle size={11} />{errorMsg}</p>
       )}
       {helperMsg && state !== "error" && (
-        <p className="text-xs text-[#64748B] mt-1">{helperMsg}</p>
+        <p className="text-sm text-[#64748B] mt-1">{helperMsg}</p>
       )}
     </div>
   );
@@ -96,7 +96,7 @@ export function FormPPIDPage() {
       {/* Header */}
       <div className="bg-white border-b border-[#E2E8F0]">
         <div className="max-w-[1440px] mx-auto px-8 pt-24 pb-6">
-          <nav className="flex items-center gap-1.5 text-xs text-[#64748B] mb-5">
+          <nav className="flex items-center gap-1.5 text-sm text-[#64748B] mb-5">
             <Link to="/" className="hover:text-[#9A2109] transition-colors">Beranda</Link>
             <ChevronRight size={12} />
             <span className="hover:text-[#9A2109] cursor-pointer transition-colors">Formulir Layanan</span>
@@ -116,13 +116,13 @@ export function FormPPIDPage() {
             <Shield size={18} className="text-[#1D4ED8]" />
           </div>
           <div>
-            <p className="text-xs font-bold text-[#1D4ED8] uppercase tracking-wide mb-0.5">Jaminan SLA & Keamanan Data</p>
+            <p className="text-sm font-bold text-[#1D4ED8] uppercase tracking-wide mb-0.5">Jaminan SLA & Keamanan Data</p>
             <p className="text-sm text-[#1E40AF] leading-relaxed">
               Sesuai <strong>SK KMA No. 1-144/KMA/SK/I/2011</strong>, permohonan informasi Anda akan diproses maksimal dalam{" "}
               <strong>10 (sepuluh) hari kerja</strong>. Formulir ini terenkripsi dan resmi dicatat pada register PPID PN Purworejo.
             </p>
           </div>
-          <div className="flex items-center gap-1.5 text-xs text-[#1D4ED8] font-semibold bg-white border border-[#BFDBFE] px-3 py-1.5 rounded-full flex-shrink-0">
+          <div className="flex items-center gap-1.5 text-sm text-[#1D4ED8] font-semibold bg-white border border-[#BFDBFE] px-3 py-1.5 rounded-full flex-shrink-0">
             <Clock size={12} />
             10 Hari Kerja
           </div>
@@ -138,7 +138,7 @@ export function FormPPIDPage() {
                 <div className="w-8 h-8 rounded-full bg-[#9A2109] text-white text-sm font-bold flex items-center justify-center">1</div>
                 <div>
                   <h2 className="text-sm font-bold text-[#1E293B]">Data Diri Pemohon</h2>
-                  <p className="text-xs text-[#64748B]">Isi dengan data sesuai identitas resmi</p>
+                  <p className="text-sm text-[#64748B]">Isi dengan data sesuai identitas resmi</p>
                 </div>
               </div>
               <div className="px-7 py-6 space-y-5">
@@ -216,7 +216,7 @@ export function FormPPIDPage() {
                   />
                 </div>
                 {(emailState === "valid" || waState === "valid") && (
-                  <p className="text-xs text-[#64748B] flex items-center gap-1.5 -mt-2">
+                  <p className="text-sm text-[#64748B] flex items-center gap-1.5 -mt-2">
                     <Info size={11} className="text-[#94A3B8]" />
                     Nomor tiket dan perkembangan permohonan akan dikirimkan ke kontak ini.
                   </p>
@@ -238,7 +238,7 @@ export function FormPPIDPage() {
                     <div className="flex items-center gap-3 px-4 py-3 bg-[#F0FDF4] border border-[#86EFAC] rounded-xl">
                       <CheckCircle2 size={16} className="text-[#16A34A] flex-shrink-0" />
                       <span className="text-sm text-[#15803D] font-medium flex-1 truncate">{fileName}</span>
-                      <button onClick={() => setFileName(null)} className="text-[#94A3B8] hover:text-[#DC2626] transition-colors">
+                      <button aria-label="Aksi" onClick={() => setFileName(null)} className="text-[#94A3B8] hover:text-[#DC2626] transition-colors">
                         <X size={14} />
                       </button>
                     </div>
@@ -253,7 +253,7 @@ export function FormPPIDPage() {
                       <p className="text-sm font-medium text-[#475569] group-hover:text-[#9A2109] transition-colors">
                         Klik atau seret file ke sini
                       </p>
-                      <p className="text-xs text-[#94A3B8]">Format PDF, JPG, PNG (Maks 2MB)</p>
+                      <p className="text-sm text-[#94A3B8]">Format PDF, JPG, PNG (Maks 2MB)</p>
                     </div>
                   )}
                 </div>
@@ -266,7 +266,7 @@ export function FormPPIDPage() {
                 <div className="w-8 h-8 rounded-full bg-[#9A2109] text-white text-sm font-bold flex items-center justify-center">2</div>
                 <div>
                   <h2 className="text-sm font-bold text-[#1E293B]">Informasi yang Diminta</h2>
-                  <p className="text-xs text-[#64748B]">Jelaskan secara spesifik informasi yang dibutuhkan</p>
+                  <p className="text-sm text-[#64748B]">Jelaskan secara spesifik informasi yang dibutuhkan</p>
                 </div>
               </div>
               <div className="px-7 py-6 space-y-5">
@@ -286,7 +286,7 @@ export function FormPPIDPage() {
                     }`}
                   />
                   <div className="flex justify-end mt-1">
-                    <span className={`text-xs ${rincian.length > 450 ? "text-[#DC2626]" : "text-[#94A3B8]"}`}>
+                    <span className={`text-sm ${rincian.length > 450 ? "text-[#DC2626]" : "text-[#94A3B8]"}`}>
                       {rincian.length}/500 karakter
                     </span>
                   </div>
@@ -342,14 +342,14 @@ export function FormPPIDPage() {
 
             {/* Action Bar */}
             <div className="bg-white rounded-2xl border border-[#E2E8F0] p-5 flex items-center justify-between shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)]">
-              <button
+              <button aria-label="Aksi"
                 onClick={() => setShowReset(true)}
                 className="flex items-center gap-2 text-sm text-[#DC2626] hover:text-[#B91C1C] font-medium transition-colors"
               >
                 <Trash2 size={15} />
                 Kosongkan Formulir
               </button>
-              <button
+              <button aria-label="Aksi"
                 onClick={handleSubmit}
                 disabled={!canSubmit}
                 className={`flex items-center gap-2 px-8 py-3 rounded-full text-sm font-bold transition-all ${
@@ -371,7 +371,7 @@ export function FormPPIDPage() {
                 <div className="w-8 h-8 rounded-lg bg-[#FFF1F1] flex items-center justify-center">
                   <Info size={16} className="text-[#9A2109]" />
                 </div>
-                <h3 className="text-sm font-bold text-[#1E293B]">Petunjuk & Ketentuan Layanan</h3>
+                <h2 className="text-sm font-bold text-[#1E293B]">Petunjuk & Ketentuan Layanan</h2>
               </div>
 
               <div className="space-y-4">
@@ -393,10 +393,10 @@ export function FormPPIDPage() {
                   },
                 ].map(({ num, icon: Icon, text }) => (
                   <div key={num} className="flex gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#9A2109] text-white text-[10px] font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-6 h-6 rounded-full bg-[#9A2109] text-white text-sm font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
                       {num}
                     </div>
-                    <p className="text-xs text-[#475569] leading-relaxed">{text}</p>
+                    <p className="text-sm text-[#475569] leading-relaxed">{text}</p>
                   </div>
                 ))}
               </div>
@@ -405,9 +405,9 @@ export function FormPPIDPage() {
                 <div className="bg-[#F8FAFC] rounded-xl p-4 border border-[#E2E8F0]">
                   <div className="flex items-center gap-2 mb-2">
                     <Phone size={13} className="text-[#9A2109]" />
-                    <p className="text-xs font-bold text-[#1E293B]">Butuh Bantuan Langsung?</p>
+                    <p className="text-sm font-bold text-[#1E293B]">Butuh Bantuan Langsung?</p>
                   </div>
-                  <p className="text-xs text-[#64748B] leading-relaxed mb-2">
+                  <p className="text-sm text-[#64748B] leading-relaxed mb-2">
                     Hubungi Petugas PTSP via WhatsApp Layanan:
                   </p>
                   <a
@@ -422,7 +422,7 @@ export function FormPPIDPage() {
 
             {/* Progress tracker */}
             <div className="bg-white rounded-2xl border border-[#E2E8F0] p-5 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)]">
-              <p className="text-xs font-bold text-[#1E293B] uppercase tracking-wide mb-4">Kelengkapan Formulir</p>
+              <p className="text-sm font-bold text-[#1E293B] uppercase tracking-wide mb-4">Kelengkapan Formulir</p>
               <div className="space-y-2.5">
                 {[
                   { label: "Kategori Pemohon", done: true },
@@ -443,12 +443,12 @@ export function FormPPIDPage() {
                         : <div className="w-1.5 h-1.5 rounded-full bg-[#CBD5E1]" />
                       }
                     </div>
-                    <span className={`text-xs ${done ? "text-[#15803D] font-medium" : "text-[#94A3B8]"}`}>{label}</span>
+                    <span className={`text-sm ${done ? "text-[#15803D] font-medium" : "text-[#94A3B8]"}`}>{label}</span>
                   </div>
                 ))}
               </div>
               <div className="mt-4 pt-3 border-t border-[#F1F5F9]">
-                <div className="flex justify-between text-xs mb-1.5">
+                <div className="flex justify-between text-sm mb-1.5">
                   <span className="text-[#64748B]">Kelengkapan</span>
                   <span className="font-bold text-[#9A2109]">
                     {[true, nikState === "valid", namaLengkap.length > 2, emailState === "valid", waState === "valid", !!fileName, rincian.length > 20, agreed].filter(Boolean).length}/8
@@ -481,13 +481,13 @@ export function FormPPIDPage() {
               Apakah Anda yakin ingin mengulang formulir dari awal? Data yang diketik akan hilang dan tidak dapat dikembalikan.
             </p>
             <div className="flex gap-3">
-              <button
+              <button aria-label="Aksi"
                 onClick={() => setShowReset(false)}
                 className="flex-1 py-2.5 border border-[#E2E8F0] rounded-full text-sm font-semibold text-[#475569] hover:bg-[#F8FAFC] transition-colors"
               >
                 Batal
               </button>
-              <button
+              <button aria-label="Aksi"
                 onClick={handleReset}
                 className="flex-1 py-2.5 bg-[#DC2626] hover:bg-[#B91C1C] text-white rounded-full text-sm font-semibold transition-colors"
               >
@@ -512,14 +512,14 @@ export function FormPPIDPage() {
             </div>
             <div className="px-7 py-6">
               <div className="bg-[#F8FAFC] border border-[#E2E8F0] rounded-xl p-4 text-center mb-5">
-                <p className="text-xs text-[#64748B] font-semibold uppercase tracking-wide mb-2">Nomor Tiket Registrasi</p>
+                <p className="text-sm text-[#64748B] font-semibold uppercase tracking-wide mb-2">Nomor Tiket Registrasi</p>
                 <p className="text-xl font-bold text-[#9A2109] tracking-wider">{ticketNo}</p>
               </div>
-              <p className="text-xs text-[#64748B] text-center leading-relaxed mb-6">
+              <p className="text-sm text-[#64748B] text-center leading-relaxed mb-6">
                 Simpan nomor tiket ini untuk memantau status permohonan Anda. Permohonan akan diproses dalam <strong className="text-[#1E293B]">10 hari kerja</strong>.
               </p>
               <div className="flex gap-3">
-                <button
+                <button aria-label="Aksi"
                   onClick={handleCopy}
                   className={`flex-1 flex items-center justify-center gap-2 py-2.5 border rounded-full text-sm font-semibold transition-all ${
                     copied
@@ -530,7 +530,7 @@ export function FormPPIDPage() {
                   {copied ? <CheckCircle2 size={14} /> : <Copy size={14} />}
                   {copied ? "Tersalin!" : "Salin Nomor Tiket"}
                 </button>
-                <button
+                <button aria-label="Aksi"
                   className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-[#9A2109] hover:bg-[#7A1A07] text-white rounded-full text-sm font-semibold transition-colors"
                 >
                   <Download size={14} />

@@ -28,7 +28,7 @@ function Label({ text, required }: { text: string; required?: boolean }) {
 function FieldError({ msg }: { msg?: string }) {
   if (!msg) return null;
   return (
-    <p className="text-xs text-red-500 mt-1 flex items-center gap-1">
+    <p className="text-sm text-red-500 mt-1 flex items-center gap-1">
       <AlertCircle size={12} />{msg}
     </p>
   );
@@ -82,19 +82,19 @@ function FileUpload({ label, required, hint, value, onChange, accept = "*" }: {
   return (
     <div>
       <Label text={label} required={required} />
-      {hint && <p className="text-xs text-gray-600 mb-2">{hint}</p>}
+      {hint && <p className="text-sm text-gray-600 mb-2">{hint}</p>}
       {value.file ? (
         <div className="flex items-center gap-3 border border-green-200 bg-green-50 rounded-xl px-4 py-3">
           <FileText size={16} className="text-green-600 flex-shrink-0" />
           <span className="flex-1 text-sm text-green-700 truncate" style={{ fontWeight: 500 }}>{value.file.name}</span>
-          <button type="button" onClick={() => { onChange(emptyFile()); if (ref.current) ref.current.value = ""; }} className="text-green-400 hover:text-green-700 transition-colors"><X size={15} /></button>
+          <button aria-label="Aksi" type="button" onClick={() => { onChange(emptyFile()); if (ref.current) ref.current.value = ""; }} className="text-green-400 hover:text-green-700 transition-colors"><X size={15} /></button>
         </div>
       ) : (
-        <button type="button" onClick={() => ref.current?.click()}
+        <button aria-label="Aksi" type="button" onClick={() => ref.current?.click()}
           className={`w-full border-2 border-dashed rounded-xl px-4 py-5 flex flex-col items-center gap-2 hover:border-[#9A2109] hover:bg-[#FFF8F7] transition-colors ${value.error ? "border-red-400 bg-red-50" : "border-gray-200 bg-gray-50"}`}>
           <Upload size={20} className={value.error ? "text-red-400" : "text-gray-600"} />
           <span className="text-sm text-gray-700">Klik untuk upload file</span>
-          <span className="text-xs text-gray-600">Maks. 10 MB</span>
+          <span className="text-sm text-gray-600">Maks. 10 MB</span>
         </button>
       )}
       <FieldError msg={value.error} />
@@ -111,7 +111,7 @@ function SelectField({ label, required, options, value, onChange, placeholder, e
   return (
     <div className="relative">
       <Label text={label} required={required} />
-      <button type="button" onClick={() => setOpen(!open)}
+      <button aria-label="Aksi" type="button" onClick={() => setOpen(!open)}
         className={`w-full flex items-center justify-between px-4 py-3 rounded-xl border text-sm text-left transition-colors ${error ? "border-red-400 bg-red-50" : "border-gray-200 bg-gray-50 hover:border-[#9A2109]"}`}>
         <span className={value ? "text-gray-800" : "text-gray-600"}>{value || placeholder || "Pilih..."}</span>
         <ChevronDown size={15} className={`text-gray-600 transition-transform ${open ? "rotate-180" : ""}`} />
@@ -121,7 +121,7 @@ function SelectField({ label, required, options, value, onChange, placeholder, e
           <div className="fixed inset-0 z-10" onClick={() => setOpen(false)} />
           <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-xl border border-gray-100 z-20 overflow-hidden">
             {options.map(opt => (
-              <button key={opt} type="button" onClick={() => { onChange(opt); setOpen(false); }}
+              <button aria-label="Aksi" key={opt} type="button" onClick={() => { onChange(opt); setOpen(false); }}
                 className={`w-full text-left px-4 py-3 text-sm hover:bg-[#FFF1F1] hover:text-[#9A2109] transition-colors ${value === opt ? "bg-[#FFF1F1] text-[#9A2109]" : "text-gray-700"}`}
                 style={{ fontWeight: value === opt ? 600 : 400 }}>
                 {opt}
@@ -229,7 +229,7 @@ export function PosbakumPage() {
       {/* Hero banner */}
       <div className="pt-24 pb-10" style={{ background: "linear-gradient(135deg,#9A2109 0%,#7B1A07 60%,#4A0E04 100%)" }}>
         <div className="max-w-6xl mx-auto px-4">
-          <nav className="flex items-center gap-1.5 text-xs mb-5 flex-wrap">
+          <nav className="flex items-center gap-1.5 text-sm mb-5 flex-wrap">
             <Link to="/" className="text-white/70 hover:text-white transition-colors">Beranda</Link>
             <ChevronRight size={11} className="text-white/40 flex-shrink-0" />
             <span className="text-white/50">Layanan Hukum</span>
@@ -243,7 +243,7 @@ export function PosbakumPage() {
               <Scale size={24} className="text-[#F9C784]" />
             </div>
             <div>
-              <p className="text-[#F9C784] text-xs mb-1 tracking-wide" style={{ fontWeight: 600 }}>HUBUNGI KAMI · BANTUAN HUKUM (POSBAKUM)</p>
+              <p className="text-[#F9C784] text-sm mb-1 tracking-wide" style={{ fontWeight: 600 }}>HUBUNGI KAMI · BANTUAN HUKUM (POSBAKUM)</p>
               <h1 className="text-white leading-tight" style={{ fontSize: "clamp(1.4rem,3vw,1.8rem)", fontWeight: 800 }}>
                 Pos Bantuan Hukum (Posbakum) Online
               </h1>
@@ -279,12 +279,12 @@ export function PosbakumPage() {
                   </div>
                   <div>
                     <p className="text-white text-sm" style={{ fontWeight: 700 }}>Formulir Posbakum Online</p>
-                    <p className="text-white/70 text-xs">Sampaikan permohonan Anda dan kami akan segera menindaklanjuti</p>
+                    <p className="text-white/70 text-sm">Sampaikan permohonan Anda dan kami akan segera menindaklanjuti</p>
                   </div>
                 </div>
 
                 {/* Info strip */}
-                <div className="mx-6 mt-5 bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-xs text-amber-800" style={{ lineHeight: 1.65 }}>
+                <div className="mx-6 mt-5 bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 text-sm text-amber-800" style={{ lineHeight: 1.65 }}>
                   <p style={{ fontWeight: 700 }} className="mb-0.5">Tentang Posbakum Online</p>
                   Layanan hukum untuk masyarakat tidak mampu secara ekonomi dan kelompok rentan (Perempuan, Anak, Penyandang Disabilitas) agar mendapat akses keadilan yang sama.
                 </div>
@@ -293,7 +293,7 @@ export function PosbakumPage() {
                 {Object.keys(errors).length > 0 && (
                   <div className="mx-6 mt-4 bg-red-50 border border-red-200 rounded-xl px-4 py-3 flex items-start gap-2">
                     <AlertCircle size={15} className="text-red-500 flex-shrink-0 mt-0.5" />
-                    <p className="text-red-600 text-xs" style={{ fontWeight: 600 }}>Mohon lengkapi semua field yang wajib diisi.</p>
+                    <p className="text-red-600 text-sm" style={{ fontWeight: 600 }}>Mohon lengkapi semua field yang wajib diisi.</p>
                   </div>
                 )}
 
@@ -315,12 +315,12 @@ export function PosbakumPage() {
 
                   <FileUpload label="Upload Kartu Identitas" required hint="Upload 1 file yang didukung. Maks 10 MB."
                     value={ktp} onChange={v => { setKtp(v); clr("ktp"); }} accept="image/*,.pdf" />
-                  {errors.ktp && <p className="text-xs text-red-500 -mt-4 flex items-center gap-1"><AlertCircle size={12} />{errors.ktp}</p>}
+                  {errors.ktp && <p className="text-sm text-red-500 -mt-4 flex items-center gap-1"><AlertCircle size={12} />{errors.ktp}</p>}
 
                   <FileUpload label="Upload Dokumen Keterangan Tidak Mampu" required
                     hint="Seperti: SKTM / Kartu Keluarga Miskin (KKM), dll. Maks 10 MB."
                     value={sktm} onChange={v => { setSktm(v); clr("sktm"); }} accept="image/*,.pdf" />
-                  {errors.sktm && <p className="text-xs text-red-500 -mt-4 flex items-center gap-1"><AlertCircle size={12} />{errors.sktm}</p>}
+                  {errors.sktm && <p className="text-sm text-red-500 -mt-4 flex items-center gap-1"><AlertCircle size={12} />{errors.sktm}</p>}
 
                   <Textarea label="Topik / Uraian Layanan Yang Akan Dikonsultasikan" required
                     placeholder="Jelaskan secara detail permasalahan hukum yang ingin dikonsultasikan..."
@@ -329,7 +329,7 @@ export function PosbakumPage() {
                   <FileUpload label="Upload Dokumen Awal (opsional)" hint="Upload 1 file yang didukung. Maks 10 MB."
                     value={dokAwal} onChange={setDokAwal} accept="image/*,.pdf,.doc,.docx" />
 
-                  <button type="submit"
+                  <button aria-label="Aksi" type="submit"
                     className="w-full flex items-center justify-center gap-2 text-white py-3.5 rounded-xl hover:bg-[#7B1A07] transition-colors"
                     style={{ backgroundColor: "#9A2109", fontWeight: 700 }}>
                     <Scale size={17} />Kirim Permohonan Posbakum
@@ -337,23 +337,23 @@ export function PosbakumPage() {
 
                   {/* Clear form */}
                   {!confirmClear ? (
-                    <button type="button" onClick={() => setConfirmClear(true)}
+                    <button aria-label="Aksi" type="button" onClick={() => setConfirmClear(true)}
                       className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-600 hover:border-gray-300 hover:text-gray-700 transition-colors text-sm"
                       style={{ fontWeight: 500 }}>
                       <RotateCcw size={15} />Bersihkan Formulir
                     </button>
                   ) : (
                     <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3">
-                      <p className="text-amber-700 text-xs text-center mb-3" style={{ fontWeight: 600 }}>
+                      <p className="text-amber-700 text-sm text-center mb-3" style={{ fontWeight: 600 }}>
                         Semua isian akan dihapus. Lanjutkan?
                       </p>
                       <div className="flex gap-2">
-                        <button type="button" onClick={handleClearForm}
+                        <button aria-label="Aksi" type="button" onClick={handleClearForm}
                           className="flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-lg bg-amber-500 text-white text-sm hover:bg-amber-600 transition-colors"
                           style={{ fontWeight: 700 }}>
                           <RotateCcw size={14} />Ya, Hapus Semua
                         </button>
-                        <button type="button" onClick={() => setConfirmClear(false)}
+                        <button aria-label="Aksi" type="button" onClick={() => setConfirmClear(false)}
                           className="flex-1 py-2.5 rounded-lg border border-gray-200 bg-white text-gray-600 text-sm hover:bg-gray-50 transition-colors"
                           style={{ fontWeight: 600 }}>
                           Batal
@@ -362,7 +362,7 @@ export function PosbakumPage() {
                     </div>
                   )}
 
-                  <p className="text-center text-gray-600 text-xs">* Menunjukkan pertanyaan yang wajib diisi</p>
+                  <p className="text-center text-gray-600 text-sm">* Menunjukkan pertanyaan yang wajib diisi</p>
                 </form>
               </div>
             </div>
@@ -372,7 +372,7 @@ export function PosbakumPage() {
               {/* Panduan */}
               <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
                 <div className="px-5 py-4 border-b border-gray-50">
-                  <h3 className="text-gray-800" style={{ fontWeight: 700, fontSize: "0.95rem" }}>Panduan Pengisian</h3>
+                  <h2 className="text-gray-800" style={{ fontWeight: 700, fontSize: "0.95rem" }}>Panduan Pengisian</h2>
                 </div>
                 <div className="p-5 space-y-3.5">
                   {[
@@ -385,7 +385,7 @@ export function PosbakumPage() {
                       <div className="w-7 h-7 rounded-lg bg-[#FFF1F1] flex items-center justify-center flex-shrink-0">
                         <Icon size={14} className="text-[#9A2109]" />
                       </div>
-                      <p className="text-gray-700 text-xs" style={{ lineHeight: 1.6 }}>{text}</p>
+                      <p className="text-gray-700 text-sm" style={{ lineHeight: 1.6 }}>{text}</p>
                     </div>
                   ))}
                 </div>
@@ -394,13 +394,13 @@ export function PosbakumPage() {
               {/* Jenis layanan */}
               <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
                 <div className="px-5 py-4 border-b border-gray-50">
-                  <h3 className="text-gray-800" style={{ fontWeight: 700, fontSize: "0.95rem" }}>Jenis Layanan Posbakum</h3>
+                  <h2 className="text-gray-800" style={{ fontWeight: 700, fontSize: "0.95rem" }}>Jenis Layanan Posbakum</h2>
                 </div>
                 <div className="p-5 space-y-2.5">
                   {JENIS_LAYANAN.map((l, i) => (
                     <div key={i} className="flex items-start gap-2">
-                      <div className="w-5 h-5 rounded-full bg-[#9A2109] text-white flex items-center justify-center flex-shrink-0 text-[10px]" style={{ fontWeight: 700, marginTop: "1px" }}>{i + 1}</div>
-                      <p className="text-gray-600 text-xs" style={{ lineHeight: 1.55 }}>{l}</p>
+                      <div className="w-5 h-5 rounded-full bg-[#9A2109] text-white flex items-center justify-center flex-shrink-0 text-sm" style={{ fontWeight: 700, marginTop: "1px" }}>{i + 1}</div>
+                      <p className="text-gray-600 text-sm" style={{ lineHeight: 1.55 }}>{l}</p>
                     </div>
                   ))}
                 </div>
@@ -409,7 +409,7 @@ export function PosbakumPage() {
               {/* Kontak */}
               <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
                 <div className="px-5 py-4" style={{ backgroundColor: "#9A2109" }}>
-                  <h3 className="text-white" style={{ fontWeight: 700, fontSize: "0.95rem" }}>Kontak Kami</h3>
+                  <h2 className="text-white" style={{ fontWeight: 700, fontSize: "0.95rem" }}>Kontak Kami</h2>
                 </div>
                 <div className="p-5 space-y-3">
                   {[
@@ -420,7 +420,7 @@ export function PosbakumPage() {
                   ].map(({ icon: Icon, text }, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <Icon size={14} className="text-[#9A2109] flex-shrink-0 mt-0.5" />
-                      <p className="text-gray-600 text-xs" style={{ lineHeight: 1.5 }}>{text}</p>
+                      <p className="text-gray-600 text-sm" style={{ lineHeight: 1.5 }}>{text}</p>
                     </div>
                   ))}
                 </div>

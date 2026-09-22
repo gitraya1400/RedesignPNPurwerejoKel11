@@ -71,7 +71,7 @@ export function ExternalModal({ open, label, onClose, onConfirm }: ExternalModal
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close */}
-        <button
+        <button aria-label="Aksi"
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-600 hover:text-gray-600 transition-colors"
         >
@@ -86,12 +86,12 @@ export function ExternalModal({ open, label, onClose, onConfirm }: ExternalModal
         </div>
 
         {/* Title */}
-        <h3
+        <h2
           className="text-gray-900 mb-2"
           style={{ fontWeight: 800, fontSize: "1.2rem" }}
         >
           Meninggalkan Website Ini
-        </h3>
+        </h2>
         <p className="text-gray-700 text-sm mb-5" style={{ lineHeight: 1.6 }}>
           Anda akan diarahkan ke sistem eksternal. Pastikan Anda mengakses dari jaringan yang aman.
         </p>
@@ -104,11 +104,11 @@ export function ExternalModal({ open, label, onClose, onConfirm }: ExternalModal
             </p>
             <div className="flex items-center gap-1 mt-1">
               <LinkIcon size={11} className="text-gray-600 flex-shrink-0" />
-              <span className="text-gray-600 text-xs truncate">{displayUrl}</span>
+              <span className="text-gray-600 text-sm truncate">{displayUrl}</span>
             </div>
           </div>
           <span
-            className="flex-shrink-0 text-[11px] px-2.5 py-1 rounded-full"
+            className="flex-shrink-0 text-sm px-2.5 py-1 rounded-full"
             style={{
               backgroundColor: "#D1FAE5",
               color: "#065F46",
@@ -140,7 +140,7 @@ export function ExternalModal({ open, label, onClose, onConfirm }: ExternalModal
 
         {/* Buttons */}
         <div className="space-y-2.5">
-          <button
+          <button aria-label="Aksi"
             onClick={handleConfirm}
             className="w-full flex items-center justify-center gap-2 text-white py-3.5 rounded-xl hover:bg-[#7B1A07] transition-colors"
             style={{
@@ -152,7 +152,7 @@ export function ExternalModal({ open, label, onClose, onConfirm }: ExternalModal
             Buka Sistem Eksternal
             <ExternalLink size={16} />
           </button>
-          <button
+          <button aria-label="Aksi"
             onClick={onClose}
             className="w-full border border-gray-200 text-gray-600 py-3.5 rounded-xl text-sm hover:bg-gray-50 transition-colors"
             style={{ fontWeight: 600 }}

@@ -133,23 +133,23 @@ export function NewsSection() {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute top-4 left-4">
-                <span className="bg-[#9A2109] text-white text-xs px-3 py-1 rounded-full" style={{ fontWeight: 600 }}>
+                <span className="bg-[#9A2109] text-white text-sm px-3 py-1 rounded-full" style={{ fontWeight: 600 }}>
                   {featuredNews.category}
                 </span>
               </div>
             </div>
             <div className="p-5">
-              <h3
+              <h2
                 className="text-gray-900 mb-3 leading-snug group-hover:text-[#9A2109] transition-colors"
                 style={{ fontWeight: 700, fontSize: "1.1rem" }}
               >
                 {featuredNews.title}
-              </h3>
+              </h2>
               <p className="text-gray-700 text-sm mb-4 leading-relaxed line-clamp-3">
                 {featuredNews.excerpt}
               </p>
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3 text-gray-600 text-xs">
+                <div className="flex items-center gap-3 text-gray-600 text-sm">
                   <span className="flex items-center gap-1">
                     <User size={12} />
                     {featuredNews.author}
@@ -182,18 +182,18 @@ export function NewsSection() {
                 </div>
                 <div className="p-3 flex-1 min-w-0">
                   <span
-                    className="text-[10px] text-[#9A2109]"
+                    className="text-sm text-[#9A2109]"
                     style={{ fontWeight: 600 }}
                   >
                     {item.category}
                   </span>
                   <p
-                    className="text-gray-800 text-xs mt-0.5 leading-snug line-clamp-2 group-hover:text-[#9A2109] transition-colors"
+                    className="text-gray-800 text-sm mt-0.5 leading-snug line-clamp-2 group-hover:text-[#9A2109] transition-colors"
                     style={{ fontWeight: 600 }}
                   >
                     {item.title}
                   </p>
-                  <p className="text-gray-600 text-[11px] mt-1 flex items-center gap-1">
+                  <p className="text-gray-600 text-sm mt-1 flex items-center gap-1">
                     <Calendar size={10} />
                     {item.date}
                   </p>
@@ -216,7 +216,7 @@ export function NewsSection() {
 
         {/* Announcement Tabs */}
         <div className="flex items-center gap-2 mb-6">
-          <button
+          <button aria-label="Aksi"
             onClick={() => setAnnouncementTab("pn")}
             className={`px-5 py-2 rounded-full text-sm transition-all ${
               announcementTab === "pn"
@@ -227,7 +227,7 @@ export function NewsSection() {
           >
             Pengumuman PN Purworejo
           </button>
-          <button
+          <button aria-label="Aksi"
             onClick={() => setAnnouncementTab("ma")}
             className={`px-5 py-2 rounded-full text-sm transition-all ${
               announcementTab === "ma"
@@ -246,7 +246,7 @@ export function NewsSection() {
               <Folder size={28} className="text-gray-300" />
             </div>
             <p className="text-gray-600 text-sm">Belum Ada Artikel</p>
-            <p className="text-gray-300 text-xs">Tidak ada pengumuman saat ini</p>
+            <p className="text-gray-300 text-sm">Tidak ada pengumuman saat ini</p>
           </div>
         ) : (
           <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden divide-y divide-gray-50">
@@ -260,7 +260,7 @@ export function NewsSection() {
                   <span className="text-white leading-none" style={{ fontSize: "1.1rem", fontWeight: 900 }}>
                     {ann.day}
                   </span>
-                  <span className="text-white/70 text-[10px]">{ann.month}</span>
+                  <span className="text-white/70 text-sm">{ann.month}</span>
                 </div>
 
                 {/* Content */}
@@ -271,7 +271,7 @@ export function NewsSection() {
                   >
                     {ann.title}
                   </p>
-                  <span className="inline-flex items-center gap-1 text-xs text-gray-600 mt-1">
+                  <span className="inline-flex items-center gap-1 text-sm text-gray-600 mt-1">
                     <Tag size={10} />
                     {ann.category}
                   </span>
