@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
 import { ChevronRight, ChevronLeft, Scale, Search, HelpCircle, Calendar } from "lucide-react";
 import courtImage from "../../imports/kantor-pengadilan-negeri-purworejo-Image.jpeg";
 
@@ -60,6 +61,17 @@ interface HeroProps {
 export function Hero({ onExternalLink }: HeroProps) {
   const [current, setCurrent] = useState(0);
   const [animating, setAnimating] = useState(false);
+  const [heroQuery, setHeroQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleHeroSearch = (e?: React.FormEvent) => {
+    e?.preventDefault();
+    if (heroQuery.trim()) {
+      navigate(`/pencarian?q=${encodeURIComponent(heroQuery.trim())}`);
+    } else {
+      navigate("/pencarian");
+    }
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -192,6 +204,56 @@ export function Hero({ onExternalLink }: HeroProps) {
                 {slide.cta}
               </button>
             )}
+
+            {/* Mobile Search Card (Visible on mobile/tablet) */}
+            <div className="lg:hidden mt-8 bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 shadow-xl">
+              <div className="flex items-center gap-2.5 mb-2.5">
+                <div className="w-8 h-8 bg-[#9A2109] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Search size={16} className="text-[#F9C784]" />
+                </div>
+                <div>
+                  <p className="text-white text-xs font-bold">Pencarian Pengadilan</p>
+                  <p className="text-white/60 text-[11px]">Temukan info, jadwal, dan layanan cepat</p>
+                </div>
+              </div>
+
+              <form onSubmit={handleHeroSearch} className="relative">
+                <input
+                  aria-label="Cari informasi pengadilan di HP"
+                  type="text"
+                  value={heroQuery}
+                  onChange={(e) => setHeroQuery(e.target.value)}
+                  placeholder="Cari sidang, cerai, posbakum, ppid..."
+                  className="w-full bg-white/15 border border-white/25 rounded-xl pl-3.5 pr-11 py-2.5 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#F9C784] text-xs sm:text-sm"
+                />
+                <button
+                  type="submit"
+                  aria-label="Kirim pencarian"
+                  className="absolute right-1.5 top-1/2 -translate-y-1/2 p-1.5 rounded-lg bg-[#9A2109] text-[#F9C784] active:scale-95 transition-transform"
+                >
+                  <Search size={14} />
+                </button>
+              </form>
+
+              <div className="flex items-center gap-1.5 mt-2 flex-wrap">
+                <span className="text-[10px] text-white/50">Cepat:</span>
+                {[
+                  { label: "Jadwal Sidang", q: "Jadwal Sidang" },
+                  { label: "Gugatan", q: "Gugatan Perceraian" },
+                  { label: "PPID", q: "PPID" },
+                  { label: "Posbakum", q: "Posbakum" },
+                ].map((pill) => (
+                  <button
+                    key={pill.label}
+                    type="button"
+                    onClick={() => navigate(`/pencarian?q=${encodeURIComponent(pill.q)}`)}
+                    className="text-[10px] text-white/85 hover:text-white bg-white/10 px-2 py-0.5 rounded-md border border-white/10"
+                  >
+                    {pill.label}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* Right — Info Card */}
@@ -213,13 +275,42 @@ export function Hero({ onExternalLink }: HeroProps) {
                   </div>
                 </div>
 
-                <div className="relative">
-                  <input aria-label="Cari berdasar kata kunci"
+                <form onSubmit={handleHeroSearch} className="relative">
+                  <input
+                    aria-label="Cari jadwal sidang, biaya perkara, gugatan, posbakum, ppid"
                     type="text"
-                    placeholder="Cari berdasar kata kunci"
-                    className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#F9C784] focus:border-transparent transition-all"
+                    value={heroQuery}
+                    onChange={(e) => setHeroQuery(e.target.value)}
+                    placeholder="Cari kata kunci (cth: jadwal sidang, cerai, posbakum)..."
+                    className="w-full bg-white/10 border border-white/20 rounded-xl pl-4 pr-12 py-3 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-[#F9C784] focus:border-transparent transition-all text-sm"
                   />
-                  <Search size={18} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/40" />
+                  <button
+                    type="submit"
+                    aria-label="Kirim pencarian"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-lg bg-[#9A2109] hover:bg-[#b0270c] text-[#F9C784] transition-colors"
+                  >
+                    <Search size={16} />
+                  </button>
+                </form>
+
+                {/* Quick keyword pills */}
+                <div className="flex items-center gap-1.5 mt-2.5 flex-wrap">
+                  <span className="text-[11px] text-white/50">Cepat:</span>
+                  {[
+                    { label: "Jadwal Sidang", q: "Jadwal Sidang" },
+                    { label: "Gugatan Cerai", q: "Gugatan Perceraian" },
+                    { label: "PPID", q: "PPID" },
+                    { label: "Posbakum", q: "Posbakum" },
+                  ].map((pill) => (
+                    <button
+                      key={pill.label}
+                      type="button"
+                      onClick={() => navigate(`/pencarian?q=${encodeURIComponent(pill.q)}`)}
+                      className="text-[11px] text-white/80 hover:text-white bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded-md transition-all border border-white/10"
+                    >
+                      {pill.label}
+                    </button>
+                  ))}
                 </div>
               </div>
 

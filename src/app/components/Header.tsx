@@ -519,22 +519,25 @@ export function Header({ onSearchOpen }: HeaderProps) {
               })}
             </nav>
 
-            {/* Search Button */}
-            <button aria-label="Aksi" aria-haspopup="true" aria-expanded="false"
+            {/* Search Button (Desktop & Mobile) */}
+            <button
+              aria-label="Buka pencarian"
+              aria-haspopup="dialog"
               onClick={onSearchOpen}
-              className={`hidden lg:flex items-center gap-2 px-3 py-2 rounded-lg text-sm transition-all ${
+              className={`flex items-center gap-1.5 px-2.5 py-2 sm:px-3 sm:py-2 rounded-lg text-sm transition-all ${
                 isScrolled
                   ? "text-gray-700 hover:text-[#9A2109]"
                   : "text-white/90 hover:text-white"
               }`}
               style={{ fontWeight: 500 }}
             >
-              <Search size={16} />
+              <Search size={18} />
+              <span className="hidden sm:inline text-xs font-semibold">Cari</span>
             </button>
 
             {/* Mobile Toggle */}
-            <button aria-label="Aksi" aria-haspopup="true" aria-expanded="false"
-              className={`lg:hidden transition-colors ${
+            <button aria-label="Menu navigasi" aria-haspopup="true" aria-expanded={mobileOpen}
+              className={`lg:hidden transition-colors p-1 ${
                 isScrolled ? "text-gray-700" : "text-white"
               }`}
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -547,6 +550,22 @@ export function Header({ onSearchOpen }: HeaderProps) {
         {/* Mobile Menu */}
         {mobileOpen && (
           <div className="lg:hidden bg-white border-t border-gray-100 shadow-xl max-h-[80vh] overflow-y-auto">
+            {/* Search bar inside mobile drawer */}
+            <div className="p-3 bg-gray-50/90 border-b border-gray-100">
+              <button
+                onClick={() => {
+                  setMobileOpen(false);
+                  onSearchOpen();
+                }}
+                className="w-full flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl bg-white border border-gray-200 text-gray-500 text-xs shadow-2xs hover:border-[#9A2109] transition-all"
+              >
+                <Search size={16} className="text-[#9A2109]" />
+                <span className="flex-1 text-left">Cari jadwal, perkara, layanan...</span>
+                <span className="text-[10px] bg-[#FFF1F1] text-[#9A2109] font-bold px-2 py-0.5 rounded-md">
+                  Cari
+                </span>
+              </button>
+            </div>
             {navItems.map((item) => (
               <div key={item.label}>
                 {item.submenu.length === 0 ? (

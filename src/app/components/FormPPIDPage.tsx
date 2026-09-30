@@ -26,7 +26,8 @@ function FormInput({
         {label} {required && <span className="text-[#DC2626]">*</span>}
       </label>
       <div className="relative">
-        <input aria-label="Input"
+        <input
+          aria-label={label}
           type={type}
           value={value}
           onChange={(e) => onChange(e.target.value)}
@@ -110,22 +111,22 @@ export function FormPPIDPage() {
         </div>
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-8 py-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-6 sm:py-8">
         {/* SLA Banner */}
-        <div className="bg-[#EFF6FF] border border-[#BFDBFE] rounded-2xl p-4 flex gap-4 items-start mb-8">
-          <div className="w-10 h-10 rounded-xl bg-[#DBEAFE] flex items-center justify-center flex-shrink-0">
-            <Shield size={18} className="text-[#1D4ED8]" />
+        <div className="bg-[#EFF6FF] border border-[#BFDBFE] rounded-2xl p-4 flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center justify-between mb-6 sm:mb-8">
+          <div className="flex gap-3 sm:gap-4 items-start">
+            <div className="w-10 h-10 rounded-xl bg-[#DBEAFE] flex items-center justify-center flex-shrink-0">
+              <Shield size={18} className="text-[#1D4ED8]" />
+            </div>
+            <div>
+              <p className="text-sm font-bold text-[#1D4ED8] uppercase tracking-wide mb-0.5">Jaminan SLA & Keamanan Data</p>
+              <p className="text-sm text-[#1E40AF] leading-relaxed">
+                Sesuai <strong>SK KMA No. 1-144/KMA/SK/I/2011</strong>, permohonan informasi Anda akan diproses maksimal dalam{" "}
+                <strong>10 (sepuluh) hari kerja</strong>. Formulir ini terenkripsi dan resmi dicatat pada register PPID PN Purworejo.
+              </p>
+            </div>
           </div>
-          <div>
-            <p className="text-sm font-bold text-[#1D4ED8] uppercase tracking-wide mb-0.5">Jaminan SLA & Keamanan Data</p>
-            <p className="text-sm text-[#1E40AF] leading-relaxed">
-
-              Sesuai <strong>SK KMA No. 1-144/KMA/SK/I/2011</strong>, permohonan informasi Anda akan diproses maksimal dalam{" "}
-              <strong>10 (sepuluh) hari kerja</strong>. Formulir ini terenkripsi dan resmi dicatat pada register PPID PN Purworejo.
-            </p>
-          </div>
-          <div className="flex items-center gap-1.5 text-sm text-[#1D4ED8] font-semibold bg-white border border-[#BFDBFE] px-3 py-1.5 rounded-full flex-shrink-0">
-
+          <div className="flex items-center gap-1.5 text-xs sm:text-sm text-[#1D4ED8] font-semibold bg-white border border-[#BFDBFE] px-3 py-1.5 rounded-full flex-shrink-0 self-start sm:self-center">
             <Clock size={12} />
             10 Hari Kerja
           </div>
@@ -137,20 +138,20 @@ export function FormPPIDPage() {
           <div className="space-y-6">
             {/* Section 1 */}
             <div className="bg-white rounded-2xl border border-[#E2E8F0] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] overflow-hidden">
-              <div className="px-7 py-5 bg-[#F8FAFC] border-b border-[#E2E8F0] flex items-center gap-3">
+              <div className="px-5 sm:px-7 py-4 sm:py-5 bg-[#F8FAFC] border-b border-[#E2E8F0] flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-[#9A2109] text-white text-sm font-bold flex items-center justify-center">1</div>
                 <div>
                   <h2 className="text-sm font-bold text-[#1E293B]">Data Diri Pemohon</h2>
                   <p className="text-sm text-[#64748B]">Isi dengan data sesuai identitas resmi</p>
                 </div>
               </div>
-              <div className="px-7 py-6 space-y-5">
+              <div className="px-5 sm:px-7 py-5 sm:py-6 space-y-5">
                 {/* Kategori radio */}
                 <div>
                   <label className="block text-sm font-semibold text-[#334155] mb-2">
                     Kategori Pemohon <span className="text-[#DC2626]">*</span>
                   </label>
-                  <div className="flex gap-4">
+                  <div className="flex flex-col sm:flex-row gap-3">
                     {[
                       { val: "individu" as const, label: "Perorangan / Individu" },
                       { val: "badan" as const, label: "Badan Hukum / Lembaga LSM" },
@@ -230,7 +231,8 @@ export function FormPPIDPage() {
                   <label className="block text-sm font-semibold text-[#334155] mb-1.5">
                     Upload Foto/Scan KTP <span className="text-[#DC2626]">*</span>
                   </label>
-                  <input aria-label="Input"
+                  <input
+                    aria-label="Upload Foto atau Scan KTP"
                     ref={fileRef}
                     type="file"
                     accept=".pdf,.jpg,.jpeg,.png"
@@ -241,7 +243,7 @@ export function FormPPIDPage() {
                     <div className="flex items-center gap-3 px-4 py-3 bg-[#F0FDF4] border border-[#86EFAC] rounded-xl">
                       <CheckCircle2 size={16} className="text-[#16A34A] flex-shrink-0" />
                       <span className="text-sm text-[#15803D] font-medium flex-1 truncate">{fileName}</span>
-                      <button aria-label="Aksi" onClick={() => setFileName(null)} className="text-[#94A3B8] hover:text-[#DC2626] transition-colors">
+                      <button aria-label="Hapus berkas KTP terpilih" onClick={() => setFileName(null)} className="text-[#94A3B8] hover:text-[#DC2626] transition-colors">
                         <X size={14} />
                       </button>
                     </div>
@@ -265,14 +267,14 @@ export function FormPPIDPage() {
 
             {/* Section 2 */}
             <div className="bg-white rounded-2xl border border-[#E2E8F0] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] overflow-hidden">
-              <div className="px-7 py-5 bg-[#F8FAFC] border-b border-[#E2E8F0] flex items-center gap-3">
+              <div className="px-5 sm:px-7 py-4 sm:py-5 bg-[#F8FAFC] border-b border-[#E2E8F0] flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-[#9A2109] text-white text-sm font-bold flex items-center justify-center">2</div>
                 <div>
                   <h2 className="text-sm font-bold text-[#1E293B]">Informasi yang Diminta</h2>
                   <p className="text-sm text-[#64748B]">Jelaskan secara spesifik informasi yang dibutuhkan</p>
                 </div>
               </div>
-              <div className="px-7 py-6 space-y-5">
+              <div className="px-5 sm:px-7 py-5 sm:py-6 space-y-5">
                 {/* Rincian */}
                 <div>
                   <label className="block text-sm font-semibold text-[#334155] mb-1.5">
@@ -344,10 +346,10 @@ export function FormPPIDPage() {
             </div>
 
             {/* Action Bar */}
-            <div className="bg-white rounded-2xl border border-[#E2E8F0] p-5 flex items-center justify-between shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)]">
+            <div className="bg-white rounded-2xl border border-[#E2E8F0] p-4 sm:p-5 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-3 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)]">
               <button aria-label="Aksi"
                 onClick={() => setShowReset(true)}
-                className="flex items-center gap-2 text-sm text-[#DC2626] hover:text-[#B91C1C] font-medium transition-colors"
+                className="flex items-center justify-center gap-2 py-2.5 sm:py-0 text-sm text-[#DC2626] hover:text-[#B91C1C] font-medium transition-colors"
               >
                 <Trash2 size={15} />
                 Kosongkan Formulir
@@ -355,7 +357,7 @@ export function FormPPIDPage() {
               <button aria-label="Aksi"
                 onClick={handleSubmit}
                 disabled={!canSubmit}
-                className={`flex items-center gap-2 px-8 py-3 rounded-full text-sm font-bold transition-all ${
+                className={`flex items-center justify-center gap-2 px-6 sm:px-8 py-3 rounded-full text-sm font-bold transition-all ${
                   canSubmit
                     ? "bg-[#9A2109] hover:bg-[#7A1A07] text-white shadow-md hover:shadow-lg"
                     : "bg-[#E2E8F0] text-[#94A3B8] cursor-not-allowed"
