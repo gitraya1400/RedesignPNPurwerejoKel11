@@ -63,7 +63,7 @@ export function ZonaIntegritas() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
           <div>
             <span
-              className="inline-flex items-center gap-2 bg-white/20 text-[#F9C784] text-xs px-4 py-1.5 rounded-full mb-3 border border-white/20"
+              className="inline-flex items-center gap-2 bg-white/20 text-[#F9C784] text-sm px-4 py-1.5 rounded-full mb-3 border border-white/20"
             >
               <Shield size={11} />
               Program Reformasi Birokrasi
@@ -78,7 +78,7 @@ export function ZonaIntegritas() {
               PN Purworejo berkomitmen mewujudkan zona integritas menuju WBK & WBBM
             </p>
           </div>
-          <button className="self-start md:self-auto flex items-center gap-2 bg-white/15 text-white border border-white/20 rounded-full px-5 py-2.5 text-sm hover:bg-white/25 transition-colors" style={{ fontWeight: 600 }}>
+          <button aria-label="Aksi" className="self-start md:self-auto flex items-center gap-2 bg-white/15 text-white border border-white/20 rounded-full px-5 py-2.5 text-sm hover:bg-white/25 transition-colors" style={{ fontWeight: 600 }}>
             Selengkapnya <ArrowRight size={14} />
           </button>
         </div>
@@ -107,13 +107,13 @@ export function ZonaIntegritas() {
                     className={zone.highlight ? "text-[#F9C784]" : "text-white/80"}
                   />
                 </div>
-                <h3
+                <h2
                   className={`mb-1.5 ${zone.highlight ? "text-[#F9C784]" : "text-white"}`}
                   style={{ fontWeight: 700, fontSize: "0.9rem" }}
                 >
                   {zone.title}
-                </h3>
-                <p className="text-white/55 text-xs leading-relaxed">{zone.desc}</p>
+                </h2>
+                <p className="text-white/55 text-sm leading-relaxed">{zone.desc}</p>
               </div>
             );
           })}

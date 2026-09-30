@@ -19,7 +19,7 @@ export function ComingSoonPage() {
         {label && (
           <p className="text-sm text-[#9A2109] font-medium mb-4">{label}</p>
         )}
-        <p className="text-gray-500 text-sm mb-8">
+        <p className="text-gray-700 text-sm mb-8">
           Halaman ini sedang dalam pengembangan. Silakan kembali beberapa saat lagi.
         </p>
         <Link

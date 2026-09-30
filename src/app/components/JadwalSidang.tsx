@@ -106,9 +106,9 @@ export function JadwalSidang({ onExternalLink }: JadwalSidangProps) {
                 JADWAL SIDANG
               </h2>
             </div>
-            <p className="text-gray-500 text-sm pl-4">{today}</p>
+            <p className="text-gray-700 text-sm pl-4">{today}</p>
           </div>
-          <button
+          <button aria-label="Aksi"
             onClick={() => onExternalLink("#", "SIPP")}
             className="inline-flex items-center gap-2 text-[#9A2109] text-sm border border-[#9A2109] rounded-full px-4 py-2 hover:bg-[#9A2109] hover:text-white transition-colors self-start"
             style={{ fontWeight: 600 }}
@@ -121,7 +121,7 @@ export function JadwalSidang({ onExternalLink }: JadwalSidangProps) {
         {/* Category Tabs */}
         <div className="flex items-center gap-2 flex-wrap mb-6">
           {categories.map((cat) => (
-            <button
+            <button aria-label="Aksi"
               key={cat}
               onClick={() => setActiveTab(cat)}
               className={`px-4 py-1.5 rounded-full text-sm transition-all duration-200 ${
@@ -142,7 +142,7 @@ export function JadwalSidang({ onExternalLink }: JadwalSidangProps) {
             <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center">
               <Users size={28} className="text-gray-300" />
             </div>
-            <p className="text-gray-400 text-sm">Belum Ada Jadwal Sidang</p>
+            <p className="text-gray-600 text-sm">Belum Ada Jadwal Sidang</p>
           </div>
         ) : (
           <div className="grid gap-3">
@@ -156,7 +156,7 @@ export function JadwalSidang({ onExternalLink }: JadwalSidangProps) {
                 >
                   {/* Room Badge */}
                   <div className="flex-shrink-0 w-20 h-14 bg-[#9A2109] rounded-xl flex flex-col items-center justify-center">
-                    <span className="text-white/70 text-[10px]">Ruang</span>
+                    <span className="text-white/70 text-sm">Ruang</span>
                     <span className="text-white text-lg leading-none" style={{ fontWeight: 800 }}>
                       {hearing.room.split(" ")[1]}
                     </span>
@@ -172,7 +172,7 @@ export function JadwalSidang({ onExternalLink }: JadwalSidangProps) {
                         {hearing.caseNumber}
                       </span>
                       <span
-                        className="text-xs px-2 py-0.5 rounded-full"
+                        className="text-sm px-2 py-0.5 rounded-full"
                         style={{ backgroundColor: tc.bg, color: tc.text, fontWeight: 600 }}
                       >
                         {hearing.type}
@@ -180,10 +180,10 @@ export function JadwalSidang({ onExternalLink }: JadwalSidangProps) {
                     </div>
                     <p className="text-gray-600 text-sm truncate">
                       <span style={{ fontWeight: 600 }}>{hearing.plaintiff}</span>
-                      <span className="text-gray-400 mx-2">vs</span>
+                      <span className="text-gray-600 mx-2">vs</span>
                       <span style={{ fontWeight: 600 }}>{hearing.defendant}</span>
                     </p>
-                    <p className="text-gray-400 text-xs mt-0.5">{hearing.agenda}</p>
+                    <p className="text-gray-600 text-sm mt-0.5">{hearing.agenda}</p>
                   </div>
 
                   {/* Time + Room */}
@@ -194,13 +194,13 @@ export function JadwalSidang({ onExternalLink }: JadwalSidangProps) {
                         {hearing.time}
                       </span>
                     </div>
-                    <div className="flex items-center gap-1 text-gray-400">
+                    <div className="flex items-center gap-1 text-gray-600">
                       <MapPin size={11} />
-                      <span className="text-xs">{hearing.room}</span>
+                      <span className="text-sm">{hearing.room}</span>
                     </div>
-                    <button
+                    <button aria-label="Aksi"
                       onClick={() => onExternalLink("#", "SIPP")}
-                      className="hidden sm:flex items-center gap-1 text-xs text-[#9A2109] hover:underline"
+                      className="hidden sm:flex items-center gap-1 text-sm text-[#9A2109] hover:underline"
                       style={{ fontWeight: 600 }}
                     >
                       SIPP <ExternalLink size={10} />

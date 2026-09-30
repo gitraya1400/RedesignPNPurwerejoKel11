@@ -73,8 +73,8 @@ export function SearchOverlay({ open, onClose }: SearchOverlayProps) {
       >
         {/* Input row */}
         <div className="flex items-center gap-3 px-4 py-3.5 border-b border-gray-100">
-          <Search size={18} className="text-gray-400 flex-shrink-0" />
-          <input
+          <Search size={18} className="text-gray-600 flex-shrink-0" />
+          <input aria-label="Input"
             ref={inputRef}
             type="text"
             value={query}
@@ -86,9 +86,9 @@ export function SearchOverlay({ open, onClose }: SearchOverlayProps) {
           {loading ? (
             <Loader2 size={18} className="text-[#9A2109] animate-spin flex-shrink-0" />
           ) : query ? (
-            <button
+            <button aria-label="Aksi"
               onClick={() => setQuery("")}
-              className="text-gray-400 hover:text-gray-600 transition-colors"
+              className="text-gray-600 hover:text-gray-600 transition-colors"
             >
               <X size={18} />
             </button>
@@ -99,7 +99,7 @@ export function SearchOverlay({ open, onClose }: SearchOverlayProps) {
         <div className="max-h-96 overflow-y-auto">
           {!query && (
             <div className="p-6 text-center">
-              <p className="text-gray-400 text-sm">Ketik kata kunci untuk mencari konten</p>
+              <p className="text-gray-600 text-sm">Ketik kata kunci untuk mencari konten</p>
             </div>
           )}
 
@@ -111,7 +111,7 @@ export function SearchOverlay({ open, onClose }: SearchOverlayProps) {
               <p className="text-gray-700 text-sm" style={{ fontWeight: 600 }}>
                 Hasil tidak ditemukan
               </p>
-              <p className="text-gray-400 text-xs text-center max-w-xs">
+              <p className="text-gray-600 text-sm text-center max-w-xs">
                 Maaf, hasil untuk "{query}" tidak ditemukan. Coba periksa ejaan kata atau gunakan kata kunci yang lebih umum.
               </p>
             </div>
@@ -119,11 +119,11 @@ export function SearchOverlay({ open, onClose }: SearchOverlayProps) {
 
           {results.length > 0 && (
             <div>
-              <p className="px-4 pt-3 pb-1 text-xs text-gray-400" style={{ fontWeight: 600 }}>
+              <p className="px-4 pt-3 pb-1 text-sm text-gray-600" style={{ fontWeight: 600 }}>
                 HASIL PENCARIAN — {results.length} ditemukan
               </p>
               {results.map((result, i) => (
-                <button
+                <button aria-label="Aksi"
                   key={i}
                   className="w-full flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors text-left group"
                   onClick={onClose}
@@ -142,7 +142,7 @@ export function SearchOverlay({ open, onClose }: SearchOverlayProps) {
                     >
                       {result.title}
                     </p>
-                    <p className="text-gray-400 text-xs">{result.category}</p>
+                    <p className="text-gray-600 text-sm">{result.category}</p>
                   </div>
                   <ArrowRight size={14} className="text-gray-300 group-hover:text-[#9A2109] transition-colors flex-shrink-0" />
                 </button>
@@ -153,8 +153,8 @@ export function SearchOverlay({ open, onClose }: SearchOverlayProps) {
 
         {/* Footer */}
         <div className="px-4 py-2.5 border-t border-gray-50 flex items-center justify-between">
-          <p className="text-gray-300 text-xs">Tekan ESC untuk menutup</p>
-          <p className="text-gray-300 text-xs">PN Purworejo Search</p>
+          <p className="text-gray-300 text-sm">Tekan ESC untuk menutup</p>
+          <p className="text-gray-300 text-sm">PN Purworejo Search</p>
         </div>
       </div>
     </div>

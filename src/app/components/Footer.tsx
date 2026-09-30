@@ -38,17 +38,17 @@ export function Footer() {
                 <Scale size={18} className="text-[#F9C784]" />
               </div>
               <div>
-                <p className="text-white/60 text-[10px] tracking-widest uppercase">MAHKAMAH AGUNG RI</p>
+                <p className="text-white/60 text-sm tracking-widest uppercase">MAHKAMAH AGUNG RI</p>
                 <p className="text-white text-sm leading-tight" style={{ fontWeight: 700 }}>
                   PN PURWOREJO KELAS IB
                 </p>
               </div>
             </div>
-            <p className="text-white/50 text-xs leading-relaxed mb-5">
+            <p className="text-white/50 text-sm leading-relaxed mb-5">
               Pengadilan Negeri Purworejo adalah lembaga peradilan di bawah Mahkamah Agung Republik Indonesia yang melayani wilayah hukum Kabupaten Purworejo.
             </p>
 
-            <div className="space-y-2.5 text-xs">
+            <div className="space-y-2.5 text-sm">
               <div className="flex items-start gap-2 text-white/50">
                 <MapPin size={13} className="text-[#F9C784] mt-0.5 flex-shrink-0" />
                 <span>Jl. Jenderal Sudirman No. 19, Purworejo, Jawa Tengah 54111</span>
@@ -72,15 +72,15 @@ export function Footer() {
 
           {/* Col 2 — Tentang */}
           <div>
-            <h4 className="text-white text-sm mb-4" style={{ fontWeight: 700 }}>
+            <h3 className="text-white text-sm mb-4" style={{ fontWeight: 700 }}>
               Tentang Pengadilan
-            </h4>
+            </h3>
             <ul className="space-y-2">
               {links1.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-white/50 hover:text-[#F9C784] text-xs transition-colors flex items-center gap-1"
+                    className="text-white/50 hover:text-[#F9C784] text-sm transition-colors flex items-center gap-1"
                   >
                     <span className="w-1 h-1 bg-[#9A2109] rounded-full flex-shrink-0" />
                     {link.label}
@@ -92,15 +92,15 @@ export function Footer() {
 
           {/* Col 3 — Layanan */}
           <div>
-            <h4 className="text-white text-sm mb-4" style={{ fontWeight: 700 }}>
+            <h3 className="text-white text-sm mb-4" style={{ fontWeight: 700 }}>
               Layanan Publik
-            </h4>
+            </h3>
             <ul className="space-y-2">
               {links2.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-white/50 hover:text-[#F9C784] text-xs transition-colors flex items-center gap-1"
+                    className="text-white/50 hover:text-[#F9C784] text-sm transition-colors flex items-center gap-1"
                   >
                     <span className="w-1 h-1 bg-[#9A2109] rounded-full flex-shrink-0" />
                     {link.label}
@@ -113,15 +113,15 @@ export function Footer() {
 
           {/* Col 4 — Reformasi */}
           <div>
-            <h4 className="text-white text-sm mb-4" style={{ fontWeight: 700 }}>
+            <h3 className="text-white text-sm mb-4" style={{ fontWeight: 700 }}>
               Reformasi Birokrasi
-            </h4>
+            </h3>
             <ul className="space-y-2">
               {links3.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-white/50 hover:text-[#F9C784] text-xs transition-colors flex items-center gap-1"
+                    className="text-white/50 hover:text-[#F9C784] text-sm transition-colors flex items-center gap-1"
                   >
                     <span className="w-1 h-1 bg-[#9A2109] rounded-full flex-shrink-0" />
                     {link.label}
@@ -133,10 +133,10 @@ export function Footer() {
 
             {/* WBK Badge */}
             <div className="mt-6 bg-white/5 rounded-xl p-3 border border-white/10">
-              <p className="text-[#F9C784] text-xs" style={{ fontWeight: 700 }}>
+              <p className="text-[#F9C784] text-sm" style={{ fontWeight: 700 }}>
                 🏆 WBK 2024
               </p>
-              <p className="text-white/40 text-[11px]">
+              <p className="text-white/40 text-sm">
                 Wilayah Bebas dari Korupsi
               </p>
             </div>
@@ -147,10 +147,10 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/5 py-4">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-white/30 text-xs">
+          <p className="text-white/30 text-sm">
             © 2025 Pengadilan Negeri Purworejo. Hak Cipta Dilindungi.
           </p>
-          <p className="text-white/30 text-xs">
+          <p className="text-white/30 text-sm">
             Mahkamah Agung Republik Indonesia
           </p>
         </div>
