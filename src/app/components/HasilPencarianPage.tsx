@@ -95,8 +95,8 @@ export function HasilPencarianPage() {
     <div className="min-h-screen bg-[#F8FAFC]">
       {/* Search Header */}
       <div className="bg-white border-b border-[#E2E8F0]">
-        <div className="max-w-[1440px] mx-auto px-8 pt-24 pb-6">
-          <nav className="flex items-center gap-1.5 text-xs text-[#64748B] mb-5">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 pt-24 pb-6">
+          <nav className="flex items-center gap-1.5 text-xs text-[#64748B] mb-5 flex-wrap">
             <Link to="/" className="hover:text-[#9A2109] transition-colors">Beranda</Link>
             <ChevronRight size={12} />
             <span className="text-[#9A2109] font-semibold">Hasil Pencarian</span>
@@ -140,7 +140,7 @@ export function HasilPencarianPage() {
         </div>
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-8 py-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-6 sm:py-8">
         {/* "Did you mean" */}
         <div className="bg-[#FFFBEB] border border-[#FDE68A] rounded-2xl p-4 flex items-start gap-3 mb-6">
           <div className="w-8 h-8 rounded-lg bg-[#FEF3C7] flex items-center justify-center flex-shrink-0">
@@ -185,7 +185,7 @@ export function HasilPencarianPage() {
         </div>
 
         {/* Main layout: results + sidebar */}
-        <div className="grid grid-cols-[1fr_300px] gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-6 lg:gap-8 items-start">
           {/* Results list */}
           <div className="space-y-4">
             {results.map((r, i) => (

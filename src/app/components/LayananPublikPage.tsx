@@ -468,7 +468,7 @@ function EBrosurSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {brochures.map((brochure) => (
           <div
             key={brochure.id}
@@ -688,8 +688,8 @@ function IkmSection() {
 
 function Sidebar({ pathname }: { pathname: string }) {
   return (
-    <aside className="w-[260px] flex-shrink-0">
-      <div className="bg-white rounded-2xl border border-[#E2E8F0] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] overflow-hidden sticky top-24">
+    <aside className="w-full lg:w-[260px] flex-shrink-0">
+      <div className="bg-white rounded-2xl border border-[#E2E8F0] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] overflow-hidden lg:sticky lg:top-24">
         {/* Header */}
         <div className="bg-gradient-to-br from-[#9A2109] to-[#7A1A07] px-5 py-4">
           <div className="flex items-center gap-2.5">
@@ -814,7 +814,7 @@ export function LayananPublikPage() {
     <div className="min-h-screen bg-[#F8FAFC]">
       {/* Page header band */}
       <div className="bg-gradient-to-br from-[#9A2109] to-[#7A1A07] pt-24 pb-6">
-        <div className="max-w-[1440px] mx-auto px-8">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-1.5 text-xs text-white/60 mb-4 flex-wrap">
             <Link to="/" className="hover:text-white transition-colors">
@@ -852,10 +852,10 @@ export function LayananPublikPage() {
       </div>
 
       {/* Body: sidebar + content */}
-      <div className="max-w-[1440px] mx-auto px-8 py-8">
-        <div className="flex gap-7 items-start">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-6 sm:py-8">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-7 items-start">
           <Sidebar pathname={pathname} />
-          <main className="flex-1 min-w-0">
+          <main className="flex-1 min-w-0 w-full">
             <MainContent pathname={pathname} />
           </main>
         </div>

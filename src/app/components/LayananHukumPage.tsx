@@ -982,8 +982,8 @@ export function LayananHukumPage() {
     <div className="min-h-screen bg-[#F8FAFC]">
       {/* Breadcrumb bar */}
       <div className="bg-white border-b border-[#E2E8F0]">
-        <div className="max-w-[1440px] mx-auto px-8 pt-24 pb-4">
-          <nav className="flex items-center gap-1.5 text-xs text-[#64748B]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 pt-24 pb-4">
+          <nav className="flex items-center gap-1.5 text-xs text-[#64748B] flex-wrap">
             <Link to="/" className="hover:text-[#9A2109] transition-colors">
               Beranda
             </Link>
@@ -1007,15 +1007,15 @@ export function LayananHukumPage() {
       </div>
 
       {/* Body */}
-      <div className="max-w-[1440px] mx-auto px-8 py-8">
-        <div className="grid grid-cols-[260px_1fr] gap-8 items-start">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-6 sm:py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-6 lg:gap-8 items-start">
           {/* Sidebar */}
-          <div className="sticky top-24">
+          <div className="w-full lg:sticky lg:top-24">
             <SidebarNav currentPath={pathname} />
           </div>
 
           {/* Main content card */}
-          <div className="bg-white rounded-2xl border border-[#E2E8F0] p-8 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)]">
+          <div className="bg-white rounded-2xl border border-[#E2E8F0] p-4 sm:p-8 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] min-w-0">
             {renderContent()}
           </div>
         </div>

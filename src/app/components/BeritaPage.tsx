@@ -358,8 +358,8 @@ export function BeritaPage() {
     <div className="min-h-screen bg-[#F8FAFC]">
       {/* ── Breadcrumb ────────────────────────────────────────────────────────── */}
       <div className="bg-white border-b border-[#E2E8F0]">
-        <div className="max-w-[1440px] mx-auto px-8 pt-24 pb-4">
-          <nav className="flex items-center gap-1.5 text-xs text-[#64748B]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 pt-24 pb-4">
+          <nav className="flex items-center gap-1.5 text-xs text-[#64748B] flex-wrap">
             <Link to="/" className="hover:text-[#9A2109] transition-colors">
               Beranda
             </Link>
@@ -373,21 +373,21 @@ export function BeritaPage() {
 
       {/* ── Hero / tab switcher ───────────────────────────────────────────────── */}
       <div className="bg-white border-b border-[#E2E8F0]">
-        <div className="max-w-[1440px] mx-auto px-8 py-8">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-6 sm:py-8">
           <h1 className="text-2xl font-bold text-[#1E293B] mb-1">Berita &amp; Informasi</h1>
           <p className="text-sm text-[#64748B] mb-6">
             Informasi terkini seputar kegiatan dan layanan Pengadilan Negeri Purworejo
           </p>
 
           {/* Tabs */}
-          <div className="flex gap-1 bg-[#F1F5F9] p-1 rounded-xl w-fit">
+          <div className="flex gap-1 bg-[#F1F5F9] p-1 rounded-xl w-fit flex-wrap">
             {tabs.map((tab) => {
               const isActive = pathname.startsWith(tab.path);
               return (
                 <Link
                   key={tab.path}
                   to={tab.path}
-                  className={`px-5 py-2 rounded-lg text-sm font-semibold transition-all ${
+                  className={`px-4 sm:px-5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all ${
                     isActive
                       ? "bg-white text-[#9A2109] shadow-sm"
                       : "text-[#64748B] hover:text-[#1E293B]"
@@ -402,7 +402,7 @@ export function BeritaPage() {
       </div>
 
       {/* ── Content ───────────────────────────────────────────────────────────── */}
-      <div className="max-w-[1440px] mx-auto px-8 py-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-6 sm:py-8">
         {isVideo ? (
           /* ── Video grid ─────────────────────────────────────────────────────── */
           <>
@@ -411,7 +411,7 @@ export function BeritaPage() {
                 Menampilkan <span className="font-semibold text-[#1E293B]">{videoItems.length}</span> video
               </p>
             </div>
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
               {videoItems.map((v) => (
                 <VideoCard key={v.id} item={v} />
               ))}
@@ -491,7 +491,7 @@ export function BeritaPage() {
               </div>
             ) : (
               <>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   {displayedArticles.map((item) => (
                     <NewsCard key={item.id} item={item} />
                   ))}

@@ -146,8 +146,8 @@ function DetailModal({ row, onClose }: { row: typeof scheduleData[0]; onClose: (
           </button>
         </div>
 
-        <div className="p-6 space-y-5">
-          <div className="grid grid-cols-2 gap-4">
+        <div className="p-4 sm:p-6 space-y-4 sm:space-y-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {[
               { label: "Klasifikasi Perkara", value: row.klasifikasi, icon: FileText },
               { label: "Ruang Sidang", value: row.ruang, icon: Building2 },
@@ -284,8 +284,8 @@ export function JadwalSidangPage() {
     <div className="min-h-screen bg-[#F8FAFC]">
       {/* Breadcrumb + Page Title */}
       <div className="bg-white border-b border-[#E2E8F0]">
-        <div className="max-w-[1440px] mx-auto px-8 pt-24 pb-6">
-          <nav className="flex items-center gap-1.5 text-xs text-[#64748B] mb-5">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 pt-24 pb-6">
+          <nav className="flex items-center gap-1.5 text-xs text-[#64748B] mb-5 flex-wrap">
             <Link to="/" className="hover:text-[#9A2109] transition-colors">Beranda</Link>
             <ChevronRight size={12} />
             <span className="hover:text-[#9A2109] cursor-pointer transition-colors">Layanan Publik</span>
@@ -293,14 +293,14 @@ export function JadwalSidangPage() {
             <span className="text-[#9A2109] font-semibold">Jadwal Sidang</span>
           </nav>
 
-          <div className="flex items-start justify-between gap-6">
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 sm:gap-6">
             <div>
-              <h1 className="text-2xl font-bold text-[#1E293B] mb-2">Jadwal Persidangan Terbuka untuk Umum</h1>
-              <p className="text-sm text-[#64748B] max-w-2xl leading-relaxed">
+              <h1 className="text-xl sm:text-2xl font-bold text-[#1E293B] mb-2">Jadwal Persidangan Terbuka untuk Umum</h1>
+              <p className="text-xs sm:text-sm text-[#64748B] max-w-2xl leading-relaxed">
                 Informasi jadwal sidang real-time yang terhubung dengan Sistem Informasi Penelusuran Perkara (SIPP) PN Purworejo.
               </p>
             </div>
-            <div className="flex-shrink-0 flex items-center gap-2 bg-[#DCFCE7] border border-[#86EFAC] text-[#15803D] px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap">
+            <div className="flex-shrink-0 flex items-center gap-2 bg-[#DCFCE7] border border-[#86EFAC] text-[#15803D] px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-semibold whitespace-nowrap self-start sm:self-auto">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full rounded-full bg-[#22C55E] opacity-75 animate-ping" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22C55E]" />
@@ -311,12 +311,12 @@ export function JadwalSidangPage() {
         </div>
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-8 py-8 space-y-6">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-6 sm:py-8 space-y-6">
         {/* Filter Bar */}
-        <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)]">
-          <div className="grid grid-cols-4 gap-4 mb-5">
+        <div className="bg-white rounded-2xl border border-[#E2E8F0] p-4 sm:p-6 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4 sm:mb-5">
             {/* Search */}
-            <div className="col-span-2 relative">
+            <div className="col-span-1 sm:col-span-2 relative">
               <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#94A3B8]" />
               <input
                 type="text"
@@ -357,7 +357,7 @@ export function JadwalSidangPage() {
             </div>
           </div>
           {/* Ruang Sidang row */}
-          <div className="grid grid-cols-4 gap-4 mb-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4 sm:mb-5">
             <div className="relative">
               <label className="block text-[11px] font-semibold text-[#64748B] uppercase tracking-wide mb-1.5">Ruang Sidang</label>
               <div className="relative">

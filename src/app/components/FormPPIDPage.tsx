@@ -95,8 +95,8 @@ export function FormPPIDPage() {
     <div className="min-h-screen bg-[#F8FAFC]">
       {/* Header */}
       <div className="bg-white border-b border-[#E2E8F0]">
-        <div className="max-w-[1440px] mx-auto px-8 pt-24 pb-6">
-          <nav className="flex items-center gap-1.5 text-xs text-[#64748B] mb-5">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 pt-24 pb-6">
+          <nav className="flex items-center gap-1.5 text-xs text-[#64748B] mb-5 flex-wrap">
             <Link to="/" className="hover:text-[#9A2109] transition-colors">Beranda</Link>
             <ChevronRight size={12} />
             <span className="hover:text-[#9A2109] cursor-pointer transition-colors">Formulir Layanan</span>
@@ -109,27 +109,26 @@ export function FormPPIDPage() {
         </div>
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-8 py-8">
-        {/* SLA Banner */}
-        <div className="bg-[#EFF6FF] border border-[#BFDBFE] rounded-2xl p-4 flex gap-4 items-start mb-8">
-          <div className="w-10 h-10 rounded-xl bg-[#DBEAFE] flex items-center justify-center flex-shrink-0">
-            <Shield size={18} className="text-[#1D4ED8]" />
-          </div>
-          <div>
-            <p className="text-xs font-bold text-[#1D4ED8] uppercase tracking-wide mb-0.5">Jaminan SLA & Keamanan Data</p>
-            <p className="text-sm text-[#1E40AF] leading-relaxed">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-6 sm:py-8 space-y-6 sm:space-y-8">
+        {/* Banner SLA */}
+        <div className="bg-[#EFF6FF] border border-[#BFDBFE] rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+          <div className="flex items-start sm:items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-[#DBEAFE] flex items-center justify-center flex-shrink-0 text-[#1D4ED8]">
+              <FileText size={18} />
+            </div>
+            <p className="text-xs sm:text-sm text-[#1E40AF] leading-relaxed">
               Sesuai <strong>SK KMA No. 1-144/KMA/SK/I/2011</strong>, permohonan informasi Anda akan diproses maksimal dalam{" "}
               <strong>10 (sepuluh) hari kerja</strong>. Formulir ini terenkripsi dan resmi dicatat pada register PPID PN Purworejo.
             </p>
           </div>
-          <div className="flex items-center gap-1.5 text-xs text-[#1D4ED8] font-semibold bg-white border border-[#BFDBFE] px-3 py-1.5 rounded-full flex-shrink-0">
+          <div className="flex items-center gap-1.5 text-xs text-[#1D4ED8] font-semibold bg-white border border-[#BFDBFE] px-3 py-1.5 rounded-full flex-shrink-0 self-start sm:self-auto">
             <Clock size={12} />
             10 Hari Kerja
           </div>
         </div>
 
         {/* Two-column layout */}
-        <div className="grid grid-cols-[1fr_340px] gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6 lg:gap-8 items-start">
           {/* LEFT: Form */}
           <div className="space-y-6">
             {/* Section 1 */}
@@ -192,7 +191,7 @@ export function FormPPIDPage() {
                   required
                 />
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <FormInput
                     label="Alamat Email Aktif"
                     type="email"

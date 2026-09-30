@@ -314,8 +314,8 @@ function Breadcrumb({ section }: { section: string }) {
 
 function Sidebar({ currentPath }: { currentPath: string }) {
   return (
-    <aside className="w-60 flex-shrink-0">
-      <div className="sticky top-28">
+    <aside className="w-full lg:w-60 flex-shrink-0">
+      <div className="lg:sticky lg:top-28">
         {/* Header */}
         <div
           className="px-4 py-3 rounded-t-2xl"
@@ -450,29 +450,29 @@ function ZonaIntegritasAreaPage({ areaKey }: { areaKey: string }) {
     <div className="bg-white rounded-2xl border border-[#E2E8F0] overflow-hidden">
       {/* Hero */}
       <div
-        className="px-8 py-8"
+        className="px-4 sm:px-8 py-6 sm:py-8"
         style={{
           background: "linear-gradient(135deg, #9A2109 0%, #7B1A07 60%, #4A0E04 100%)",
         }}
       >
-        <div className="flex items-start gap-5">
+        <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
           <div
-            className="w-14 h-14 rounded-2xl flex items-center justify-center text-lg font-black flex-shrink-0"
+            className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-base sm:text-lg font-black flex-shrink-0"
             style={{ background: "#F9C784", color: "#9A2109" }}
           >
             {data.number}
           </div>
-          <div className="flex-1">
+          <div className="flex-1 min-w-0">
             <div className="flex items-center gap-3 flex-wrap mb-2">
               <span className="text-[#F9C784] text-xs font-bold uppercase tracking-widest">
                 Zona Integritas · {data.label}
               </span>
               <StatusBadge status={data.status} />
             </div>
-            <h1 className="text-white text-2xl font-black leading-tight mb-2">
+            <h1 className="text-white text-xl sm:text-2xl font-black leading-tight mb-2">
               {data.title}
             </h1>
-            <p className="text-white/70 text-sm leading-relaxed max-w-xl">
+            <p className="text-white/70 text-xs sm:text-sm leading-relaxed max-w-xl">
               {data.subtitle}
             </p>
           </div>
@@ -480,7 +480,7 @@ function ZonaIntegritasAreaPage({ areaKey }: { areaKey: string }) {
       </div>
 
       {/* Body */}
-      <div className="px-8 py-7">
+      <div className="px-4 sm:px-8 py-5 sm:py-7">
         {/* Metric bar */}
         <MetricBar target={data.target} realisasi={data.realisasi} />
 
@@ -529,26 +529,26 @@ function AkreditasiPage() {
     <div className="bg-white rounded-2xl border border-[#E2E8F0] overflow-hidden">
       {/* Hero */}
       <div
-        className="px-8 py-8"
+        className="px-4 sm:px-8 py-6 sm:py-8"
         style={{
           background: "linear-gradient(135deg, #9A2109 0%, #7B1A07 60%, #4A0E04 100%)",
         }}
       >
-        <div className="flex items-start gap-5">
+        <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
           <div
-            className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+            className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
             style={{ background: "#F9C784" }}
           >
             <Award size={24} style={{ color: "#9A2109" }} />
           </div>
-          <div>
+          <div className="flex-1 min-w-0">
             <span className="text-[#F9C784] text-xs font-bold uppercase tracking-widest mb-2 block">
               Akreditasi Penjaminan Mutu
             </span>
-            <h1 className="text-white text-2xl font-black leading-tight mb-2">
+            <h1 className="text-white text-xl sm:text-2xl font-black leading-tight mb-2">
               Sertifikasi Akreditasi Penjaminan Mutu
             </h1>
-            <p className="text-white/70 text-sm leading-relaxed max-w-xl">
+            <p className="text-white/70 text-xs sm:text-sm leading-relaxed max-w-xl">
               Pengadilan Negeri Purworejo meraih nilai akreditasi "A" (Sangat Baik) dari Tim
               Akreditasi Pengadilan Tinggi Jawa Tengah atas komitmen dalam standar pelayanan
               peradilan yang prima.
@@ -723,29 +723,29 @@ function AmpuhPage() {
     <div className="bg-white rounded-2xl border border-[#E2E8F0] overflow-hidden">
       {/* Hero */}
       <div
-        className="px-8 py-8"
+        className="px-4 sm:px-8 py-6 sm:py-8"
         style={{
           background: "linear-gradient(135deg, #9A2109 0%, #7B1A07 60%, #4A0E04 100%)",
         }}
       >
-        <div className="flex items-start gap-5">
+        <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
           <div
-            className="w-14 h-14 rounded-2xl flex items-center justify-center text-xl font-black flex-shrink-0"
+            className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-lg sm:text-xl font-black flex-shrink-0"
             style={{ background: "#F9C784", color: "#9A2109" }}
           >
             A
           </div>
-          <div>
+          <div className="flex-1 min-w-0">
             <span className="text-[#F9C784] text-xs font-bold uppercase tracking-widest mb-2 block">
               Program Unggulan
             </span>
-            <h1 className="text-white text-2xl font-black leading-tight mb-1">
+            <h1 className="text-white text-xl sm:text-2xl font-black leading-tight mb-1">
               Program AMPUH
             </h1>
-            <p className="text-[#F9C784] text-sm font-semibold mb-2">
+            <p className="text-[#F9C784] text-xs sm:text-sm font-semibold mb-2">
               Aktualisasi Menuju Pengadilan Unggul &amp; Humanis
             </p>
-            <p className="text-white/70 text-sm leading-relaxed max-w-xl">
+            <p className="text-white/70 text-xs sm:text-sm leading-relaxed max-w-xl">
               AMPUH adalah program strategis PN Purworejo untuk mewujudkan pengadilan yang
               unggul dalam kinerja, humanis dalam pelayanan, dan berintegritas dalam setiap
               tindakan aparaturnya.
@@ -755,7 +755,7 @@ function AmpuhPage() {
       </div>
 
       {/* Body */}
-      <div className="px-8 py-7">
+      <div className="px-4 sm:px-8 py-5 sm:py-7">
         {/* Capaian */}
         <h2 className="text-base font-bold text-gray-900 mb-4">Capaian Program</h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-7">
@@ -881,11 +881,11 @@ export function ReformasiBirokrasiPage() {
 
   return (
     <div className="min-h-screen pt-24 pb-16" style={{ background: "#F8FAFC" }}>
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <Breadcrumb section={getBreadcrumbLabel()} />
-        <div className="flex gap-7 items-start">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-7 items-start">
           <Sidebar currentPath={pathname} />
-          <main className="flex-1 min-w-0">{renderContent()}</main>
+          <main className="flex-1 min-w-0 w-full">{renderContent()}</main>
         </div>
       </div>
     </div>

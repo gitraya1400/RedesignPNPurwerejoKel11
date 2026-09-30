@@ -590,7 +590,7 @@ function RenderBlocks({ blocks }: { blocks: ContentBlock[] }) {
         }
         if (b.type === "cards") {
           return (
-            <div key={i} className="grid grid-cols-2 gap-4">
+            <div key={i} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {b.items.map(({ icon: Icon, title, body }, j) => (
                 <div key={j} className="bg-[#F8FAFC] rounded-xl border border-[#E2E8F0] p-4 flex gap-3">
                   <div className="w-9 h-9 rounded-lg bg-[#FFF1F1] flex items-center justify-center flex-shrink-0">
@@ -655,14 +655,14 @@ function StaffPage({ id }: { id: string }) {
       ) : (
         <div className="grid grid-cols-1 gap-4">
           {staff.map((s, i) => (
-            <div key={i} className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-5 flex gap-5">
-              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#9A2109] to-[#7A1A07] flex items-center justify-center flex-shrink-0">
-                <User size={28} className="text-white" />
+            <div key={i} className="bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0] p-4 sm:p-5 flex flex-col sm:flex-row gap-4 sm:gap-5">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-[#9A2109] to-[#7A1A07] flex items-center justify-center flex-shrink-0">
+                <User size={24} className="text-white sm:w-7 sm:h-7" />
               </div>
-              <div className="flex-1">
+              <div className="flex-1 min-w-0">
                 <h3 className="text-base font-bold text-[#1E293B] mb-1">{s.name}</h3>
                 <p className="text-xs font-semibold text-[#9A2109] mb-2">{s.jabatan}</p>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {s.nip !== "-" && (
                     <div className="flex items-center gap-1.5 text-xs text-[#64748B]">
                       <Shield size={11} className="text-[#94A3B8]" />
@@ -700,8 +700,8 @@ export function TentangPengadilanPage() {
     <div className="min-h-screen bg-[#F8FAFC]">
       {/* Breadcrumb */}
       <div className="bg-white border-b border-[#E2E8F0]">
-        <div className="max-w-[1440px] mx-auto px-8 pt-24 pb-4">
-          <nav className="flex items-center gap-1.5 text-xs text-[#64748B]">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 pt-24 pb-4">
+          <nav className="flex items-center gap-1.5 text-xs text-[#64748B] flex-wrap">
             <Link to="/" className="hover:text-[#9A2109] transition-colors">Beranda</Link>
             {segments.map((seg, i) => (
               <span key={i} className="flex items-center gap-1.5">
@@ -719,15 +719,15 @@ export function TentangPengadilanPage() {
         </div>
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-8 py-8">
-        <div className="grid grid-cols-[260px_1fr] gap-8 items-start">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-6 sm:py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-6 lg:gap-8 items-start">
           {/* Sidebar */}
-          <div className="sticky top-24">
+          <div className="w-full lg:sticky lg:top-24">
             <SidebarNav currentPath={pathname} />
           </div>
 
           {/* Main content */}
-          <div className="bg-white rounded-2xl border border-[#E2E8F0] p-8 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)]">
+          <div className="bg-white rounded-2xl border border-[#E2E8F0] p-4 sm:p-8 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] min-w-0">
             {pegawaiId ? (
               <StaffPage id={pegawaiId} />
             ) : blocks ? (

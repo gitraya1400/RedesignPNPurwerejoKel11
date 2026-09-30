@@ -100,8 +100,8 @@ export function PanduanAlurPage() {
     <div className="min-h-screen bg-[#F8FAFC]">
       {/* Hero Banner */}
       <div className="bg-gradient-to-br from-[#9A2109] to-[#7A1A07] pt-24 pb-0">
-        <div className="max-w-[1440px] mx-auto px-8 pt-6 pb-0">
-          <nav className="flex items-center gap-1.5 text-xs text-white/60 mb-6">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 pt-6 pb-0">
+          <nav className="flex items-center gap-1.5 text-xs text-white/60 mb-6 flex-wrap">
             <Link to="/" className="hover:text-white transition-colors">Beranda</Link>
             <ChevronRight size={12} />
             <span className="hover:text-white cursor-pointer transition-colors">Layanan Hukum</span>
@@ -114,10 +114,10 @@ export function PanduanAlurPage() {
               <Award size={12} />
               Panduan Resmi PN Purworejo Kelas IB
             </div>
-            <h1 className="text-3xl font-bold text-white leading-tight mb-3">
+            <h1 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-3">
               Panduan Alur Berperkara &<br />Bantuan Hukum
             </h1>
-            <p className="text-white/75 text-sm leading-relaxed">
+            <p className="text-white/75 text-xs sm:text-sm leading-relaxed">
               Panduan langkah demi langkah yang transparan, mudah dipahami, dan bebas dari istilah hukum yang membingungkan bagi masyarakat awam.
             </p>
           </div>
@@ -128,7 +128,7 @@ export function PanduanAlurPage() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(i)}
-                className={`relative flex-shrink-0 px-5 py-3.5 text-sm font-semibold transition-all rounded-t-xl mr-1 ${
+                className={`relative flex-shrink-0 px-4 sm:px-5 py-3 sm:py-3.5 text-xs sm:text-sm font-semibold transition-all rounded-t-xl mr-1 ${
                   activeTab === i
                     ? "bg-white text-[#9A2109]"
                     : "text-white/70 hover:text-white hover:bg-white/10"
@@ -145,13 +145,13 @@ export function PanduanAlurPage() {
       </div>
 
       {/* Tab Content */}
-      <div className="max-w-[1440px] mx-auto px-8 py-8 space-y-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 py-6 sm:py-8 space-y-6 sm:space-y-8">
         {/* Summary Cards */}
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5">
           {summaryCards.map(({ icon: Icon, label, value, sub, color, bg }) => (
             <div
               key={label}
-              className="bg-white rounded-2xl border border-[#E2E8F0] p-5 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] flex gap-4"
+              className="bg-white rounded-2xl border border-[#E2E8F0] p-4 sm:p-5 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] flex gap-4"
             >
               <div
                 className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
@@ -169,7 +169,7 @@ export function PanduanAlurPage() {
         </div>
 
         {/* Main content: Stepper + aside */}
-        <div className="grid grid-cols-[1fr_320px] gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 lg:gap-8 items-start">
           {/* Vertical Stepper */}
           <div className="space-y-0">
             <div className="bg-white rounded-2xl border border-[#E2E8F0] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] overflow-hidden">
